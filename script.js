@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // A concise summary of your framework to give the AI context for every query.
         frameworkContext: `
-            You are an expert in Robert Mertzman's philosophical system, "Capability-Based Coordination." Your entire knowledge base for this conversation is the following set of principles:
+            You are an AI assistant specializing in the "Capability-Based Coordination" philosophical system. Your entire knowledge base for this conversation is the following set of principles:
 
             1.  **Personal Reality Framework (PRF):** Each person has a unique architecture for organizing experience, made of their Beliefs, Rules, Ontological commitments, and Authenticity criteria (BROA+). It's a dynamic system, shaped by their life story (Assembly History), that guides action.
             2.  **Capability-Based Coordination & Functional Equivalence:** The core idea that ethical coordination doesn't require people to share identical beliefs. Instead, they can coordinate by developing "functionally equivalent" capabilities that achieve the same shared goal. Different methods can be used to advance the same shared network objective.
@@ -189,7 +189,21 @@ document.addEventListener('DOMContentLoaded', () => {
             tab.btn.setAttribute('aria-selected', 'true');
         },
 
-        handleConceptAnalogy(e) { /* ... same as before ... */ },
+        handleConceptAnalogy(e) {
+            if (e.target.classList.contains('generate-analogy-btn')) {
+                const index = e.target.dataset.index;
+                const concept = this.concepts[index];
+                const outputElement = document.getElementById(`analogy-output-${index}`);
+                const prompt = `${this.frameworkContext}
+                
+                A student needs a simple, relatable analogy to understand the following concept:
+                **Concept:** "${concept.name}"
+                **Description:** "${concept.description}"
+                
+                Your task: Create an analogy in an accessible, educational tone. The framework often uses examples from technology (like software or HTML) or collaborative activities (like gaming or sports) to explain coordination. Please create an analogy in that spirit.`;
+                this.callGeminiAPI(prompt, outputElement);
+            }
+        },
 
         async handleResonanceLab() {
             const userInput = document.getElementById('resonance-input').value;
@@ -199,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const allFigures = [...this.navigators, ...this.thinkers];
             const figuresData = allFigures.map(f => ({ name: f.name, summary: f.summary, capabilities: (f.capabilities || []).join(', ') }));
             
-            this.currentResonance = { reflection: userInput }; // Store context
+            this.currentResonance = { reflection: userInput };
 
             const prompt = `${this.frameworkContext}
             A student's reflection: "${userInput}". From the list below, identify the top 3-5 figures with "functionally equivalent" capabilities. For each match, briefly explain the connection using framework concepts. Format as clean HTML.
@@ -233,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const [typeB, indexB] = valB.split('-');
             const personB = (typeB === 'navigator' ? this.navigators : this.thinkers)[indexB];
 
-            this.currentComparison = { personA, personB }; // Store context
+            this.currentComparison = { personA, personB };
 
             const outputElement = document.getElementById('comparison-output');
             const chatContainer = document.getElementById('comparison-chat-container');
@@ -277,9 +291,40 @@ document.addEventListener('DOMContentLoaded', () => {
             this.callGeminiAPI(prompt, aiTurn);
         },
 
-        handleCapabilityExplorer(e) { /* ... same as before ... */ },
-        handleCardClick(e) { /* ... same as before ... */ },
-        
+        handleCapabilityExplorer(e) {
+            const selectedCapability = e.target.value;
+            const outputElement = document.getElementById('capability-explorer-output');
+            if (selectedCapability) {
+                const allFigures = [...this.navigators, ...this.thinkers];
+                const matchingFigures = allFigures.filter(f => (f.capabilities || []).includes(selectedCapability));
+                outputElement.innerHTML = matchingFigures.map(person => {
+                    const type = this.navigators.some(p => p.name === person.name) ? 'navigator' : 'thinker';
+                    const index = (type === 'navigator' ? this.navigators : this.thinkers).findIndex(p => p.name === person.name);
+                    return this.createCardHtml(person, type, index);
+                }).join('');
+            } else {
+                outputElement.innerHTML = '';
+            }
+        },
+
+        handleCardClick(e) {
+            const card = e.target.closest('div[data-index]');
+            if (card) {
+                const type = card.dataset.type;
+                const index = card.dataset.index;
+                let data;
+                switch (type) {
+                    case 'navigator': data = this.navigators[index]; break;
+                    case 'thinker': data = this.thinkers[index]; break;
+                    case 'foundation': data = this.foundations[index]; break;
+                    case 'casestudy': data = this.caseStudies[index]; break;
+                    case 'essay': data = this.essays[index]; break;
+                    default: return;
+                }
+                this.showDetailModal(data, type);
+            }
+        },
+
         showDetailModal(data, type) {
             const modalContentEl = document.getElementById('modal-content-details');
             const modal = document.getElementById('detail-modal');
@@ -290,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'navigator':
                 case 'thinker':
                     html = this.getPersonModalHtml(data, type);
-                    this.currentModalFigure = data; // Store context for chat
+                    this.currentModalFigure = data;
                     break;
                 case 'foundation':
                 case 'casestudy':
@@ -307,19 +352,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const sendBtn = document.getElementById('modal-chat-send');
                 const inputEl = document.getElementById('modal-chat-input');
                 sendBtn.addEventListener('click', () => this.handleModalChat(inputEl));
-                inputEl.addEventListener('keyup', (e) => {
-                    if (e.key === 'Enter') sendBtn.click();
-                });
+                inputEl.addEventListener('keyup', (e) => (e.key === 'Enter') && sendBtn.click());
             }
         },
 
         handleModalChat(inputElement) {
             const userInput = inputElement.value;
             if (!userInput.trim() || !this.currentModalFigure) return;
-
             const outputContainer = document.getElementById('modal-chat-output');
             const data = this.currentModalFigure;
-
             const prompt = `${this.frameworkContext}
             A student is viewing the profile of ${data.name}. Here is their full analysis for context:
             ---
