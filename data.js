@@ -903,7 +903,6 @@ Individual-Collective Identity Balance: Personal authenticity demanded simultane
 Cultural-Global Engagement Synthesis: Genuine leadership involved maintaining authentic Pashtun and Islamic identity while building international solidarity and advocacy, preserving cultural grounding while engaging universal human rights framework and global educational development.
 Education-Justice Coordination: Authentic educational advocacy required understanding connections between educational access and broader social justice issues while maintaining primary focus on education as foundation for human development and democratic participation.`
         },
-        // --- NEW ENTRY FOR VIRGINIA HELD ---
         {
             name: "Virginia Held",
             lifespan: "1929-present",
@@ -964,7 +963,6 @@ Abstract-Concrete Reasoning Synthesis: Sophisticated capacity for coordinating s
 Individual-Institutional Academic Navigation: Advanced ability to build successful academic career while challenging institutional structures and philosophical orthodoxies, creating space for feminist philosophical development while maintaining scholarly credibility and institutional influence.
 Interdisciplinary-Disciplinary Coordination: Demonstrated capacity for engaging multiple academic disciplines while maintaining philosophical identity and theoretical coherence, building care ethics through coordination with empirical research while preserving philosophical analytical methods and systematic approach.`
         },
-        // --- NEW ENTRIES FOR WANGARI, OREN, and THICH NHAT HANH ---
         {
             name: "Wangari Maathai",
             lifespan: "1940-2011",
@@ -1151,19 +1149,19 @@ Inter-Faith-Secular Dialogue Integration: Demonstrated capacity for engaging div
         },
     ],
     thinkers: [
-      {
-    name: "Confucius",
-    lifespan: "551-479 BCE",
-    title: "A PRF Analysis of Moral Cultivation, Social Harmony, and Ethical Governance",
-    summary: "His PRF emerged from social upheaval, emphasizing relational wisdom and cultural cultivation as the foundation for social harmony.",
-    bioLink: "https://www.britannica.com/biography/Confucius",
-    videoUrl: null,
-    assemblyHistory: `<p><strong>Early Formation (551-520 BCE):</strong> Born into minor nobility during a period of institutional decline, his framework was shaped by a deep reverence for traditional Zhou dynasty rituals and a practical need to address social disorder. His roles as an administrator, teacher, and wandering advisor integrated theoretical wisdom with the practical challenges of governance and moral education.</p>`,
-    broa: `<p><strong>Beliefs:</strong> Human beings develop through reciprocal care and fulfilling their social roles. Rules: Act with ritual propriety (Li) and benevolent governance (Ren).</p><p><strong>Ontology:</strong> Personhood is constituted through a network of social relationships, not an individual essence.</p><p><strong>Authenticity:</strong> Achieved through the sincere and excellent fulfillment of one's social duties.</p>`,
-    atcf: "Confucius maintained remarkable coherence by adapting ancient cultural wisdom to contemporary social challenges. He integrated his roles as a scholar, teacher, and political advisor, always aiming to create a framework for social harmony that future generations could inherit and build upon.",
-    fop: "His Future-Oriented Projections were focused on creating a durable educational and cultural legacy. He developed systematic approaches to moral education and reinterpreted classical traditions to ensure they would remain relevant for restoring social order and guiding future cultural development.",
-    capabilities: ["Capability for Cultural Transmission and Reinterpretation", "Capability for Relational Moral Cultivation", "Capability for Integrating Theory and Governance", "Individual-Social Moral Integration"],
-    fullPrfAnalysis: `Confucius: A PRF Analysis of Moral Cultivation, Social Harmony, and Ethical Governance
+        {
+            name: "Confucius",
+            lifespan: "551-479 BCE",
+            title: "A PRF Analysis of Moral Cultivation, Social Harmony, and Ethical Governance",
+            summary: "His PRF emerged from social upheaval, emphasizing relational wisdom and cultural cultivation as the foundation for social harmony.",
+            bioLink: "https://www.britannica.com/biography/Confucius",
+            videoUrl: null,
+            assemblyHistory: `<p><strong>Early Formation (551-520 BCE):</strong> Born into minor nobility during a period of institutional decline, his framework was shaped by a deep reverence for traditional Zhou dynasty rituals and a practical need to address social disorder. His roles as an administrator, teacher, and wandering advisor integrated theoretical wisdom with the practical challenges of governance and moral education.</p>`,
+            broa: `<p><strong>Beliefs:</strong> Human beings develop through reciprocal care and fulfilling their social roles. Rules: Act with ritual propriety (Li) and benevolent governance (Ren).</p><p><strong>Ontology:</strong> Personhood is constituted through a network of social relationships, not an individual essence.</p><p><strong>Authenticity:</strong> Achieved through the sincere and excellent fulfillment of one's social duties.</p>`,
+            atcf: "Confucius maintained remarkable coherence by adapting ancient cultural wisdom to contemporary social challenges. He integrated his roles as a scholar, teacher, and political advisor, always aiming to create a framework for social harmony that future generations could inherit and build upon.",
+            fop: "His Future-Oriented Projections were focused on creating a durable educational and cultural legacy. He developed systematic approaches to moral education and reinterpreted classical traditions to ensure they would remain relevant for restoring social order and guiding future cultural development.",
+            capabilities: ["Capability for Cultural Transmission and Reinterpretation", "Capability for Relational Moral Cultivation", "Capability for Integrating Theory and Governance", "Individual-Social Moral Integration"],
+            fullPrfAnalysis: `Confucius: A PRF Analysis of Moral Cultivation, Social Harmony, and Ethical Governance
 Personal Reality Framework Analysis (551-479 BCE)
 Assembly History: From Minor Noble to Foundational Ethical Teacher
 Early Formation and Cultural Foundation (551-520 BCE)
@@ -1229,8 +1227,7 @@ Cultural Wisdom Preservation: Understanding that traditional cultural knowledge 
 Social Harmony Through Character: Contribution to systematic approaches for building social cohesion and political stability through moral cultivation rather than coercive control, creating sustainable frameworks for collective flourishing based on ethical relationships and virtuous leadership.`
         },
         {
-      
-    name: "Aristotle",
+            name: "Aristotle",
     lifespan: "384-322 BCE",
     title: "A PRF Analysis of Systematic Philosophy, Empirical Investigation, and Comprehensive Knowledge",
     summary: "Synthesized empirical observation with systematic logic to create a comprehensive framework for understanding ethics, politics, and the natural world.",
