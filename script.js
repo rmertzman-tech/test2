@@ -291,9 +291,40 @@ document.addEventListener('DOMContentLoaded', () => {
             this.callGeminiAPI(prompt, aiTurn);
         },
 
-        handleCapabilityExplorer(e) { /* ... (This function remains unchanged) ... */ },
-        handleCardClick(e) { /* ... (This function remains unchanged) ... */ },
-        
+        handleCapabilityExplorer(e) {
+            const selectedCapability = e.target.value;
+            const outputElement = document.getElementById('capability-explorer-output');
+            if (selectedCapability) {
+                const allFigures = [...this.navigators, ...this.thinkers];
+                const matchingFigures = allFigures.filter(f => (f.capabilities || []).includes(selectedCapability));
+                outputElement.innerHTML = matchingFigures.map(person => {
+                    const type = this.navigators.some(p => p.name === person.name) ? 'navigator' : 'thinker';
+                    const index = (type === 'navigator' ? this.navigators : this.thinkers).findIndex(p => p.name === person.name);
+                    return this.createCardHtml(person, type, index);
+                }).join('');
+            } else {
+                outputElement.innerHTML = '';
+            }
+        },
+
+        handleCardClick(e) {
+            const card = e.target.closest('div[data-index]');
+            if (card) {
+                const type = card.dataset.type;
+                const index = card.dataset.index;
+                let data;
+                switch (type) {
+                    case 'navigator': data = this.navigators[index]; break;
+                    case 'thinker': data = this.thinkers[index]; break;
+                    case 'foundation': data = this.foundations[index]; break;
+                    case 'casestudy': data = this.caseStudies[index]; break;
+                    case 'essay': data = this.essays[index]; break;
+                    default: return;
+                }
+                this.showDetailModal(data, type);
+            }
+        },
+
         showDetailModal(data, type) {
             const modalContentEl = document.getElementById('modal-content-details');
             const modal = document.getElementById('detail-modal');
@@ -325,7 +356,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         },
 
-        // --- MODIFIED FUNCTION WITH NEW AI PERSONA ---
         handleModalChat(inputElement) {
             const userInput = inputElement.value;
             if (!userInput.trim() || !this.currentModalFigure) return;
