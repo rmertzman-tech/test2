@@ -2,11 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const app = {
         apiKey: '',
-        currentComparison: null, 
+        currentComparison: null,
         currentResonance: null,
         currentModalFigure: null,
 
-        // Load data from the global appData object
         navigators: appData.navigators,
         thinkers: appData.thinkers,
         concepts: appData.concepts,
@@ -14,15 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         caseStudies: appData.caseStudies,
         essays: appData.essays,
 
-        // A concise summary of your framework to give the AI context for every query.
         frameworkContext: `
             You are an expert in the "Capability-Based Coordination" philosophical system. Your entire knowledge base for this conversation is the following set of principles:
-
-            1.  **Personal Reality Framework (PRF):** Each person has a unique architecture for organizing experience, made of their Beliefs, Rules, Ontological commitments, and Authenticity criteria (BROA+). It's a dynamic system, shaped by their life story (Assembly History), that guides action.
-            2.  **Capability-Based Coordination & Functional Equivalence:** The core idea that ethical coordination doesn't require people to share identical beliefs. Instead, they can coordinate by developing "functionally equivalent" capabilities that achieve the same shared goal.
-            3.  **Adaptive Temporal Coherence Function (ATCF):** A measure of an agent's ability to maintain a coherent identity over time by integrating past experiences, present actions, and future aspirations. High ATCF is a mark of ethical maturity.
-            4.  **Bootstrap Authority:** Normative authority isn't granted by external credentials but emerges from demonstrated competence in advancing shared goals.
-            5.  **Two Operating Systems:** People can simultaneously run two systems: OS1 (Truth-Commitment for deep personal meaning) and OS2 (Capability-Coordination for practical cooperation with those who hold different truths).
+            1.  **Personal Reality Framework (PRF):** Each person has a unique architecture for organizing experience (Beliefs, Rules, Ontology, Authenticity).
+            2.  **Capability-Based Coordination & Functional Equivalence:** People can coordinate by developing "functionally equivalent" capabilities to achieve shared goals, even with different beliefs.
+            3.  **Adaptive Temporal Coherence Function (ATCF):** A measure of a coherent identity over time.
+            4.  **Bootstrap Authority:** Normative authority emerges from demonstrated competence.
+            5.  **Two Operating Systems:** People can use OS1 (Truth-Commitment) for personal meaning and OS2 (Capability-Coordination) for practical cooperation.
         `,
 
         init() {
@@ -194,13 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const index = e.target.dataset.index;
                 const concept = this.concepts[index];
                 const outputElement = document.getElementById(`analogy-output-${index}`);
-                const prompt = `${this.frameworkContext}
-                
-                A student needs a simple, relatable analogy to understand the following concept:
-                **Concept:** "${concept.name}"
-                **Description:** "${concept.description}"
-                
-                Your task: Create an analogy in an accessible, educational tone. The framework often uses examples from technology (like software or HTML) or collaborative activities (like gaming or sports) to explain coordination. Please create an analogy in that spirit.`;
+                const prompt = `${this.frameworkContext}\nA student needs a simple, relatable analogy for the concept: "${concept.name} - ${concept.description}". Create an analogy in an accessible, educational tone, perhaps using examples from technology or collaborative activities.`;
                 this.callGeminiAPI(prompt, outputElement);
             }
         },
@@ -215,9 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             this.currentResonance = { reflection: userInput };
 
-            const prompt = `${this.frameworkContext}
-            A student's reflection: "${userInput}". From the list below, identify the top 3-5 figures with "functionally equivalent" capabilities. For each match, briefly explain the connection using framework concepts. Format as clean HTML.
-            List: ${JSON.stringify(figuresData, null, 2)}`;
+            const prompt = `${this.frameworkContext}\nA student's reflection: "${userInput}". From the list below, identify the top 3-5 figures with "functionally equivalent" capabilities. For each match, briefly explain the connection using framework concepts. Format as clean HTML.\nList: ${JSON.stringify(figuresData, null, 2)}`;
             
             const success = await this.callGeminiAPI(prompt, outputElement);
             if (success) chatContainer.classList.remove('hidden');
@@ -228,10 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!userInput.trim() || !this.currentResonance) return;
             const outputContainer = document.getElementById('counterparts-output');
             
-            const prompt = `${this.frameworkContext}
-            This is a follow-up conversation. The student's original reflection was: "${this.currentResonance.reflection}". The AI has already provided an initial list of role models.
-            The student's new question is: "${userInput}"
-            Please provide a concise and helpful answer that builds on the previous context. Format as clean HTML.`;
+            const prompt = `${this.frameworkContext}\nThis is a follow-up conversation. The student's original reflection was: "${this.currentResonance.reflection}". The AI has already provided an initial list of role models. The student's new question is: "${userInput}". Provide a concise and helpful answer that builds on the previous context. Format as clean HTML.`;
             
             this.appendChatTurn(outputContainer, userInput, prompt);
             document.getElementById('resonance-chat-input').value = '';
@@ -252,11 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const outputElement = document.getElementById('comparison-output');
             const chatContainer = document.getElementById('comparison-chat-container');
             
-            const prompt = `${this.frameworkContext}
-            Analyze the "Functional Equivalence" between ${personA.name} and ${personB.name}.
-            **${personA.name} Context:** ${personA.fullPrfAnalysis || personA.broa}
-            **${personB.name} Context:** ${personB.fullPrfAnalysis || personB.broa}
-            Your Task: Identify a shared ethical capability, explain how each person's unique PRF led to it, and summarize their functional equivalence. Format as clean HTML.`;
+            const prompt = `${this.frameworkContext}\nAnalyze the "Functional Equivalence" between ${personA.name} and ${personB.name}.\n**${personA.name} Context:** ${personA.fullPrfAnalysis || personA.broa}\n**${personB.name} Context:** ${personB.fullPrfAnalysis || personB.broa}\nYour Task: Identify a shared ethical capability, explain how each person's unique PRF led to it, and summarize their functional equivalence. Format as clean HTML.`;
             
             const success = await this.callGeminiAPI(prompt, outputElement);
             if(success) chatContainer.classList.remove('hidden');
@@ -268,10 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const outputContainer = document.getElementById('comparison-output');
             const { personA, personB } = this.currentComparison;
             
-            const prompt = `${this.frameworkContext}
-            This is a follow-up conversation about the comparison between ${personA.name} and ${personB.name}.
-            The student's new question is: "${userInput}"
-            Provide a concise, helpful answer that builds on the previous comparison, using the framework's concepts. Format as clean HTML.`;
+            const prompt = `${this.frameworkContext}\nThis is a follow-up conversation about the comparison between ${personA.name} and ${personB.name}. The student's new question is: "${userInput}". Provide a concise, helpful answer that builds on the previous comparison, using the framework's concepts. Format as clean HTML.`;
             
             this.appendChatTurn(outputContainer, userInput, prompt);
             document.getElementById('comparison-chat-input').value = '';
@@ -291,9 +270,40 @@ document.addEventListener('DOMContentLoaded', () => {
             this.callGeminiAPI(prompt, aiTurn);
         },
 
-        handleCapabilityExplorer(e) { /* ... (This function remains unchanged) ... */ },
-        handleCardClick(e) { /* ... (This function remains unchanged) ... */ },
-        
+        handleCapabilityExplorer(e) {
+            const selectedCapability = e.target.value;
+            const outputElement = document.getElementById('capability-explorer-output');
+            if (selectedCapability) {
+                const allFigures = [...this.navigators, ...this.thinkers];
+                const matchingFigures = allFigures.filter(f => (f.capabilities || []).includes(selectedCapability));
+                outputElement.innerHTML = matchingFigures.map(person => {
+                    const type = this.navigators.some(p => p.name === person.name) ? 'navigator' : 'thinker';
+                    const index = (type === 'navigator' ? this.navigators : this.thinkers).findIndex(p => p.name === person.name);
+                    return this.createCardHtml(person, type, index);
+                }).join('');
+            } else {
+                outputElement.innerHTML = '';
+            }
+        },
+
+        handleCardClick(e) {
+            const card = e.target.closest('div[data-index]');
+            if (card) {
+                const type = card.dataset.type;
+                const index = card.dataset.index;
+                let data;
+                switch (type) {
+                    case 'navigator': data = this.navigators[index]; break;
+                    case 'thinker': data = this.thinkers[index]; break;
+                    case 'foundation': data = this.foundations[index]; break;
+                    case 'casestudy': data = this.caseStudies[index]; break;
+                    case 'essay': data = this.essays[index]; break;
+                    default: return;
+                }
+                this.showDetailModal(data, type);
+            }
+        },
+
         showDetailModal(data, type) {
             const modalContentEl = document.getElementById('modal-content-details');
             const modal = document.getElementById('detail-modal');
@@ -325,19 +335,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         },
 
-        // --- NEW AND IMPROVED AI PERSONA PROMPT ---
         handleModalChat(inputElement) {
             const userInput = inputElement.value;
             if (!userInput.trim() || !this.currentModalFigure) return;
-
             const outputContainer = document.getElementById('modal-chat-output');
             const data = this.currentModalFigure;
 
             const prompt = `
-            You are an AI simulating the historical figure ${data.name}. You are to respond AS this person, in the first person ("I believe," "In my time..."). 
-            Your personality, memories, and core reasoning must be based entirely on the detailed Personal Reality Framework (PRF) provided below.
+            IMPORTANT: This is a simulation. You are to respond AS the historical figure, not as an expert about them. Adopt the voice, tone, and reasoning style of ${data.name}.
+            Your personality and memories are based entirely on the Personal Reality Framework (PRF) analysis provided below.
             
-            A unique aspect of this simulation is that you have been comprehensively briefed on a modern philosophical system called "Capability-Based Coordination" and modern scientific concepts. You can and should use this new knowledge to reflect upon your own life and ideas, and to answer student questions. 
+            A unique aspect of this simulation is that you have been comprehensively briefed on a modern philosophical system called 'Capability-Based Coordination' and modern scientific concepts. You can and should use this new knowledge to reflect upon your own life and ideas, and to answer student questions.
             
             **Your Task:**
             A student has asked you: "${userInput}"
@@ -352,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${data.fullPrfAnalysis || data.broa}
             ---
             
-            Now, answer the student's question.`;
+            Now, answer the student's question. Format the entire response in clean HTML.`;
             
             this.appendChatTurn(outputContainer, userInput, prompt);
             inputElement.value = '';
