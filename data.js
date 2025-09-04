@@ -379,20 +379,73 @@ Organizational Leadership Through Service: Advanced ability to exercise leadersh
 Movement Coordination Under Opposition: Demonstrated capacity for maintaining Catholic Worker movement coherence and growth despite consistent opposition from church hierarchy, government surveillance, and cultural hostility throughout multiple decades.`,
             foundationalLinks: ["Cross-Scale Information Organization"]
         },
+        
         {
-            name: "Sophie Scholl",
-            lifespan: "1921-1943",
-            title: "The Conscientious Resister",
-            summary: "A member of the White Rose non-violent resistance group in Nazi Germany, executed for distributing anti-war leaflets.",
-            bioLink: "https://www.britannica.com/biography/Sophie-Scholl",
-            videoUrl: null,
-            assemblyHistory: "<p>Raised in a Christian family opposed to Nazism, her framework was shaped by a profound dissonance between state propaganda and her personal ethics. An initial period in the Hitler Youth awakened her to this conflict, leading her to join the White Rose resistance group with her brother Hans.</p>",
-            broa: "<p><strong>Beliefs:</strong> A principled conscience and profound moral courage, believing ordinary citizens had a duty to speak out against evil. <strong>Rules:</strong> Act according to conscience, regardless of personal risk. Use non-violent means to awaken the public. <strong>Ontology:</strong> A moral reality that transcends state power. <strong>Authenticity:</strong> Aligning one's actions with one's deepest moral convictions, even unto death.</p>",
-            atcf: "Her calm defiance during her trial for treason, where she refused to recant her beliefs, was a dramatic example of her commitment to her principles, demonstrating perfect coherence between her past development and her final actions.",
-            fop: "Her actions were aimed at a future Germany free from tyranny. Her legacy serves as an enduring projection of the power of individual conscience against oppressive regimes.",
-            fullPrfAnalysis: "Sophie Scholl's PRF was defined by a principled conscience and profound moral courage. Raised in a Christian family opposed to Nazism, she believed ordinary citizens had a duty to speak out against evil. Her reality was the oppressive Nazi regime. After an initial period in the Hitler Youth, she experienced a profound dissonance between Nazi propaganda and her Christian ethics, which awakened her resistance. She acted with the hope of a future Germany free from tyranny. Her calm defiance during her trial for treason, where she refused to recant her beliefs, was a dramatic example of her commitment to her principles.",
-            capabilities: ["Capability for Youth Activism and Dissent", "Capability for Articulating Moral Conscience", "Capability for Ultimate Sacrifice for Principle"]
-        },
+    name: "Sophie Scholl",
+    lifespan: "1921-1943",
+    title: "A PRF Analysis of Moral Courage and Principled Resistance",
+    summary: "A German student and member of the White Rose resistance group whose PRF shows a powerful transformation from youthful idealism within the Nazi system to an unwavering commitment to resistance based on conscience and human dignity.",
+    bioLink: "https://www.britannica.com/biography/Sophie-Scholl",
+    videoUrl: null,
+    assemblyHistory: `<p><strong>Initial Nazi Enthusiasm (1933-1937):</strong> Her PRF was initially shaped by a Protestant upbringing and an idealistic commitment to the collective purpose offered by the League of German Girls (BDM).</p><p><strong>Critical Awakening (1937-1942):</strong> Influenced by her family's liberal democratic values and exposure to forbidden literature, she experienced a growing disillusionment with the Nazi regime's brutality. Her studies in biology and philosophy at the University of Munich provided the intellectual tools for a systematic critique of totalitarianism.</p><p><strong>Principled Resistance (1942-1943):</strong> Joining her brother Hans in the White Rose, she translated her moral convictions into direct, non-violent action by co-writing and distributing anti-Nazi leaflets. Her calm defiance during her trial and subsequent execution cemented her legacy as a martyr for freedom of conscience.</p>`,
+    broa: `<p><strong>Beliefs:</strong> Every human possesses an inherent dignity that transcends state power. Truth and intellectual honesty are fundamental moral obligations. Individual conscience is the ultimate authority for moral judgment.</p><p><strong>Rules:</strong> Act according to conscience, regardless of personal risk. Use non-violent, intellectual, and moral persuasion to resist injustice. Expose political lies and propaganda with factual truth.</p><p><strong>Ontology:</strong> A moral reality grounded in Christian ethics and universal human values exists independently of and holds authority over political power. Individual moral choices have an eternal significance.</p><p><strong>Authenticity:</strong> The unwavering alignment of one's actions with one's deepest moral convictions, even in the face of death.</p>`,
+    atcf: "Demonstrated remarkable and rapid temporal coherence, transforming from an enthusiastic participant in the Nazi youth movement to a principled opponent. Her final actions at her trial were in perfect alignment with her fully developed convictions, showing a complete integration of her moral awakening with her ultimate sacrifice.",
+    fop: "Her actions were oriented toward a future Germany free from tyranny and grounded in human dignity. Her legacy serves as an enduring projection of the power of individual and collective conscience to bear witness against oppressive regimes, aiming to inspire future generations to similar moral courage.",
+    capabilities: ["Capability for Youth Activism and Dissent", "Capability for Articulating Moral Conscience", "Capability for Ultimate Sacrifice for Principle", "Moral-Political Integration"],
+    fullPrfAnalysis: `
+        <h4 class="font-bold mb-2">Assembly History: From Hitler Youth Enthusiasm to Resistance Martyrdom</h4>
+        
+        <h5 class="font-semibold mt-3 mb-1">Early Formation and Initial Nazi Enthusiasm (1921-1937 CE)</h5>
+        <p class="mb-2">Sophie Scholl's Personal Reality Framework emerged from the intersection of German middle-class Protestant values, Nazi ideological indoctrination, and strong family intellectual traditions. Born in Forchtenberg to a liberal-minded mayor, her PRF initially developed within contexts of moral earnestness and civic responsibility. Her initial enthusiasm for the Bund Deutscher Mädel (League of German Girls) demonstrated a capacity for idealistic commitment to collective causes, providing direct experience of how totalitarian movements could exploit genuine human needs for belonging and purpose.</p>
+        
+        <h5 class="font-semibold mt-3 mb-1">Disillusionment and Critical Awakening (1937-1940 CE)</h5>
+        <p class="mb-2">Her gradual recognition of Nazi brutality required a fundamental reconstruction of her worldview. This was heavily influenced by her father's anti-Nazi views and the family's access to forbidden literature. Her mandatory labor service provided direct experience of Nazi institutional control, while her Protestant faith provided resources for moral resistance, enabling a systematic critique of Nazi ideology through Christian ethical principles.</p>
+        
+        <h5 class="font-semibold mt-3 mb-1">University Education and Intellectual Formation (1940-1942 CE)</h5>
+        <p class="mb-2">Her biology and philosophy studies at Ludwig Maximilian University in Munich provided systematic intellectual development and the social context for meeting like-minded students. Her introduction to the White Rose resistance group through her brother Hans provided a framework for translating individual moral conviction into collective political action. Her engagement with Christian theology and German philosophy provided the theoretical foundations for her resistance work.</p>
+
+        <h5 class="font-semibold mt-3 mb-1">Active Resistance and Final Sacrifice (1942-1943 CE)</h5>
+        <p class="mb-2">Her participation in writing, producing, and distributing anti-Nazi leaflets demonstrated her capacity for translating moral conviction into effective political communication. Her work to extend the White Rose network required a sophisticated understanding of security and organization. Her behavior during her arrest, interrogation, and show trial demonstrated an exceptional integration of moral conviction with practical courage, providing a final, powerful testimony to her unwavering commitment to truth and human dignity.</p>
+        
+        <h4 class="font-bold mb-2 mt-4">Personal Reality Framework Configuration</h4>
+        <h5 class="font-semibold mt-3 mb-1">BROA+ (Beliefs, Rules, Ontological Commitments, Authenticity Criteria)</h5>
+        <p class="mb-2"><strong>Belief System (B):</strong></p>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Human Dignity and Universal Moral Law:</strong> A profound conviction that every human possesses inherent dignity that cannot be subordinated to political ideology, making individual conscience the ultimate moral authority.</li>
+            <li><strong>Truth and Intellectual Honesty:</strong> A core understanding that truth-seeking is a fundamental human obligation that cannot be compromised for political advantage or social conformity.</li>
+            <li><strong>Individual Responsibility and Collective Action:</strong> A systematic belief that individual moral obligation extends to collective political responsibility for opposing systematic injustice.</li>
+            <li><strong>Christian Faith and Moral Resistance:</strong> An integration of Protestant Christianity with active political opposition, understanding that authentic faith requires a practical commitment to justice.</li>
+        </ul>
+        <p class="mt-2 mb-2"><strong>Rule System (R):</strong></p>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Conscience-Based Moral Decision Making:</strong> Consistently apply individual moral judgment informed by Christian ethics and rational reflection, rather than political authority.</li>
+            <li><strong>Truth-Telling and Anti-Propaganda Activity:</strong> Actively commit to exposing political lies through the systematic distribution of factual information and moral critique.</li>
+            <li><strong>Solidarity and Collaborative Resistance:</strong> Systematically coordinate individual moral conviction with collective political action through participation in resistance groups.</li>
+            <li><strong>Non-Violent Resistance and Moral Witness:</strong> Consistently apply non-violent methods of opposition that prioritize moral integrity and intellectual persuasion over violent confrontation.</li>
+        </ul>
+        <p class="mt-2 mb-2"><strong>Ontological Commitments (O):</strong></p>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Truth-Power Relationship:</strong> A framework where truth possesses ultimate authority over political claims, making intellectual honesty and critique of authority essential.</li>
+            <li><strong>Temporal-Eternal Moral Significance:</strong> A conviction that individual moral choices have both immediate political consequences and eternal moral significance, making principled resistance meaningful regardless of tactical success.</li>
+            <li><strong>Individual-Community Responsibility:</strong> An understanding that personal moral development and community welfare are mutually enhancing through a shared commitment to human dignity and truth.</li>
+        </ul>
+        <p class="mt-2 mb-2"><strong>Authenticity Criteria (A+):</strong></p>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Moral-Political Integration:</strong> Authentic ethical life required coordinating individual moral conviction with active political engagement against injustice.</li>
+            <li><strong>Truth-Courage Synthesis:</strong> Genuine integrity demanded coordinating systematic truth-seeking with the practical courage to act on one's convictions despite personal danger.</li>
+            <li><strong>Individual-Collaborative Balance:</strong> Authentic resistance involved coordinating personal moral development with effective collective action, maintaining both personal integrity and collaborative solidarity.</li>
+        </ul>
+
+        <h4 class="font-bold mb-2 mt-4">Coordination Capabilities (C)</h4>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Moral-Political Integration:</strong> Exceptional ability to coordinate individual ethical development with effective collective political resistance, translating moral conviction into practical action.</li>
+            <li><strong>Intellectual-Practical Resistance:</strong> Sophisticated capacity for coordinating a systematic critique of totalitarian ideology with practical resistance activity like leaflet campaigns.</li>
+            <li><strong>Individual-Community Action:</strong> Advanced ability to coordinate personal moral development with collaborative resistance organizing while maintaining both individual conscience and collective solidarity.</li>
+            <li><strong>Temporal-Eternal Significance:</strong> Demonstrated capacity for coordinating immediate political action with ultimate moral principles, maintaining both practical effectiveness and spiritual integrity.</li>
+        </ul>
+    `
+},  
+        
         {
             name: "Oskar Schindler",
             lifespan: "1908–1974",
@@ -2039,17 +2092,70 @@ Present-Future Consequence Integration: Demonstrated capacity for coordinating a
             videoUrl: null
         },
         {
-            name: "Kwame Anthony Appiah",
-            lifespan: "1954-Present",
-            title: "The Rooted Cosmopolitan",
-            summary: "A British-Ghanaian philosopher whose work on identity, culture, and cosmopolitanism argues for a world where universal moral concern coexists with respect for particular cultural identities.",
-            assemblyHistory: "His unique bicultural upbringing—son of an Asante royal and politician in Ghana and a British aristocrat and author in England—provided him with a direct, lived experience of navigating multiple identities. His education at Cambridge grounded him in the analytical tradition of philosophy, which he then applied to questions of race, culture, and postcolonial identity.",
-            broa: "His BROA+ is defined by 'rooted cosmopolitanism.' Beliefs: We have moral obligations to all human beings, but our particular identities and cultural affiliations also have real value. Identity is not an essence but something we choose and construct from available cultural 'scripts.' Rules: Engage in respectful dialogue across cultures; respect individual choices about identity. Ontology: Race is a social construct, not a biological reality, but it has real-world effects. Authenticity: A life that coherently integrates one's multiple cultural affiliations and moral commitments, embracing complexity over purity.",
-            atcf: "Appiah's life and work show a consistent effort to bridge divides—between cultures, between academic philosophy and public discourse, and between universal ethics and particular identities. He has maintained a coherent philosophical project while adapting to different institutional and cultural contexts in Ghana, the UK, and the US.",
-            fop: "He projects a future of global conversation, where people can learn from different cultural traditions without abandoning their own. His work aims to provide the philosophical tools for a globalized world to manage cultural difference peacefully and productively.",
-            capabilities: ["Capability for Cross-Cultural Translation", "Capability for Public Intellectual Integration", "Capability for Deconstructing Essentialist Identities"],
-            videoUrl: null
-        }
+    name: "Kwame Anthony Appiah",
+    lifespan: "1954-present",
+    title: "A PRF Analysis of Cosmopolitan Ethics and Cultural Identity",
+    summary: "A philosopher whose unique bicultural heritage and analytical rigor led him to develop 'rooted cosmopolitanism,' a framework for coordinating universal moral obligations with respect for particular cultural identities in a globalized world.",
+    bioLink: "https://en.wikipedia.org/wiki/Kwame_Anthony_Appiah",
+    videoUrl: null,
+    assemblyHistory: `<p><strong>Unprecedented Cultural Synthesis (1954-1981):</strong> Born in London to an Asante royal and Ghanaian politician and a British aristocrat and author, his PRF was forged by direct experience navigating multiple cultural worlds. His education at Cambridge grounded him in analytical philosophy, providing the tools to systematically investigate the complex questions of identity he lived.</p><p><strong>Identity & Race Deconstruction (1981-2002):</strong> His early academic work deconstructed the biological basis for race while affirming its powerful social reality. He integrated African literature and philosophy into mainstream philosophical discourse, challenging the essentialist assumptions of both Western and postcolonial theory.</p><p><strong>Cosmopolitan Ethics (2002-present):</strong> In works like *Cosmopolitanism*, he systematically developed his vision of "rooted cosmopolitanism." As a prominent public intellectual, he has applied this framework to contemporary issues of honor, cultural change, and moral progress, becoming a crucial voice in global ethical debates.</p>`,
+    broa: `<p><strong>Beliefs:</strong> All humans share a moral status deserving equal concern (universalism), but our particular cultural identities and affiliations have real value and are essential to a good life (particularity). Identity is not a fixed essence but is composed of multiple, overlapping, and chosen "scripts."</p><p><strong>Rules:</strong> Engage in respectful dialogue across cultures to foster mutual learning. Support individual freedom to choose and shape cultural identities. Base moral progress on conversation and cultural evolution, not imposition.</p><p><strong>Ontology:</strong> Race is a social construct, not a biological reality, but it has real-world effects. Cultural value is real but not essentialist; cultures are not pure, monolithic entities.</p><p><strong>Authenticity:</strong> A life that coherently integrates one's multiple cultural affiliations with universal moral commitments, embracing complexity and conversation over purity and dogma.</p>`,
+    atcf: "Successfully integrated his postcolonial Ghanaian heritage, Asante royal culture, and British analytical training into a coherent philosophical identity. He has consistently applied his core cosmopolitan principles across diverse fields, from literary theory to applied ethics, while maintaining his role as a cultural and intellectual bridge-builder.",
+    fop: "His work is oriented toward establishing a philosophical foundation for a peaceful and productive globalized future. He projects a world where people can learn from different cultural traditions without abandoning their own, using the tools of 'rooted cosmopolitanism' to manage cultural difference through conversation, not conflict.",
+    capabilities: ["Capability for Cross-Cultural Translation", "Capability for Public Intellectual Integration", "Capability for Deconstructing Essentialist Identities", "Traditional-Modern Cultural Bridge-Building"],
+    fullPrfAnalysis: `
+        <h4 class="font-bold mb-2">Assembly History: From Postcolonial Ghana to Global Philosophy</h4>
+
+        <h5 class="font-semibold mt-3 mb-1">Early Formation and Unprecedented Cultural Synthesis (1954-1972 CE)</h5>
+        <p class="mb-2">Kwame Anthony Appiah's Personal Reality Framework emerged from the unprecedented cultural synthesis of postcolonial Ghana, British intellectual traditions, and Asante royal heritage. Born in London to Joe Appiah, a Ghanaian lawyer from an Asante royal family, and Peggy Cripps, a British aristocrat, his PRF was shaped by direct experience navigating multiple cultural worlds during Ghana's independence period. His childhood in Kumasi provided deep immersion in Asante culture, while his education at Lancing College and Cambridge University provided rigorous training in Western analytical philosophy. This created the foundational patterns for his later work on coordinating universal dignity with respect for cultural particularity.</p>
+
+        <h5 class="font-semibold mt-3 mb-1">Cambridge Formation and Analytical Philosophy Mastery (1972-1981 CE)</h5>
+        <p class="mb-2">His training at Clare College, Cambridge, provided a rigorous foundation in analytical philosophy, which he began to apply to questions of identity, race, and culture. His PhD work on probability theory honed his technical skills, while his engagement with African philosophical traditions created an awareness of how diverse intellectual traditions could contribute to a universal philosophical conversation, challenging Western assumptions about rationality and cultural development.</p>
+
+        <h5 class="font-semibold mt-3 mb-1">Academic Development and Identity Theory Innovation (1981-2002 CE)</h5>
+        <p class="mb-2">His groundbreaking early work deconstructed the concept of race, using philosophical and historical analysis to show that racial categories lack a biological foundation while acknowledging their powerful social reality. He became a key figure in integrating African literature and philosophy into the mainstream, creating frameworks for cross-cultural dialogue that avoided both cultural imperialism and essentialist nationalism. His innovative work on identity argued that identities are multiple, chosen, and socially constructed from cultural "scripts" rather than being fixed essences.</p>
+
+        <h5 class="font-semibold mt-3 mb-1">Public Philosophy and Cosmopolitan Ethics Development (2002-present CE)</h5>
+        <p class="mb-2">Appiah systematically developed his ethical framework in major works like *Cosmopolitanism: Ethics in a World of Strangers*. This work provides a comprehensive framework for coordinating universal moral obligations with particular cultural attachments, arguing that global citizenship and local belonging can and should enhance each other. As a prominent public intellectual, he has applied these insights to contemporary issues in works like *The Honor Code*, exploring how cultural practices change and how moral progress occurs through cross-cultural dialogue and internal cultural evolution.</p>
+
+        <h4 class="font-bold mb-2 mt-4">Personal Reality Framework Configuration</h4>
+        <h5 class="font-semibold mt-3 mb-1">BROA+ (Beliefs, Rules, Ontological Commitments, Authenticity Criteria)</h5>
+        <p class="mb-2"><strong>Belief System (B):</strong></p>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Cosmopolitan Universalism and Cultural Particularity:</strong> A profound conviction that all humans share a moral status deserving equal concern, but this universalism must be realized through respect for particular cultural attachments, not a global monoculture.</li>
+            <li><strong>Identity Multiplicity and Chosen Belonging:</strong> A core understanding that identities are multiple, overlapping, and chosen, not fixed essences. This allows for authentic participation in multiple cultural traditions.</li>
+            <li><strong>Cultural Value Without Essentialism:</strong> A systematic belief that cultures have genuine value without being pure or monolithic, making cultural appreciation compatible with cultural criticism and cross-cultural learning.</li>
+            <li><strong>Moral Progress Through Cross-Cultural Dialogue:</strong> An integration of the understanding that human morality can improve over time through respectful engagement, dialogue, and practical experience with diverse ways of life.</li>
+        </ul>
+        <p class="mt-2 mb-2"><strong>Rule System (R):</strong></p>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Universal Moral Concern with Cultural Sensitivity:</strong> Consistently apply universal principles of human dignity through careful attention to cultural context and local knowledge.</li>
+            <li><strong>Identity Choice and Cultural Participation:</strong> Actively support individual freedom to choose and shape cultural identities while maintaining respect for cultural traditions and communities.</li>
+            <li><strong>Cross-Cultural Dialogue and Mutual Learning:</strong> Systematically engage in dialogue across cultural boundaries that seeks mutual understanding rather than domination or relativism.</li>
+            <li><strong>Public Philosophy and Democratic Engagement:</strong> Consistently translate complex philosophical insights into accessible public discourse to serve democratic deliberation.</li>
+        </ul>
+        <p class="mt-2 mb-2"><strong>Ontological Commitments (O):</strong></p>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Universal-Particular Human Dignity:</strong> An understanding that humans share a fundamental moral status that is expressed through diverse cultural forms.</li>
+            <li><strong>Individual-Community Identity Formation:</strong> A framework where personal identity and community culture are mutually enhancing through chosen belonging and respectful participation.</li>
+            <li><strong>Reason-Culture Integration:</strong> A conviction that rational investigation and cultural wisdom are not opposed but are coordinated through practical engagement and dialogue.</li>
+        </ul>
+        <p class="mt-2 mb-2"><strong>Authenticity Criteria (A+):</strong></p>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Universal-Cultural Balance:</strong> Authentic moral philosophy requires coordinating universal human dignity with respectful attention to cultural particularity, avoiding both cultural imperialism and moral relativism.</li>
+            <li><strong>Individual-Community Identity Integration:</strong> Genuine personal identity demands coordinating individual choice with cultural belonging, embracing both personal freedom and community continuity.</li>
+            <li><strong>Philosophical-Public Synthesis:</strong> Authentic intellectual achievement involves coordinating rigorous philosophical analysis with accessible public communication that can serve democratic deliberation.</li>
+        </ul>
+
+        <h4 class="font-bold mb-2 mt-4">Coordination Capabilities (C)</h4>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li><strong>Cross-Cultural-Philosophical Integration:</strong> Exceptional ability to coordinate systematic philosophical analysis with sensitive cross-cultural understanding, maintaining both intellectual rigor and cultural humility.</li>
+            <li><strong>Identity-Universality Synthesis:</strong> Sophisticated capacity for coordinating the experience of multiple cultural identities with a commitment to cosmopolitan moral principles.</li>
+            <li><strong>Academic-Public Philosophy Coordination:</strong> Advanced ability to coordinate rigorous scholarly investigation with accessible public intellectual engagement.</li>
+            <li><strong>Traditional-Modern Cultural Bridge-Building:</strong> Demonstrated capacity for coordinating respect for traditional cultural wisdom with engagement with modern institutional arrangements and global challenges.</li>
+        </ul>
+    `
+}
     ],
     concepts: [
         {
@@ -2078,3 +2184,4 @@ Present-Future Consequence Integration: Demonstrated capacity for coordinating a
         }
     ]
 };
+
