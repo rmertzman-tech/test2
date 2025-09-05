@@ -2210,17 +2210,47 @@ Present-Future Consequence Integration: Demonstrated capacity for coordinating a
     foundationalLinks: ["Capability-Based Propositions", "Cross-Scale Information Organization"]
 },
         {
-            name: "Martha Nussbaum",
-            lifespan: "1947-Present",
-            title: "The Capabilities Proponent",
-            summary: "An American philosopher who champions the 'Capabilities Approach,' arguing that social justice means ensuring every individual has the real opportunity to develop their essential human capabilities.",
-            assemblyHistory: "Her framework was formed through a combination of classical philosophy (especially Aristotle), literary studies, and a growing engagement with feminist theory and international development. Her early training as an actor also gave her a deep appreciation for the role of emotions and narrative in moral life.",
-            broa: "His BROA+ is grounded in an Aristotelian and universalist humanism. Beliefs: All humans share a set of central capabilities essential for a flourishing life. Emotions are cognitive and provide vital information for moral reasoning. Rules: Evaluate societies and policies based on whether they provide citizens with the necessary conditions to develop their capabilities. Ontology: A pluralistic view of value; human flourishing is multi-dimensional and cannot be reduced to a single metric like money. Authenticity: An integrated life where intellectual rigor, emotional intelligence, and a commitment to social justice are intertwined.",
-            atcf: "Nussbaum has demonstrated remarkable consistency in applying and developing her Capabilities Approach across diverse fields, from ancient Greek ethics to modern constitutional law and international development policy. She coherently integrates philosophical analysis, literary interpretation, and practical policy advocacy.",
-            fop: "She projects a future where global justice and national policies are evaluated not by GDP, but by how well they secure a threshold of central capabilities for every single person, creating a more humane and just world.",
-            capabilities: ["Capability for Interdisciplinary Synthesis", "Capability for Cross-Cultural Translation", "Capability for Integrating Emotion and Reason"],
-            videoUrl: null
+           name: "Martha Nussbaum",
+            lifespan: "1947-present",
+            title: "A PRF Analysis of Capabilities, Emotions, and Human Flourishing",
+            summary: "An American philosopher who champions the 'Capabilities Approach,' coordinating ancient philosophical wisdom with contemporary social justice to argue that flourishing requires the real opportunity for every individual to develop their central human capabilities.",
+            bioLink: "https://en.wikipedia.org/wiki/Martha_Nussbaum",
+            videoUrl: null,
+            assemblyHistory: `<p><strong>Early Formation (1947-1975):</strong> Her PRF was shaped by a privileged intellectual upbringing and a deep education in classical literature and philosophy. Early experience in acting gave her a unique appreciation for the role of emotions in moral life, while the civil rights movement sparked a commitment to social justice.</p><p><strong>Capabilities Development (1975-1995):</strong> She revitalized Aristotelian ethics and, in collaboration with Amartya Sen, developed the 'Capabilities Approach' as a new framework for international development, challenging purely economic measures of human welfare.</p><p><strong>Public & Global Engagement (1995-present):</strong> Nussbaum applied her capabilities framework broadly to constitutional law, feminist theory, and global education, becoming a leading public intellectual.</p>`,
+            broa: `<p><strong>Beliefs:</strong> All humans share a set of central capabilities essential for a flourishing life. Emotions are cognitive judgments of value and are essential for moral reasoning.</p><p><strong>Rules:</strong> Evaluate societies based on whether they secure a threshold of central capabilities for every individual. Use literature and narrative to cultivate moral imagination.</p><p><strong>Ontology:</strong> A universalist view of human nature grounded in shared capabilities. Value is pluralistic and cannot be reduced to a single metric.</p><p><strong>Authenticity:</strong> An integrated life where intellectual rigor, emotional intelligence, and a practical commitment to social justice are intertwined.</p>`,
+            atcf: "Successfully integrated classical philosophy, literary studies, feminist theory, and practical policy engagement into a coherent and evolving intellectual project. She has demonstrated remarkable consistency in applying her Capabilities Approach across diverse fields, from ancient Greek ethics to modern constitutional law.",
+            fop: "Her work is oriented toward establishing the Capabilities Approach as a durable international standard for assessing human welfare. She projects a future where global justice and national policies are evaluated not by GDP, but by how well they secure a threshold of central capabilities for every single person.",
+            capabilities: ["Capability for Interdisciplinary Synthesis", "Capability for Cross-Cultural Translation", "Capability for Integrating Emotion and Reason", "Classical-Contemporary Synthesis"],
+            fullPrfAnalysis: `
+                <h4 class="font-bold mb-2">Assembly History: From Classical Literature to Applied Philosophy</h4>
+                <h5 class="font-semibold mt-3 mb-1">Early Formation and Privileged Cultural Synthesis (1947-1967 CE)</h5>
+                <p class="mb-2">Martha Nussbaum's Personal Reality Framework emerged from the intersection of privileged American intellectual culture, classical literary education, and early encounters with moral complexity that would drive her toward developing comprehensive approaches to human flourishing. Her exceptional education emphasized classical literature and philosophy, providing deep engagement with ancient Greek and Roman texts. Her early serious involvement in theater created an appreciation for the embodied dimensions of moral understanding, while the 1960s civil rights movement embedded a commitment to practical engagement and institutional reform.</p>
+                <h5 class="font-semibold mt-3 mb-1">Graduate Formation and Philosophical Revolution (1967-1975 CE)</h5>
+                <p class="mb-2">Her deep study of Aristotelian ethics at Harvard provided a systematic foundation for understanding how ancient insights could illuminate contemporary moral and political problems. Her early integration of philosophy with classics, literature, and emerging feminist theory demonstrated the possibility of rigorous philosophical work that could engage diverse intellectual traditions. Personal experience with divorce created an awareness of women's economic vulnerability, which informed her later theoretical work on gender justice and capability development.</p>
+                <h5 class="font-semibold mt-3 mb-1">Academic Innovation and Capabilities Development (1975-1995 CE)</h5>
+                <p class="mb-2">Her systematic recovery of Aristotelian insights about flourishing and practical wisdom demonstrated their relevance for contemporary ethical and political theory. Her collaboration with Amartya Sen was crucial in developing the capabilities approach as an alternative to utilitarian and rights-based frameworks for measuring human welfare. Her revolutionary integration of philosophical analysis with literary texts to illuminate moral psychology created lasting methodological innovations.</p>
+                <h5 class="font-semibold mt-3 mb-1">Public Philosophy and Global Engagement (1995-present CE)</h5>
+                <p class="mb-2">Her systematic development of capabilities theory provided a comprehensive framework for human development policy, building international recognition. Her extensive work on constitutional interpretation, religious freedom, and legal theory demonstrated a capacity for applying philosophical insights to concrete legal questions. Her recent work on aging, disability rights, and social justice demonstrates a continued capacity for extending the capabilities approach to new domains.</p>
+                
+                <h4 class="font-bold mb-2 mt-4">Personal Reality Framework Configuration</h4>
+                <h5 class="font-semibold mt-3 mb-1">BROA+ (Beliefs, Rules, Ontological Commitments, Authenticity Criteria)</h5>
+                <p class="mb-2"><strong>Belief System (B):</strong></p>
+                <ul class="list-disc list-inside space-y-1 text-sm">
+                    <li><strong>Human Capabilities Foundation:</strong> Profound conviction that human beings possess innate capacities for flourishing, making social institutions responsible for enabling them.</li>
+                    <li><strong>Emotions as Cognitive and Evaluative:</strong> Core understanding that emotions are essential sources of information for moral reasoning.</li>
+                    <li><strong>Classical Wisdom and Contemporary Relevance:</strong> Systematic belief that ancient philosophical insights are essential resources for contemporary moral and political problems.</li>
+                    <li><strong>Literature and Philosophy Integration:</strong> Understanding that narrative fiction and philosophical analysis mutually illuminate each other.</li>
+                </ul>
+                <p class="mt-2 mb-2"><strong>Rule System (R):</strong></p>
+                <ul class="list-disc list-inside space-y-1 text-sm">
+                    <li><strong>Capabilities List Application:</strong> Consistent evaluation of institutions based on whether they enable people to exercise central human capabilities.</li>
+                    <li><strong>Contextual Practical Wisdom:</strong> Active application of universal principles with attention to particular circumstances.</li>
+                    <li><strong>Interdisciplinary Research Integration:</strong> Systematic coordination of philosophical analysis with empirical research.</li>
+                    <li><strong>Public Engagement and Policy Application:</strong> Consistent translation of philosophical insights into accessible public communication.</li>
+                </ul>
+            `
         },
+    
         {
     name: "Kwame Anthony Appiah",
     lifespan: "1954-present",
