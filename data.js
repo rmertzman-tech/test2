@@ -2377,7 +2377,83 @@ Present-Future Consequence Integration: Demonstrated capacity for coordinating a
             <li><strong>Traditional-Modern Cultural Bridge-Building:</strong> Demonstrated capacity for coordinating respect for traditional cultural wisdom with engagement with modern institutional arrangements and global challenges.</li>
         </ul>
     `
-}
+        },
+        
+        {
+    name: "John Dewey",
+    lifespan: "1859-1952 CE",
+    title: "A PRF Analysis of Experiential Democracy and Educational Philosophy",
+    summary: "An American philosopher, psychologist, and educational reformer whose ideas have been influential in education and social reform. His PRF coordinates experiential learning with democratic practice.",
+    bioLink: "https://www.britannica.com/biography/John-Dewey",
+    videoUrl: null,
+    assemblyHistory: `<p><strong>Early Formation (1859-1879):</strong> His PRF emerged from post-Civil War Vermont, shaped by a rural democratic heritage and the tension between Calvinist duty and Transcendentalist individualism.</p><p><strong>Philosophical Development (1882-1894):</strong> At Johns Hopkins, he synthesized German idealism with American pragmatism and was influenced by the new field of experimental psychology, leading him to focus on how academic excellence could serve social transformation.</p><p><strong>Chicago Laboratory School (1894-1904):</strong> He put his theories into practice, creating an experimental school that integrated individual student development with collaborative, experiential learning and community engagement.</p><p><strong>Global Advocate (1919-1952):</strong> He expanded his focus from educational reform to a comprehensive social philosophy, becoming an international advocate for a democratic way of life grounded in education and scientific inquiry.</p>`,
+    broa: `<p><strong>Beliefs:</strong> Democracy is not just a form of government but a way of life based on shared inquiry and collaborative problem-solving. Genuine knowledge emerges from the interaction between thinking and doing ("experiential learning"). Personal growth and community welfare are mutually reinforcing.</p><p><strong>Rules:</strong> Employ "learning by doing." Involve students in democratic classroom governance. Integrate intellectual understanding with practical application. Use collaborative inquiry to solve problems.</p><p><strong>Ontology:</strong> Reality is a process of ongoing interactions, not fixed substances. Knowledge and values are socially constructed and can be modified through democratic inquiry. Ideas are tools for solving problems.</p><p><strong>Authenticity:</strong> A life that coordinates rigorous intellectual development with practical educational application and social engagement, avoiding both purely abstract theory and unreflective activism.</p>`,
+    atcf: "Successfully integrated his rural democratic heritage, traditional philosophical training, insights from experimental psychology, and a commitment to progressive social reform, maintaining a coherent and evolving philosophy across nine decades.",
+    fop: "His work was oriented toward creating systematic frameworks for ongoing democratic development and social reconstruction through education. He projected a future where schools would be the primary institutions for cultivating the habits of collaborative inquiry and social responsibility necessary for a flourishing democratic society.",
+    capabilities: ["Academic-Practical Integration", "Individual-Collaborative Learning Synthesis", "Educational-Social Reform Coordination", "Local-National-International Impact"],
+    fullPrfAnalysis: `John Dewey: A PRF Analysis of Experiential Democracy and Educational Philosophy
+Personal Reality Framework Analysis (1859-1952 CE)
+Assembly History: From Rural Vermont to Progressive Educational Innovation
+Early Formation (1859-1879 CE)
+John Dewey's Personal Reality Framework emerged during America's post-Civil War transformation, when traditional educational and social institutions were being challenged by industrialization, urbanization, and democratic expansion. Born in Burlington, Vermont, to Archibald Dewey, a grocer, and Lucina Rich Dewey, his assembly history created unique conditions for democratic educational innovation.
+Rural Democratic Heritage: Growing up in small-town Vermont during Reconstruction provided direct experience of participatory democracy and community self-governance while witnessing the practical challenges of extending democratic ideals across racial and class boundaries.
+Middle-Class Work Ethic: Family background in commerce and practical trades embedded lifelong appreciation for the dignity of productive work and the importance of education serving practical human needs rather than abstract theoretical speculation.
+Post-Civil War Idealism: Coming of age during America's effort to rebuild itself on more inclusive democratic principles created commitment to using education and social institutions to realize democratic potential while addressing systematic inequalities.
+Calvinist-Transcendentalist Tension: Exposure to both traditional Calvinist moral seriousness and emerging Transcendentalist emphasis on individual development created tension between community obligation and personal growth that would shape his educational philosophy.
+University of Vermont and Early Teaching (1875-1882 CE)
+Dewey's undergraduate experience and brief teaching career created foundational experiences with both traditional and progressive educational approaches:
+Traditional Liberal Arts Education: Classical curriculum emphasizing Greek, Latin, mathematics, and moral philosophy provided systematic training in intellectual disciplines while revealing limitations of purely academic approach divorced from practical experience and social application.
+Philosophical Awakening: Encounter with Scottish Common Sense philosophy and emerging German idealism created appreciation for systematic philosophical inquiry while questioning traditional separation between theoretical knowledge and practical wisdom.
+Rural Teaching Experience: Teaching in Oil City, Pennsylvania, and Charlotte, Vermont, provided direct experience with educational challenges facing ordinary students while revealing gap between educational theory and classroom reality.
+Democratic Teaching Innovation: Early experiments with student-centered learning and practical application of knowledge demonstrated how educational methods could enhance rather than suppress student initiative and democratic participation.
+Johns Hopkins and Philosophical Development (1882-1884 CE)
+Graduate study at Johns Hopkins exposed Dewey to cutting-edge philosophical and psychological research while creating his distinctive synthesis of German idealism with American pragmatism:
+G. Stanley Hall's Psychology: Contact with experimental psychology provided scientific approaches to understanding learning and development while maintaining appreciation for philosophical questions about human nature and social organization.
+Hegelian Idealism Encounter: Systematic study of Hegel created appreciation for dialectical thinking and social development while adapting idealist insights to American democratic contexts rather than accepting German political implications.
+Research University Model: Experience with German-inspired research methodology provided tools for systematic inquiry while maintaining commitment to education serving democratic citizenship rather than creating academic elite.
+Philosophical Community Formation: Participation in philosophical discussions and academic networks demonstrated importance of intellectual community for individual development while revealing limitations of purely academic philosophy divorced from social practice.
+Key Life Transitions and PRF Adaptations
+From Individual Scholar to Social Reformer (1884-1894 CE)
+The transition from graduate student to University of Michigan professor required integrating philosophical inquiry with practical educational and social reform while maintaining intellectual rigor and democratic commitments.
+PRF Development: Preserved systematic philosophical methodology while expanding focus from individual intellectual development to collective democratic advancement, demonstrating how academic excellence could serve broader social transformation.
+Chicago Laboratory School Innovation (1894-1904 CE)
+The move from traditional university teaching to experimental school creation required extending educational theories into practical institutional development while coordinating with diverse stakeholders and maintaining research standards.
+PRF Innovation: Developed systematic approaches to experiential education that integrated individual student development with collaborative learning and community engagement, creating replicable frameworks for democratic education that could function effectively within existing institutional constraints.
+From Educational Innovator to Social Philosopher (1904-1919 CE)
+The expansion from educational reform to comprehensive social philosophy required adapting educational insights to broader questions of democracy, industrial relations, and international cooperation while maintaining practical focus and American democratic grounding.
+PRF Integration: Successfully coordinated specific educational expertise with universal democratic theory while maintaining essential commitments to experiential methodology and social reform throughout expanding intellectual scope and public influence.
+From National to International Democratic Advocate (1919-1952 CE)
+The extension from American democratic reform to global democratic development required adapting pragmatic educational methods to international contexts while maintaining authentic American democratic perspective and practical effectiveness.
+PRF Coherence: Integrated American democratic experience with universal human development while maintaining essential commitments to experiential methodology and educational democracy throughout expanding global engagement and international recognition.
+Personal Reality Framework Configuration
+BROA+ (Beliefs, Rules, Ontological Commitments, Authenticity Criteria)
+Belief System (B):
+Democracy as Way of Life: Profound conviction that democracy represents not merely political system but comprehensive approach to human association based on shared inquiry, mutual respect, and collaborative problem-solving, making democratic education essential for human flourishing and social progress.
+Experience as Knowledge Foundation: Core understanding that genuine knowledge emerges through interaction between thinking and action rather than passive reception of information, making experiential learning essential for both individual development and social advancement while requiring educational methods that integrate theory with practice.
+Individual-Social Development Integration: Systematic belief that personal growth and community welfare enhance each other when properly coordinated through democratic institutions and educational practices, making individual authenticity inseparable from social responsibility while avoiding both isolated individualism and collectivist conformity.
+Scientific Method as Democratic Practice: Integration of experimental scientific methodology with democratic social inquiry, understanding that both natural and social problems can be addressed through collaborative investigation that tests hypotheses against experience while remaining open to revision based on evidence and consequences.
+Rule System (R):
+Experiential Learning Methodology: Consistent application of learning through doing rather than passive information transmission, ensuring that educational activities engage student interest and initiative while connecting classroom learning with real-world problem-solving and community service.
+Democratic Classroom Governance: Systematic involvement of students in educational decision-making and classroom organization, maintaining appropriate adult guidance while developing student capacity for self-direction, collaborative responsibility, and shared inquiry.
+Theory-Practice Integration: Active coordination of intellectual understanding with practical application through projects, experiments, and community engagement that demonstrate how ideas function in actual experience while testing theoretical claims against practical consequences.
+Collaborative Inquiry Process: Regular engagement in shared investigation of problems that affect student and community welfare, ensuring that educational activities serve broader social purposes while developing individual capacity for critical thinking and democratic participation.
+Ontological Commitments (O):
+Process Philosophy: Reality consists of ongoing interactions and transactions rather than fixed substances or eternal forms, making change and development fundamental rather than accidental features of natural and social existence.
+Naturalistic Humanism: Human beings are natural organisms whose intelligence and moral capacity emerged through evolutionary and social development, making education a natural process that can be enhanced through scientific understanding and democratic practice without requiring supernatural foundations.
+Social Constructionism: Knowledge, values, and institutions are created through collective human activity and can be reconstructively modified through democratic inquiry and experimental action rather than being discovered as pre-existing eternal truths.
+Instrumental Rationality: Ideas and theories function as tools for solving problems and coordinating action rather than representing reality directly, making their value dependent on their effectiveness in enhancing human experience and democratic cooperation.
+Authenticity Criteria (A+):
+Educational-Social Integration: Authentic educational work required coordination between individual student development and broader social reform, avoiding both narrow academic focus that ignores social context and social activism that ignores educational foundation and systematic inquiry.
+Theory-Practice Synthesis: Personal authenticity demanded simultaneous attention to rigorous intellectual development and practical educational application, refusing to separate philosophical understanding from educational experimentation and social engagement while maintaining both theoretical depth and practical effectiveness.
+Individual-Democratic Balance: Genuine educational leadership involved coordinating personal intellectual authority with collaborative democratic inquiry and shared decision-making, avoiding both isolated individual expertise and collective approaches that ignore individual knowledge and responsibility.
+Local-Universal Coordination: Authentic educational philosophy required maintaining specific American democratic grounding while developing approaches that could serve universal human development and cross-cultural learning without losing cultural authenticity and practical effectiveness.
+Coordination Capabilities (C)
+Academic-Practical Integration: Exceptional ability to coordinate systematic philosophical inquiry with practical educational innovation while building institutional frameworks that honored both intellectual rigor and democratic participation without losing effectiveness or scholarly credibility.
+Individual-Collaborative Learning Synthesis: Sophisticated capacity for coordinating student-centered education with collaborative group learning and community engagement while maintaining focus on individual development and avoiding both isolated individualism and conformist group pressure.
+Educational-Social Reform Coordination: Advanced ability to build educational innovations while engaging broader social and political reform movements, maintaining educational authenticity while achieving social influence and recognition without compromising either educational effectiveness or social justice commitments.
+Local-National-International Impact: Demonstrated capacity for coordinating specific institutional innovations with systematic educational theory and international educational development while maintaining authentic American democratic perspective and practical focus throughout expanding influence and recognition.`
+},
+
     ],
     concepts: [
         {
