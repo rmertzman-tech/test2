@@ -2377,8 +2377,7 @@ Present-Future Consequence Integration: Demonstrated capacity for coordinating a
             <li><strong>Traditional-Modern Cultural Bridge-Building:</strong> Demonstrated capacity for coordinating respect for traditional cultural wisdom with engagement with modern institutional arrangements and global challenges.</li>
         </ul>
     `
-        },
-        
+        },    
         {
     name: "John Dewey",
     lifespan: "1859-1952 CE",
@@ -2452,7 +2451,7 @@ Academic-Practical Integration: Exceptional ability to coordinate systematic phi
 Individual-Collaborative Learning Synthesis: Sophisticated capacity for coordinating student-centered education with collaborative group learning and community engagement while maintaining focus on individual development and avoiding both isolated individualism and conformist group pressure.
 Educational-Social Reform Coordination: Advanced ability to build educational innovations while engaging broader social and political reform movements, maintaining educational authenticity while achieving social influence and recognition without compromising either educational effectiveness or social justice commitments.
 Local-National-International Impact: Demonstrated capacity for coordinating specific institutional innovations with systematic educational theory and international educational development while maintaining authentic American democratic perspective and practical focus throughout expanding influence and recognition.`
-},
+}
 
     ],
     concepts: [
