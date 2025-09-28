@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
              const colors = { foundation: 'text-gray-800', casestudy: 'text-yellow-800', essay: 'text-blue-800' };
             return `
                 <div class="simple-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer flex flex-col" data-type="${type}" data-index="${index}">
-                     <h3 class="text-xl font-bold ${colors[type]}">${item.title}</h3>
-                     <p class="text-gray-600 mt-2 text-sm flex-grow">${item.summary}</p>
+                      <h3 class="text-xl font-bold ${colors[type]}">${item.title}</h3>
+                      <p class="text-gray-600 mt-2 text-sm flex-grow">${item.summary}</p>
                 </div>
             `;
         },
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             outputElement.innerHTML = '<div class="loader"></div>';
             try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${this.apiKey}`, {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-preview-0514:generateContent?key=${this.apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: prompt }] }] })
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const [typeA, indexA] = valA.split('-');
             const personA = (typeA === 'navigator' ? this.navigators : this.thinkers)[indexA];
             const [typeB, indexB] = valB.split('-');
-            const personB = (typeB === 'navigator' ? this.thinkers : this.thinkers)[indexB];
+            const personB = (typeB === 'navigator' ? this.navigators : this.thinkers)[indexB]; // Corrected this line
 
             this.currentComparison = { personA, personB };
 
@@ -436,4 +436,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     app.init();
 });
-
