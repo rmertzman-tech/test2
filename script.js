@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const app = {
         // --- YOUR API KEY GOES HERE ---
-        // Replace "i9d-lTladymJwcrQ7HhKQgRh34FmgrE." with your actual key.
+        // Replace "YOUR_GEMINI_API_KEY_HERE" with your actual key.
         apiKey: 'AIzaSyCDi9d-lTladymJwcrQ7HhKQgRh34FmgrE.', 
         // -----------------------------
 
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             outputElement.innerHTML = '<div class="loader"></div>';
             try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${this.apiKey}`, {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${this.apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: prompt }] }] })
