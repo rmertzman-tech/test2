@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const app = {
-        apiKey: '',
+        // --- YOUR API KEY GOES HERE ---
+        // Replace "AIzaSyCDi9d-lTladymJwcrQ7HhKQgRh34FmgrE." with your actual key.
+        apiKey: 'YOUR_GEMINI_API_KEY_HERE', 
+        // -----------------------------
+
         currentComparison: null,
         currentResonance: null,
         currentModalFigure: null,
@@ -23,22 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
         `,
 
         init() {
-            this.loadApiKey();
+            // No longer need to load key from localStorage
             this.renderAllContent();
             this.setupEventListeners();
         },
 
-        loadApiKey() {
-            try {
-                // This 'try...catch' block prevents the app from crashing if localStorage is blocked.
-                const savedKey = localStorage.getItem('geminiApiKey');
-                if (savedKey) {
-                    this.apiKey = savedKey;
-                }
-            } catch (e) {
-                console.error("Could not access localStorage. This is expected in some private browsing modes.", e);
-            }
-        },
+        // This function is no longer needed as the key is hardcoded.
+        // loadApiKey() { ... }
         
         renderAllContent() {
             document.getElementById('profile-grid').innerHTML = this.navigators.map((item, index) => this.createCardHtml(item, 'navigator', index)).join('');
@@ -100,14 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         async callGeminiAPI(prompt, outputElement) {
-            if (!this.apiKey) {
-                document.getElementById('settings-api-key-modal').classList.remove('hidden');
-                outputElement.innerHTML = '';
+            if (!this.apiKey || this.apiKey === 'YOUR_GEMINI_API_KEY_HERE') {
+                outputElement.innerHTML = `<p class="text-red-500 text-sm">Error: API Key is not configured in the script.js file.</p>`;
                 return false;
             }
             outputElement.innerHTML = '<div class="loader"></div>';
             try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-preview-0514:generateContent?key=${this.apiKey}`, {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${this.apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: prompt }] }] })
@@ -163,20 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
             detailModal.addEventListener('click', e => (e.target === detailModal) && detailModal.classList.add('hidden'));
             document.querySelectorAll('.card-container').forEach(c => c.addEventListener('click', e => this.handleCardClick(e)));
 
-            const settingsModal = document.getElementById('settings-api-key-modal');
-            document.getElementById('settings-btn').addEventListener('click', () => settingsModal.classList.remove('hidden'));
-            document.getElementById('cancel-api-key-btn').addEventListener('click', () => settingsModal.classList.add('hidden'));
-            document.getElementById('save-api-key-btn').addEventListener('click', () => {
-                const newKey = document.getElementById('api-key-input-settings').value.trim();
-                this.apiKey = newKey;
-                try {
-                    if (newKey) localStorage.setItem('geminiApiKey', newKey);
-                    else localStorage.removeItem('geminiApiKey');
-                } catch (e) {
-                    console.error("Could not access localStorage to save API key.", e);
-                }
-                settingsModal.classList.add('hidden');
-            });
+            // The settings modal and its buttons are no longer needed.
+            // You can now safely remove the "Settings" button from your index.html file.
+            // const settingsModal = document.getElementById('settings-api-key-modal');
+            // document.getElementById('settings-btn').addEventListener('click', () => settingsModal.classList.remove('hidden'));
+            // ... (rest of the settings event listeners removed)
 
             document.getElementById('concept-grid').addEventListener('click', e => this.handleConceptAnalogy(e));
             document.getElementById('find-counterparts-btn').addEventListener('click', () => this.handleResonanceLab());
@@ -240,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const [typeA, indexA] = valA.split('-');
             const personA = (typeA === 'navigator' ? this.navigators : this.thinkers)[indexA];
             const [typeB, indexB] = valB.split('-');
-            const personB = (typeB === 'navigator' ? this.navigators : this.thinkers)[indexB]; // Corrected this line
+            const personB = (typeB === 'navigator' ? this.navigators : this.thinkers)[indexB];
 
             this.currentComparison = { personA, personB };
 
@@ -436,3 +421,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     app.init();
 });
+
