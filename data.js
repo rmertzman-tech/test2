@@ -350,6 +350,104 @@ Examined Life Ideal: Establishment of critical self-reflection as essential for 
     foundationalLinks: ["Capability-Based Coordination & Bootstrap Authority", "Cross-Scale Information Organization"]
 },
         {
+    name: "Florence Nightingale",
+    lifespan: "1820-1910",
+    title: "A PRF Analysis of Systems Coordination Through Data-Driven Care and Institutional Innovation",
+    summary: "A British social reformer and the founder of modern nursing whose PRF coordinated rigorous data analysis with institutional innovation to revolutionize healthcare, demonstrating how evidence-based advocacy can drive systemic change.",
+    bioLink: "https://www.britannica.com/biography/Florence-Nightingale",
+    videoUrl: null,
+    assemblyHistory: `<p><strong>Historical Context and Life Overview:</strong> Florence Nightingale lived during the height of the Industrial Revolution, a period when traditional care systems were collapsing under the strain of urbanization and military expansion. Born into a wealthy British family, she dedicated her life to transforming healthcare through systematic data collection, institutional innovation, and evidence-based advocacy.</p><p><strong>Life Timeline and Coordination Development:</strong></p><ul><li>1820-1844: Privileged upbringing and growing recognition of a "calling" to care work despite family and cultural opposition.</li><li>1844-1854: Systematic study of healthcare systems across Europe; self-education in mathematics and statistics.</li><li>1854-1856: Crimean War leadership, where she transformed military hospital death rates through systematic coordination and data analysis.</li><li>1856-1910: 54 years of institutional reform driven by data visualization, policy advocacy, and the development of a professional nursing system.</li></ul><p><strong>Nightingale's Real-World Coordination Challenges:</strong></p><p><strong>Challenge 1: Evidence-Based Advocacy:</strong> Nightingale faced medical and military establishments that were resistant to data collection and institutional change, requiring her to use rigorous evidence to overcome inertia.</p><p><strong>Challenge 2: Professional System Building:</strong> As a woman in Victorian England, she confronted immense gender barriers, requiring her to create an entirely new professional system for women (nursing) that could coordinate with male-dominated institutions.</p><p><strong>Challenge 3: Multi-Scale Coordination:</strong> She coordinated healthcare reform across multiple scales—from individual patient care to national policy—while managing chronic illness and having limited direct authority.</p>`,
+    broa: `<p><strong>Beliefs (B):</strong> Systematic data collection enables evidence-based care coordination that saves lives. Individual care excellence and systems coordination are mutually reinforcing. Effective healthcare requires the integration of medical, engineering, administrative, and social knowledge.</p><p><strong>Rules (R):</strong> Systematically observe and collect data before intervening. Use evidence-based advocacy with strategic communication tailored to the audience. Build professional systems that create ongoing coordination capacity. Leverage constraints into strategic advantages through innovation.</p><p><strong>Ontology (O):</strong> Effective healthcare coordination is an evidence-based system that requires continuous learning and adaptive improvement. It operates through institutional innovation and professional network building.</p><p><strong>Authenticity (A+):</strong> A life where success is measured by evidence-based effectiveness (e.g., reduced mortality rates), and where individual excellence is channeled into building collective, institutional capacity that empowers others.</p>`,
+    atcf: "Successfully integrated her privileged upbringing, self-directed scientific education, and profound sense of moral calling into a coherent life's work. She demonstrated remarkable consistency over 50+ years of post-Crimea activism, maintaining her core identity as a data-driven systems reformer despite chronic illness and social constraints.",
+    fop: "Her work was explicitly oriented toward creating durable, evidence-based healthcare systems for the future. By founding the first professional nursing school and creating new standards for hospital design and sanitation, she built institutional frameworks designed to improve public health for generations to come.",
+    capabilities: [
+        "Evidence-Based Systems Coordination",
+        "Data Visualization for Advocacy",
+        "Multi-Disciplinary Knowledge Integration",
+        "Professional Institution Building"
+    ],
+    fullPrfAnalysis: `
+        <h4 class="font-bold mb-2">Florence Nightingale's Personal Reality Framework (BROA+)</h4>
+        <h5 class="font-semibold mt-3 mb-1">Systems Coordination Through Data-Driven Care and Institutional Innovation</h5>
+        
+        <h5 class="font-semibold mt-3 mb-1">Who Florence Nightingale Was and Why Her Life Matters for Systems Coordination</h5>
+        <h6 class="font-semibold mt-3 mb-1">Historical Context and Life Overview</h6>
+        <p class="mb-2">Florence Nightingale (1820-1910) lived during the height of the Industrial Revolution and Victorian Era, a period when traditional care systems were collapsing under urbanization, industrialization, and military expansion. Born into a wealthy British family, she chose to dedicate her life to transforming healthcare through systematic data collection, institutional innovation, and evidence-based advocacy - developing coordination approaches that remain essential for contemporary systems challenges.</p>
+        
+        <h6 class="font-semibold mt-3 mb-1">Life Timeline and Coordination Development:</h6>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li>1820-1844: Privileged upbringing and growing recognition of "calling" to care work despite family and cultural opposition</li>
+            <li>1844-1854: Systematic study of healthcare systems across Europe; self-education in mathematics, statistics, and institutional management</li>
+            <li>1854-1856: Crimean War nursing leadership - transforming military hospital death rates through systematic coordination and data analysis</li>
+            <li>1856-1910: 54 years of institutional reform through data visualization, policy advocacy, and professional nursing system development despite chronic illness and societal constraints</li>
+        </ul>
+        
+        <h6 class="font-semibold mt-3 mb-1">Nightingale's Real-World Coordination Challenges</h6>
+        <p class="mb-2"><strong>Challenge 1: Evidence-Based Advocacy Under Institutional Resistance:</strong> Nightingale faced medical and military establishments that dismissed systematic data collection and resisted institutional change. She had to develop coordination methods that used rigorous evidence to overcome institutional inertia and professional opposition while building rather than destroying institutional capacity.</p>
+        <p class="mb-2"><strong>Challenge 2: Professional System Building Across Cultural Barriers:</strong> As a woman in Victorian England advocating for professional nursing, Nightingale confronted gender expectations that confined women to domestic roles while medical professions remained exclusively male domains. She had to develop institutional innovations that created professional opportunities for women while coordinating with male-dominated medical and government institutions.</p>
+        <p class="mb-2"><strong>Challenge 3: Multi-Scale Coordination Under Resource Constraints:</strong> Nightingale coordinated healthcare reform from individual patient care through institutional redesign to national policy advocacy and international professional development, all while managing chronic illness and limited direct institutional authority. She developed coordination approaches that created systemic change through strategic leverage rather than direct control.</p>
+        <p class="mb-2"><strong>Challenge 4: Knowledge Integration Across Disciplines:</strong> Nightingale integrated medical knowledge, statistical analysis, sanitation engineering, architectural design, administrative management, and social reform into comprehensive healthcare coordination systems. She had to develop integration methods that coordinated across professional boundaries and methodological differences.</p>
+        
+        <h4 class="font-bold mb-2 mt-4">Nightingale's Personal Reality Framework (BROA+) with Historical Examples</h4>
+        <h5 class="font-semibold mt-3 mb-1">Beliefs (B) - Foundational Assumptions Demonstrated Through Life Choices</h5>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li>"Systematic data collection and analysis enable evidence-based care coordination that saves lives and builds institutional capacity."</li>
+            <li><strong>Historical Example - The Crimean War Statistical Analysis (1854-1856):</strong> When Nightingale arrived at Scutari military hospital, death rates exceeded 40%. Instead of just providing individual patient care, she systematically collected mortality data, revealing that 16,000 of 18,000 deaths were from preventable diseases caused by sanitation and supply coordination failures. She used this data as coordination technology to convince administrators and officials how systems changes would save lives.</li>
+            <li><strong>Student Application:</strong> When working on challenges, collect systematic data that reveals systems patterns rather than just addressing individual cases. Use evidence to coordinate across stakeholders who might resist change without rigorous proof.</li>
+            <li><strong>Historical Example - The Coxcomb Diagram (1858):</strong> After Crimea, Nightingale created revolutionary data visualizations (coxcombs) that enabled non-technical audiences like Parliament members to understand complex statistical patterns of mortality, making it a powerful coordination tool for advocacy.</li>
+            <li><strong>Student Application:</strong> When advocating for change, develop data visualization and communication approaches that enable diverse stakeholders to understand systems patterns and coordination needs.</li>
+            <li>"Individual care excellence and systems coordination enhancement serve each other through systematic integration and evidence-based improvement."</li>
+            <li><strong>Historical Example - The Nightingale Ward Design (1859-1863):</strong> Nightingale integrated individual care and systems reform through hospital design. Features like nursing station placement for observation, ventilation systems, and patient spacing served both the individual patient's experience and the systematic coordination of care.</li>
+            <li><strong>Student Application:</strong> Design coordination systems that serve both individual authentic participation and collective effectiveness. Seek integration through systems thinking rather than compromise through trade-offs.</li>
+            <li><strong>Historical Example - Notes on Nursing (1859):</strong> Her famous nursing manual integrated individual care techniques (observation, hygiene) with a systems understanding of how hospital organization and sanitation affect patient outcomes, showing that personal excellence and collective capacity are linked.</li>
+            <li><strong>Student Application:</strong> Integrate your individual skill building with systems understanding, recognizing how personal excellence serves collective capability and how community coordination enables individual effectiveness.</li>
+            <li>"Healthcare coordination requires integration of medical, engineering, administrative, and social knowledge rather than single-discipline expertise alone."</li>
+            <li><strong>Historical Example - The Sanitary Commission Coordination (1857-1858):</strong> Nightingale coordinated a Royal Commission that integrated expertise from medical professionals, engineers, administrators, statisticians, and social reformers to create a comprehensive analysis of military healthcare systems.</li>
+            <li><strong>Student Application:</strong> When addressing complex challenges, develop coordination approaches that integrate different disciplinary perspectives rather than depending on single-discipline expertise.</li>
+        </ul>
+
+        <h5 class="font-semibold mt-3 mb-1">Rules (R) - Systematic Practices Demonstrated Through Specific Actions</h5>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li>"Systematic observation and data collection before intervention - understand systems patterns before attempting coordination changes."</li>
+            <li><strong>Historical Example - The Scutari Hospital Initial Assessment (October 1854):</strong> Despite urgent patient needs, Nightingale spent her first weeks systematically documenting conditions—physical, administrative, and medical—recognizing that uninformed action could worsen coordination rather than improve outcomes.</li>
+            <li><strong>Student Application:</strong> When engaging with a challenge, invest time in systematic observation and data collection before implementing solutions to ensure you are addressing root causes.</li>
+            <li>"Evidence-based advocacy using strategic communication adapted to different stakeholder audiences and decision-making contexts."</li>
+            <li><strong>Historical Example - Multi-Audience Advocacy Campaign (1857-1859):</strong> She coordinated her advocacy by presenting the same core evidence in different formats for different audiences: rigorous statistical reports for Parliament, operational analysis for the military, and visual diagrams (coxcombs) for the public.</li>
+            <li><strong>Student Application:</strong> Develop multi-audience communication strategies that adapt evidence to different stakeholders' perspectives and decision-making contexts while maintaining a consistent evidence-based foundation.</li>
+            <li>"Professional system building that creates ongoing coordination capacity beyond individual expertise or organizational dependency."</li>
+            <li><strong>Historical Example - The Nightingale Training School (1860-1910):</strong> Instead of just training individual nurses, she created a professional system with a systematic curriculum, institutional partnerships, certification standards, and a model for international expansion. This created a self-sustaining professional infrastructure.</li>
+            <li><strong>Student Application:</strong> In leadership roles, focus on building institutional capacity and professional systems that enable ongoing coordination beyond your individual involvement.</li>
+            <li>"Leverage constraints into strategic advantage through systems innovation and institutional coordination."</li>
+            <li><strong>Historical Example - Converting Illness into Influence (1857-1910):</strong> Confined to her home for 50 years by chronic illness, she converted this constraint into a strategic advantage by focusing on written communication—letters, reports, and books—which allowed her to coordinate international healthcare reform more effectively than travel would have.</li>
+            <li><strong>Student Application:</strong> When facing constraints, use systems thinking to identify how they might enable strategic advantages. Innovation often emerges from limitation through creative coordination.</li>
+        </ul>
+
+        <h5 class="font-semibold mt-3 mb-1">Ontology (O) - How Healthcare Coordination Works, Demonstrated Through Life Patterns</h5>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li>Evidence-based systems coordination through continuous learning and adaptive improvement:</li>
+            <li><strong>Historical Example - The Continuous Data Collection Practice:</strong> Throughout her life, Nightingale maintained systematic data collection, using comparative analysis and causal investigation to continuously adapt and improve coordination approaches based on evidence rather than fixed protocols.</li>
+            <li><strong>Student Application:</strong> Develop habits of systematic data collection, pattern analysis, and adaptive improvement rather than assuming initial approaches are optimal.</li>
+            <li>Systems coordination through institutional innovation and professional network building:</li>
+            <li><strong>Historical Example - The Institutional Cascade Strategy:</strong> Nightingale's interventions were designed to create cascading effects. The success of her first training school led to graduates creating new programs, which led to professional associations, which influenced government policy. This demonstrates leverage through institutional innovation.</li>
+            <li><strong>Student Application:</strong> In leadership roles, identify strategic intervention points where institutional innovation can create cascading coordination capacity rather than depending on continuous individual effort.</li>
+        </ul>
+
+        <h5 class="font-semibold mt-3 mb-1">Authenticity Criteria (A+) - What Counted as Genuine Development, Demonstrated Through Life Choices</h5>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+            <li>Evidence-based effectiveness demonstration:</li>
+            <li><strong>Historical Example - The Mortality Rate Documentation:</strong> Nightingale's authentic impact was measured through rigorous data. At Scutari, she documented a mortality reduction from 42% to 2% within six months, proving her systems' effectiveness through patient outcomes, not just claims.</li>
+            <li><strong>Student Application:</strong> Develop rigorous approaches to measuring coordination effectiveness through outcomes rather than just activity or effort.</li>
+            <li>Professional system building that empowers others rather than creating dependency:</li>
+            <li><strong>Historical Example - The Nursing Professional Development:</strong> Her training school was designed to create professional autonomy for nurses through standardized education and credentials, building others' independent capabilities rather than creating dependency on her expertise.</li>
+            <li><strong>Student Application:</strong> In teaching and leadership roles, focus on building others' independent coordination capabilities rather than creating dependency on your expertise.</li>
+            <li>Integration of individual excellence with collective capacity building:</li>
+            <li><strong>Historical Example - Recognition Management:</strong> Despite becoming an international celebrity, Nightingale avoided public appearances and used her reputation solely to advance her systems work. Her authenticity was demonstrated by her focus on collective capacity building over personal recognition.</li>
+            <li><strong>Student Application:</strong> Approach recognition and advancement opportunities with a focus on how they enable greater coordination effectiveness and community capacity building.</li>
+        </ul>
+    `,
+    foundationalLinks: ["Cross-Scale Information Organization", "Capability-Based Coordination in Practice"]
+},
+        {
             name: "Harriet Tubman",
             lifespan: "c. 1822-1913",
             title: "A PRF Analysis of Liberation, Leadership, and Cross-Scale Coordination",
