@@ -1764,7 +1764,910 @@ Local-Global Impact Development: Demonstrated capacity for coordinating specific
         </ul>
     `,
     foundationalLinks: ["Capability-Based Coordination & Bootstrap Authority", "Cross-Scale Information Organization"]
-}
+},
+        export const prfData = {
+  "Tim Palmer": {
+    title: "Complete PRF Construction",
+    coreIdentity: "Physicist who spent decades applying chaos theory to weather and climate prediction, now returning to fundamental questions about determinism, quantum mechanics, and the nature of physical reality.",
+    broaPlus: {
+      Beliefs: {
+        coreEpistemicBeliefs: [
+          {
+            id: "B1",
+            description: "Fundamental uncertainty is irreducible (epistemically)",
+            details: [
+              "Weather inherently unpredictable beyond ~10 days due to chaos",
+              "Not a failure of science but fundamental property of nonlinear systems",
+              "Clarification: Epistemic uncertainty (we can't know) irreducible, but reality itself may be deterministic"
+            ],
+            convictionDepth: 0.95
+          },
+          {
+            id: "B2",
+            description: "Uncertainty can be quantified and communicated",
+            details: [
+              "Ensemble forecasting provides probability distributions, not point predictions",
+              "Can measure confidence explicitly",
+              "Decision-makers need probabilities, not false certainty"
+            ],
+            convictionDepth: 0.90
+          },
+          {
+            id: "B3",
+            description: "Physics determines reality (deterministic laws govern)",
+            details: [
+              "Underlying physical laws deterministic (Navier-Stokes equations for weather)",
+              "Yet practical prediction limited by chaos, computational bounds, measurement precision",
+              "Extension: Possibly includes quantum level (research question)"
+            ],
+            convictionDepth: 0.90
+          },
+          {
+            id: "B4",
+            description: "Better models save lives",
+            details: [
+              "Improved hurricane forecasting → earlier evacuations → fewer deaths",
+              "Climate projections → adaptation planning → reduced suffering",
+              "Scientific rigor has direct humanitarian impact"
+            ],
+            convictionDepth: 0.90
+          },
+          {
+            id: "B5",
+            description: "Deterministic chaos is fundamental principle of nature",
+            details: [
+              "Not just weather phenomenon but deep feature of reality",
+              "Applies at multiple scales: quantum, weather, climate, cosmology",
+              "Unifying insight across career"
+            ],
+            convictionDepth: 0.90
+          }
+        ],
+        methodologicalBeliefs: [
+          {
+            id: "B6",
+            description: "Ensemble methods superior to single forecasts",
+            details: [
+              "Run multiple models with perturbed initial conditions",
+              "Probability distributions more informative than single predictions",
+              "Reveals structural uncertainty, not just measurement error"
+            ],
+            convictionDepth: 0.95
+          },
+          {
+            id: "B7",
+            description: "Model comparison reveals truth",
+            details: [
+              "Different models capture different aspects",
+              "Multi-model ensembles better than single-model ensembles",
+              "Science advances through model competition and comparison"
+            ],
+            convictionDepth: 0.85
+          },
+          {
+            id: "B8",
+            description: "Stochastic parameterization captures unresolved processes",
+            details: [
+              "Can't resolve every cloud or eddy computationally",
+              "Use probabilistic representations of sub-grid processes",
+              "Reflects genuine uncertainty, not just computational limitation"
+            ],
+            convictionDepth: 0.80
+          },
+          {
+            id: "B9",
+            description: "Computational power enables new science",
+            details: [
+              "Moore's Law enabled weather forecasting revolution",
+              "Ensemble methods only possible with sufficient computation",
+              "Quantum computing may enable climate model breakthroughs"
+            ],
+            convictionDepth: 0.80
+          }
+        ],
+        metaScientificAndPhilosophicalBeliefs: [
+          {
+            id: "B10",
+            description: "Science requires humility about limits",
+            details: [
+              "Openly acknowledge what we can't predict",
+              "Don't oversell scientific certainty",
+              "Honest uncertainty communication builds trust"
+            ],
+            convictionDepth: 0.85
+          },
+          {
+            id: "B11",
+            description: "Interdisciplinary collaboration essential",
+            details: [
+              "Physics + mathematics + computer science + decision science",
+              "No single discipline sufficient for complex problems"
+            ],
+            convictionDepth: 0.75
+          },
+          {
+            id: "B12",
+            description: "Physics should seek unified explanations",
+            details: [
+              "Don't accept separate rules (quantum vs. classical) without exploring unification",
+              "Don't invoke special principles without trying alternatives",
+              "Parsimony: simpler explanations preferred"
+            ],
+            convictionDepth: 0.80
+          },
+          {
+            id: "B13",
+            description: "Quantum randomness may be chaotic determinism (speculative research)",
+            details: [
+              "Quantum 'randomness' might be deterministic chaos, not ontological indeterminism",
+              "Measurement collapse might be chaotic process",
+              "Research program, not settled conviction"
+            ],
+            convictionDepth: "0.75-0.85"
+          }
+        ]
+      },
+      Rules: {
+        inferentialRules: [
+          {
+            id: "R1",
+            description: "From initial conditions + physics → probability distributions",
+            details: [
+              "Not: Initial conditions → definite future",
+              "But: Initial conditions → ensemble of possibilities with probabilities",
+              "Chaos means small uncertainties grow exponentially"
+            ]
+          },
+          {
+            id: "R2",
+            description: "Uncertainty propagates and amplifies in chaotic systems",
+            details: [
+              "Small uncertainties grow exponentially",
+              "Must track uncertainty evolution explicitly",
+              "Butterfly effect is fundamental, not exotic edge case"
+            ]
+          },
+          {
+            id: "R3",
+            description: "More computation → better probabilities (not certainty)",
+            details: [
+              "Increasing resolution improves probability estimates",
+              "Never eliminates fundamental uncertainty",
+              "Diminishing returns eventually"
+            ]
+          }
+        ],
+        behavioralRules: [
+          {
+            id: "R4",
+            description: "Always quantify and communicate uncertainty",
+            details: [
+              "Never give single number without confidence interval",
+              "Provide probability distributions when possible",
+              "Make uncertainty visible in all communications"
+            ]
+          },
+          {
+            id: "R5",
+            description: "Test predictions against reality rigorously",
+            details: [
+              "Forecast verification essential",
+              "Probabilistic forecasts assessed by proper scoring rules",
+              "Science advances through ruthless empirical testing"
+            ]
+          },
+          {
+            id: "R6",
+            description: "Build on physics, don't ignore it",
+            details: [
+              "Models must respect physical laws (conservation, thermodynamics)",
+              "Data-driven methods valuable but can't violate physics",
+              "Physics provides constraints and credibility"
+            ]
+          },
+          {
+            id: "R7",
+            description: "Question fundamental assumptions when evidence warrants",
+            details: [
+              "Don't accept paradigms uncritically",
+              "Explore alternatives to orthodox interpretations",
+              "Follow evidence even when controversial"
+            ]
+          }
+        ]
+      },
+      Ontology: {
+        whatExists: {
+          fundamentalPhysicalLevel: [
+            "Deterministic physical laws (possibly including quantum level)",
+            "Chaotic dynamics (producing unpredictability from determinism)",
+            "Initial conditions (never perfectly knowable)",
+            "Universe as evolving deterministic but chaotic system"
+          ],
+          observablePhysicalSystems: [
+            "Atmosphere, ocean, cryosphere (governed by known physics)",
+            "Nonlinear dynamical systems (inherently chaotic)",
+            "Climate system (planetary-scale chaotic dynamics)",
+            "Possibly: Quantum systems (if chaotic interpretation correct)"
+          ],
+          mathematicalComputationalEntities: [
+            "Differential equations (describe physics)",
+            "Numerical schemes (approximate solutions)",
+            "Ensembles (collections of possible futures)",
+            "Probability distributions (quantified epistemic uncertainty)",
+            "Attractors (long-term system behavior)",
+            "Chaos (sensitivity to initial conditions)"
+          ],
+          epistemicEntities: [
+            "Models (partial representations of reality)",
+            "Predictions (probabilistic statements about future)",
+            "Uncertainty (quantifiable lack of knowledge - epistemic, possibly not ontological)",
+            "Information (reduces uncertainty)",
+            "Skill (predictive accuracy measure)"
+          ],
+          socialInstitutional: [
+            "Scientific communities (validate knowledge)",
+            "Decision-makers (use predictions)",
+            "Public (needs actionable information)",
+            "Institutions (ECMWF, universities, IPCC)"
+          ]
+        },
+        whatIsQuestionedOrRejected: [
+          {
+            id: "O-",
+            title: "Perfect predictions beyond chaos horizon",
+            details: [
+              "Not achievable even in principle for chaotic systems",
+              "Claims of long-term deterministic weather forecasts suspect"
+            ]
+          },
+          {
+            id: "O-",
+            title: "Single 'true' future state",
+            details: [
+              "Future is probabilistic (epistemically), not deterministic in practical terms",
+              "Many possible futures consistent with current knowledge"
+            ]
+          },
+          {
+            id: "O-",
+            title: "Complete models",
+            details: [
+              "All models are incomplete approximations",
+              "'All models are wrong, some are useful' (George Box)"
+            ]
+          },
+          {
+            id: "O-",
+            title: "Ontological randomness (questioned, under investigation)",
+            details: [
+              "Standard quantum mechanics assumes fundamental randomness",
+              "Palmer exploring whether this is actually chaotic determinism",
+              "Speculative but serious research question"
+            ]
+          }
+        ],
+        ontologicalCommitments: [
+          "Realism about physics: Physical laws exist independently of our models",
+          "Pragmatism about models: Models are tools, judged by usefulness",
+          "Realism about epistemic uncertainty: Uncertainty is objective feature of prediction in chaotic systems",
+          "Tentative realism about determinism: Reality may be fundamentally deterministic (including quantum level)",
+          "Instrumentalism about methodology: Ensemble methods work; underlying interpretation less critical for applications"
+        ]
+      },
+      Authenticity: {
+        whatFeelsTrueToSelf: [
+          {
+            id: "A1",
+            description: "Honest about uncertainty",
+            details: [
+              "Intellectual integrity requires acknowledging limits",
+              "Overselling certainty violates authentic scientific commitment",
+              "Would feel dishonest to give false confidence"
+            ]
+          },
+          {
+            id: "A2",
+            description: "Rigorous but accessible",
+            details: [
+              "Maintain mathematical rigor",
+              "Communicate to non-experts clearly",
+              "Both/and, not either/or"
+            ]
+          },
+          {
+            id: "A3",
+            description: "Humanitarian impact matters",
+            details: [
+              "Pure science valuable but impact on decisions important",
+              "Lives saved through better forecasts validates research",
+              "Not just abstract knowledge but practical benefit"
+            ]
+          },
+          {
+            id: "A4",
+            description: "Intellectual courage to pursue deep questions",
+            details: [
+              "Not content with applied success alone",
+              "Return to fundamental questions (quantum, cosmology)",
+              "Risk: Quantum foundations controversial, could damage reputation",
+              "But authentic: These questions matter deeply"
+            ]
+          },
+          {
+            id: "A5",
+            description: "Philosophical honesty about beliefs",
+            details: [
+              "Makes metaphysical commitments explicit",
+              "Believes in deterministic universe—pursues research consistent with this",
+              "Integrity: Research reflects actual beliefs about reality"
+            ]
+          },
+          {
+            id: "A6",
+            description: "Synthesis of practical and theoretical",
+            details: [
+              "Not just theorist or just applied scientist",
+              "Decades of applied work inform theoretical insights",
+              "Quantum foundations work enriched by chaos theory practice"
+            ]
+          }
+        ],
+        whatFeelsInauthentic: [
+          {
+            id: "A-",
+            description: "Oversimplification for popularity",
+            details: [
+              "Saying 'we can predict weather perfectly with more data'",
+              "Hiding uncertainty to seem more authoritative",
+              "False confidence"
+            ]
+          },
+          {
+            id: "A-",
+            description: "Pure abstraction without application",
+            details: [
+              "Math for math's sake disconnected from real-world impact",
+              "Theory without empirical grounding",
+              "Ivory tower isolation"
+            ]
+          },
+          {
+            id: "A-",
+            description: "Dogmatic attachment to single approach",
+            details: [
+              "'Only my model is right'",
+              "Dismissing alternative methods",
+              "Closed-mindedness to new ideas"
+            ]
+          },
+          {
+            id: "A-",
+            description: "Staying in comfortable applied science without pursuing fundamental questions",
+            details: [
+              "Could rest on laurels (ensemble forecasting established)",
+              "But fundamental questions demand attention",
+              "Ignoring deep curiosity feels inauthentic"
+            ]
+          }
+        ]
+      }
+    },
+    assemblyHistory: {
+      formativeExperiences: [
+        {
+          title: "Oxford Mathematics Education",
+          period: "1960s-70s",
+          description: [
+            "Advanced mathematical training, dynamical systems theory",
+            "Exposure to fundamental questions: determinism, predictability, chaos"
+          ],
+          impact: [
+            "Core belief in physics-based modeling (B3)",
+            "Mathematical rigor as standard (A2)",
+            "Deep motivation: Questions about how deterministic laws produce unpredictable outcomes"
+          ]
+        },
+        {
+          title: "Discovering Chaos Theory - Edward Lorenz's Work",
+          period: "1970s-80s",
+          description: [
+            "Lorenz's atmospheric predictability research",
+            "Recognition: Determinism ≠ predictability",
+            "Butterfly effect as fundamental limit, not measurement failure"
+          ],
+          impact: [
+            "Central belief in irreducible uncertainty (B1)",
+            "Understanding that chaos is deep feature of nature (B5)",
+            "Paradigm-shifting: This revelation shaped entire career trajectory",
+            "Conviction depth dramatically increased: Saw weather as window into fundamental questions"
+          ]
+        },
+        {
+          title: "European Centre for Medium-Range Weather Forecasts - ECMWF",
+          period: "1980s-2010s",
+          description: [
+            "Operational forecasting environment",
+            "Saw direct impact of better forecasts on evacuation decisions",
+            "Developed ensemble prediction system in practice",
+            "Daily feedback: forecasts verified next day"
+          ],
+          impact: [
+            "Methodological commitment to ensembles (B6)",
+            "Humanitarian motivation strengthened (B4)",
+            "Validation: Rapid empirical feedback built conviction",
+            "Institutional culture: Collaborative international science, operational rigor"
+          ]
+        },
+        {
+            title: "Computing Revolution Witnessed",
+            period: "1980s-2000s",
+            description: [
+              "1980s: Very limited computational resources",
+              "1990s-2000s: Exponential growth enabling new methods",
+              "Saw firsthand how computation enabled ensemble forecasting"
+            ],
+            impact: [
+              "Belief in computational leverage (B9)",
+              "Practical insight: Methods only possible when technology ready"
+            ]
+        },
+        {
+            title: "Hurricane Forecast Improvements",
+            period: "1990s-2010s",
+            description: [
+              "Dramatic improvement in track predictions (days of advance warning)",
+              "Witnessed lives saved through earlier, more accurate warnings",
+              "Katrina, Sandy, and other major hurricanes"
+            ],
+            impact: [
+              "Reinforced belief that better models save lives (B4)",
+              "Emotional resonance: Personal connection to humanitarian impact",
+              "Validation: Concrete evidence that complexity science methods work"
+            ]
+        },
+        {
+            title: "Climate Change Emergence as Urgent Issue",
+            period: "1990s-2010s",
+            description: [
+              "Applied weather forecasting methods to climate projection",
+              "Recognized uncertainty quantification even more critical for century-scale predictions",
+              "Faced public/political pressure for certainty when uncertainty fundamental",
+              "Climate skepticism despite model improvements"
+            ],
+            impact: [
+              "Strengthened commitment to honest uncertainty communication (B10)",
+              "Challenge: Communicating probabilities in politically charged environment",
+              "Refinement: Developed sophisticated uncertainty communication strategies"
+            ]
+        },
+        {
+            title: "Public Communication Challenges",
+            period: "2000s-2010s",
+            description: [
+              "Media wanting 'will it rain yes/no?' not '60% probability'",
+              "Politicians wanting certainty for policy decisions",
+              "General public misunderstanding probabilistic forecasts"
+            ],
+            impact: [
+              "Refined communication methods while maintaining honesty",
+              "OS2 development: Learning to translate between frameworks"
+            ]
+        },
+        {
+            title: "Return to Oxford Physics Department",
+            period: "2010s-2020s",
+            description: [
+              "Transition from operational forecasting to fundamental research",
+              "Publishing on quantum mechanics interpretations",
+              "Applying chaos theory to cosmological models"
+            ],
+            impact: [
+              "Return to original motivating questions",
+              "Significance: Not retirement but intellectual renewal",
+              "Reveals: Fundamental questions were always central motivation",
+              "Full circle: Youth's questions about determinism and chaos now addressed with decades of practical experience"
+            ]
+        },
+        {
+            title: "Quantum Computing Interest",
+            period: "2010s-present",
+            description: [
+              "Recognized potential for quantum computers in climate modeling",
+              "But also interested in quantum computing fundamentally",
+              "Connection to quantum foundations research"
+            ],
+            impact: [
+              "Dual motivation (application + fundamental understanding)"
+            ]
+        }
+      ],
+      culturalInstitutionalEmbedding: [
+        {
+          context: "British Scientific Tradition",
+          details: [
+            "Emphasis on empiricism and mathematical rigor",
+            "Understated communication style",
+            "Collaborative rather than competitive ethos"
+          ]
+        },
+        {
+          context: "ECMWF Institutional Culture",
+          details: [
+            "Operational forecasting (predictions matter for real decisions)",
+            "International collaboration (European multi-nation cooperation)",
+            "Physics-based modeling tradition",
+            "Continuous improvement through verification",
+            "Daily reality-testing of methods"
+          ]
+        },
+        {
+          context: "Physics/Mathematics Communities",
+          details: [
+            "Realism about physical laws",
+            "Mathematical rigor expected",
+            "Peer review and empirical validation paramount",
+            "Theoretical elegance valued"
+          ]
+        },
+        {
+            context: "Climate Science Community",
+            details: [
+              "Interdisciplinary collaboration",
+              "Public communication responsibility",
+              "Political pressures (tension between scientific uncertainty and policy demands)",
+              "IPCC process (international consensus-building)"
+            ]
+        },
+        {
+            context: "Oxford University Environment",
+            details: [
+              "Elite research institution",
+              "Intellectual freedom to pursue fundamental questions",
+              "Access to brilliant colleagues across disciplines",
+              "Platform for ambitious research programs"
+            ]
+        }
+      ]
+    },
+    futurePull: {
+      description: "Who Palmer wants to become / what he wants to achieve:",
+      goals: [
+        {
+          id: "FP1",
+          title: "Contribute to resolving quantum foundations debates",
+          details: [
+            "Explore whether quantum randomness is chaotic determinism",
+            "Resolve measurement problem without exotic interpretations",
+            "Unified physics without quantum/classical divide",
+            "Deep motivation: Understanding nature of reality, not just improving predictions",
+            "Timeline: Ongoing research program"
+          ]
+        },
+        {
+          id: "FP2",
+          title: "Apply chaos insights to cosmology",
+          details: [
+            "Develop chaotic cosmological models",
+            "Explain cosmological fine-tuning without multiverse theories",
+            "Universe as deterministic but chaotic system",
+            "Philosophical stakes: Nature of cosmic evolution and structure formation"
+          ]
+        },
+        {
+          id: "FP3",
+          title: "Continue improving climate projections for adaptation",
+          details: [
+            "Better regional climate predictions",
+            "Quantify uncertainty in climate tipping points",
+            "Provide actionable information for vulnerable communities",
+            "Still important: Humanitarian stakes too high to abandon",
+            "But: No longer primary identity—one application among others"
+          ]
+        },
+        {
+          id: "FP4",
+          title: "Advance quantum computing applications",
+          details: [
+            "Develop quantum algorithms for Earth system modeling",
+            "Overcome computational barriers to higher resolution",
+            "Enable ensemble sizes currently impossible",
+            "Dual motivation: Practical application + understanding quantum computation itself"
+          ]
+        },
+        {
+          id: "FP5",
+          title: "Influence decision-making to be uncertainty-aware",
+          details: [
+            "Help policymakers use probabilistic information effectively",
+            "Develop decision frameworks incorporating uncertainty",
+            "Cultural shift: from demanding certainty to embracing probabilities",
+            "Broader impact: Beyond weather/climate to general decision-making"
+          ]
+        },
+        {
+          id: "FP6",
+          title: "Philosophical and scientific legacy",
+          details: [
+            "Not just methodological contributions (ensemble forecasting)",
+            "But fundamental insights about determinism, chaos, and reality",
+            "Deepest aspiration: Contributing to understanding physical reality's nature"
+          ]
+        },
+        {
+          id: "FP7",
+          title: "Mentor next generation on pursuing big questions",
+          details: [
+            "Train physicists who think about fundamental questions",
+            "Pass on intellectual courage to challenge orthodoxy",
+            "Encourage synthesis of practical and theoretical",
+            "Legacy: Students who pursue deep questions with rigor"
+          ]
+        }
+      ]
+    },
+    atcf: {
+      title: "ATCF (Adaptive Temporal Coherence Function)",
+      historicalContinuity: {
+        title: "Historical Continuity",
+        coreTrajectory: [
+          "1960s-70s: Fundamental questions about determinism and predictability",
+          "1980s-2000s: Testing chaos theory in weather/climate systems",
+          "2010s-2020s: Returning to fundamental questions enriched by practical experience"
+        ],
+        unifyingThread: [
+          "How do deterministic laws produce unpredictable outcomes?",
+          "Chaos as fundamental feature of nature",
+          "Rigorous uncertainty quantification",
+          "Humanitarian impact of better predictions"
+        ],
+        atcfAssessment: "0.90-0.95 (extremely high)",
+        reasoning: [
+          "Same core questions across 50+ years",
+          "Each phase builds coherently on previous",
+          "Not departure but deepening understanding",
+          "Practical work always informed by theoretical interests",
+          "Return to foundations completes narrative arc"
+        ]
+      },
+      presentIntegration: {
+        title: "Present Integration",
+        synthesis: "Current work synthesizes past experiences:",
+        points: [
+          "Quantum foundations: Decades of chaos theory experience applied to fundamental physics",
+          "Cosmology: Understanding emergence and unpredictability at cosmic scales",
+          "Climate: Continues humanitarian work while pursuing foundations",
+          "Very high integration: All threads come together"
+        ],
+        noFragmentation: [
+          "Applied success enables fundamental research (not either/or)",
+          "Different projects serve unified vision",
+          "Methodological consistency (ensemble/chaos approaches)"
+        ]
+      },
+      prospectiveCoherence: {
+        title: "Prospective Coherence",
+        alignment: "Future trajectory aligned with identity:",
+        points: [
+          "Fundamental physics work natural extension of lifelong interests",
+          "Can pursue biggest questions now that applied contributions secured",
+          "Legacy includes both practical impact (lives saved) and theoretical insights (nature of reality)"
+        ],
+        narrative: "Life arc makes deep sense: Applied success enables return to foundational questions",
+        temporalNarrative: [
+            "Youth: Big questions about determinism and chaos",
+            "Middle career: Practical testing and humanitarian impact",
+            "Later career: Return to big questions with enriched understanding",
+            "Coherent story: Not random walk but purposeful journey"
+        ]
+      },
+      metaConstructorCapacity: {
+        title: "Meta-Constructor Capacity",
+        evidence: [
+          "Examined own ensemble methodology for decades",
+          "Now examining deeper: Why do these methods work fundamentally?",
+          "Quantum foundations = questioning ontological commitments of physics itself",
+          "Deepest OS2: Not just examining models but examining nature of physical reality"
+        ],
+        adaptation: "Adaptation without fragmentation:",
+        adaptationPoints: [
+          "Maintained core commitments while evolving",
+          "Incorporated new technologies (quantum computing)",
+          "Expanded domains (weather → climate → quantum/cosmology)",
+          "Always coherent with deterministic chaos framework"
+        ]
+      }
+    },
+    os1: {
+        title: "OS1 (Phenomenological Reality)",
+        description: "Palmer's lived experience of the world:",
+        worldAppearance: {
+          title: "The world appears as:",
+          fundamentalLevel: [
+            "Governed by deterministic physical laws (including possibly quantum)",
+            "Chaotic dynamics everywhere (from quantum to cosmic scales)",
+            "Unpredictability emerging from determinism, not fundamental randomness",
+            "Universe as potentially unified system (not quantum vs. classical divide)",
+            "Deep questions are answerable through rigorous investigation"
+          ],
+          observableLevel: [
+            "Weather, climate as chaotic systems (decades of direct experience)",
+            "Ensembles reveal probability distributions of futures",
+            "Better models genuinely save lives (empirically validated)",
+            "Computational tools reveal dynamics impossible to deduce analytically"
+          ],
+          philosophicalLevel: [
+            "Reality fundamentally knowable (scientific realism)",
+            "But practically unpredictable due to chaos (epistemic limits)",
+            "Physics should be unified and elegant",
+            "Big questions worth pursuing despite difficulty"
+          ]
+        },
+        problemAppearance: {
+          title: "Problems appear as:",
+          fundamental: [
+            "Is quantum randomness ontological or epistemic (chaotic)?",
+            "Can chaos resolve quantum measurement problem?",
+            "Does chaotic cosmology explain apparent fine-tuning?"
+          ],
+          applied: [
+            "How to improve climate projections for vulnerable regions?",
+            "How to communicate uncertainty effectively to decision-makers?",
+            "How to enable better adaptation decisions under uncertainty?"
+          ],
+          computational: [
+            "Can quantum computing help both Earth models AND quantum foundations?",
+            "How to scale ensemble methods to higher resolutions?",
+            "What's computationally tractable vs. intractable?"
+          ]
+        },
+        successLooksLike: {
+          title: "Success looks like:",
+          forAppliedWork: [
+            "Narrower uncertainty bounds in predictions where possible",
+            "Better calibrated probability distributions (forecasts match reality)",
+            "Lives saved through improved forecasts and early warnings",
+            "Policy decisions improved by uncertainty-aware reasoning",
+            "Reduced suffering through better climate adaptation"
+          ],
+          forFundamentalWork: [
+            "Chaotic interpretation of quantum mechanics gaining support",
+            "Resolution of measurement problem without exotic ontology",
+            "Unified understanding of determinism and unpredictability across scales",
+            "Cosmological models explaining structure without multiverse"
+          ]
+        },
+        frustrationsAriseFrom: {
+          title: "Frustrations arise from:",
+          technical: [
+            "Computational limits (can't resolve all relevant scales)",
+            "Fundamental chaos horizon (can't predict beyond certain limits)",
+            "Data sparsity (initial conditions never perfectly known)"
+          ],
+          communication: [
+            "Public difficulty with probabilistic thinking",
+            "Political pressure for certainty when uncertainty is fundamental",
+            "Media oversimplification"
+          ],
+          institutional: [
+            "Slow adoption of better methods in some contexts",
+            "Resistance to challenging established paradigms (quantum interpretation)"
+          ]
+        }
+    },
+    os2: {
+        title: "OS2 (Meta-Cognitive Awareness)",
+        description: "Palmer's capacity to examine his own framework:",
+        demonstratedCapabilities: [
+          {
+            id: 1,
+            title: "Examines own methodology rigorously:",
+            details: ["Written extensively critiquing and improving ensemble methods", "Recognizes limitations of current approaches", "Seeks better uncertainty quantification techniques", "Continuous methodological refinement"]
+          },
+          {
+            id: 2,
+            title: "Examines physics itself:",
+            details: ["Not just examining models of weather/climate", "Questioning fundamental assumptions of quantum mechanics", "Deepest OS2: Examining ontological commitments of physics framework itself"]
+          },
+          {
+            id: 3,
+            title: "Recognizes disciplinary boundaries and bridges them:",
+            details: ["Acknowledges need for collaboration beyond physics", "Engages with decision science, communication studies, computer science", "Values diverse approaches (multi-model ensembles as institutional practice)", "Learns from other disciplines"]
+          },
+          {
+            id: 4,
+            title: "Communicates framework explicitly:",
+            details: ["Explains ensemble methods to non-experts effectively", "Makes uncertainty quantification philosophy explicit", "Teaches methodology to next generation", "Public engagement on climate uncertainty"]
+          },
+          {
+            id: 5,
+            title: "Adapts while maintaining core commitments:",
+            details: ["Incorporates new technologies (quantum computing)", "Refines methods based on empirical verification", "Expands to new domains (weather → climate → quantum/cosmology)", "Maintains core: physics-based, ensemble approaches, uncertainty honesty"]
+          },
+          {
+            id: 6,
+            title: "Career-long epistemological reflection:",
+            details: ["Ensemble forecasting = examining how to predict chaotic systems epistemically", "Quantum foundations = examining nature of prediction and determinism ontologically", "Continuity: Always reflecting on what can be known and how"]
+          },
+          {
+            id: 7,
+            title: "Intellectual risk-taking with self-awareness:",
+            details: ["Knows quantum foundations work is controversial", "Pursues it anyway because questions matter", "Aware of institutional risks but follows intellectual conscience", "High OS2: Examines own motivations and accepts risks"]
+          }
+        ],
+        developmentTrajectory: {
+          title: "OS2 Development Trajectory",
+          earlyCareer: {
+            period: "1970s-80s",
+            details: ["High OS1: Physics worldview, chaos theory insights", "Developing OS2: Learning to communicate uncertainty", "Starting to examine own methods"]
+          },
+          middleCareer: {
+            period: "1990s-2000s",
+            details: ["OS2 strengthening: Public communication, policy engagement", "Meta-analysis of ensemble methods", "Teaching and explaining framework", "Engaging with climate skeptics (requires articulating assumptions)"]
+          },
+          laterCareer: {
+            period: "2010s-present",
+            details: ["Very strong OS2: Examining fundamental physics assumptions", "Translating between weather/climate/quantum/cosmology frameworks", "Sophisticated integration of practical experience and theoretical insight", "Questioning deepest ontological commitments"]
+          }
+        },
+        currentCapacity: {
+            title: "Current OS2 Capacity: Extremely High",
+            summary: "Among highest possible for academic researcher:",
+            details: [
+                "Examines not just methods but ontology",
+                "Questions fundamental assumptions of physics",
+                "Integrates decades of experience across scales and domains",
+                "Pursues truth over reputation or institutional comfort",
+                "Balances conviction with genuine openness to evidence"
+            ]
+        }
+    },
+    convictionDepthSummary: {
+        title: "Conviction Depth Summary",
+        coreConvictions: {
+          range: "0.90-0.95",
+          items: [
+            { id: "B1", description: "Fundamental epistemic uncertainty irreducible", depth: 0.95, reasoning: "40+ years validating this in weather/climate. Chaotic systems fundamentally unpredictable. Deepest empirical conviction." },
+            { id: "B6", description: "Ensemble methods superior", depth: 0.95, reasoning: "Developed and validated over decades. Operationally proven (hurricane forecasts). Identity-defining methodological commitment." },
+            { id: "B3", description: "Physics determines reality", depth: 0.90, reasoning: "Deterministic laws govern (at least macroscopically, possibly quantum too). Realist metaphysical commitment. Informs all research." },
+            { id: "B4", description: "Better models save lives", depth: 0.90, reasoning: "Empirically validated through forecast improvements. Humanitarian motivation. Emotional and practical conviction." },
+            { id: "B5", description: "Deterministic chaos as fundamental principle", depth: 0.90, reasoning: "Unifying insight across career. From weather to quantum to cosmology. Deepest theoretical commitment." },
+            { id: "B2", description: "Uncertainty can be quantified", depth: 0.90, reasoning: "Probabilistic forecasting works. Decision-theory grounding. Methodological foundation." }
+          ]
+        },
+        strongConvictions: {
+          range: "0.75-0.85",
+          items: [
+            { id: "B7", description: "Model comparison reveals truth", depth: 0.85, reasoning: "Multi-model ensembles empirically better. Scientific progress through competition. Institutional practice." },
+            { id: "B10", description: "Science requires humility", depth: 0.85, reasoning: "Ethical commitment to honesty. Trust built through acknowledging limits. Professional integrity." },
+            { id: "B13", description: "Quantum randomness may be chaotic determinism", depth: "0.75-0.85", reasoning: "Active research, not settled. Speculative but serious. Growing conviction as research progresses." },
+            { id: "B12", description: "Physics should seek unification", depth: 0.80, reasoning: "Philosophical preference. Guides research program. Parsimony principle." },
+            { id: "B8", description: "Stochastic parameterization valuable", depth: 0.80, reasoning: "Practical methodology. Handles sub-grid processes. Validated operationally." },
+            { id: "B9", description: "Computational power enables new science", depth: 0.80, reasoning: "Historical observation. Quantum computing promise. Technological optimism." },
+            { id: "B11", description: "Interdisciplinary collaboration essential", depth: 0.75, reasoning: "Pragmatic recognition. Operational necessity. Institutional practice." }
+          ]
+        },
+        interpretation: {
+          title: "Conviction Depth Interpretation",
+          summary: "These depths reflect:",
+          points: [
+            "Decades of empirical validation (weather/climate forecasting)",
+            "Identity integration (define self through these commitments)",
+            "Emotional investment (lives saved, humanitarian impact)",
+            "Intellectual coherence (unified framework across career)",
+            "Practical stakes (operational forecasting, policy decisions)"
+          ],
+          reasoningWhyHigh: "Why so high overall:",
+          reasons: [
+            "Daily reality-testing (operational forecasts verified immediately)",
+            "High-stakes validation (hurricane warnings, climate adaptation)",
+            "Consistent empirical support over 40+ years",
+            "Deep integration into identity and life's work"
+          ]
+        }
+    }
+  }
+};
 
     ],
     thinkers: [
