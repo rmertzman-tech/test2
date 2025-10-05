@@ -1764,10 +1764,10 @@ Local-Global Impact Development: Demonstrated capacity for coordinating specific
         </ul>
     `,
     foundationalLinks: ["Capability-Based Coordination & Bootstrap Authority", "Cross-Scale Information Organization"]
-}
-        
+}  
 
     ],
+    
     thinkers: [
         {
             name: "Confucius",
