@@ -1765,7 +1765,8 @@ Local-Global Impact Development: Demonstrated capacity for coordinating specific
     `,
     foundationalLinks: ["Capability-Based Coordination & Bootstrap Authority", "Cross-Scale Information Organization"]
 },
-        export const prfData = {
+        
+        {
   "Tim Palmer": {
     title: "Complete PRF Construction",
     coreIdentity: "Physicist who spent decades applying chaos theory to weather and climate prediction, now returning to fundamental questions about determinism, quantum mechanics, and the nature of physical reality.",
@@ -2667,7 +2668,7 @@ Local-Global Impact Development: Demonstrated capacity for coordinating specific
         }
     }
   }
-};
+}
 
     ],
     thinkers: [
