@@ -1,160 +1,38 @@
-/* --- Base Styles & Typography --- */
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+body { font-family: 'Inter', sans-serif; }
+
+.header-banner {
+    background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
+    border-bottom: 8px solid #6366f1;
 }
 
-/* --- Accessibility: Coherence Scaffolding --- */
-:focus-visible {
-    outline: 3px solid #4f46e5;
-    outline-offset: 2px;
-}
-
-/* Skip link and screen reader utility */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* --- Layout Containers --- */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-/* --- Interactive Elements --- */
-.concept-card, .profile-card, .simple-card {
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
-    border: 1px solid transparent;
+.modal-content::-webkit-scrollbar { width: 6px; }
+.modal-content::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+
+.loader-vivid {
+    border: 3px solid rgba(255,255,255,0.1);
+    border-top: 3px solid #6366f1;
+    border-radius: 50%;
+    width: 24px; height: 24px;
+    animation: spin 1s linear infinite;
 }
 
-.concept-card:hover, .profile-card:hover, .simple-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    border-color: #e0e7ff;
-}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-/* Tab Navigation Styling */
-.tab-btn {
-    transition: all 0.2s ease;
-    border-bottom: 2px solid transparent;
-}
-
-.tab-btn[aria-selected="true"] {
-    color: #4338ca;
-    background-color: #eef2ff;
-    border-bottom-color: #4f46e5;
-}
-
-.tab-btn[aria-selected="false"] {
-    color: #6b7280;
+/* Fix line clamping for summaries */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
 }
 
 .tab-btn[aria-selected="false"]:hover {
-    color: #111827;
-    background-color: #f9fafb;
-}
-
-/* --- Modal Architecture --- */
-#detail-modal {
-    backdrop-filter: blur(4px);
-}
-
-.modal-content {
-    max-height: 85vh;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
-}
-
-/* Custom scrollbar for modal (WebKit) */
-.modal-content::-webkit-scrollbar {
-    width: 8px;
-}
-.modal-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-.modal-content::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
-}
-.modal-content::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-}
-
-/* --- AI Diagnostics & Outputs --- */
-/* Wrapper for AI conversation turns */
-.ai-turn-wrapper {
-    background-color: #ffffff;
-    border-left: 4px solid #4f46e5;
-    padding: 1.25rem;
-    margin-bottom: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.gemini-output {
-    background-color: #f8f9fa;
-    border-left: 4px solid #4f46e5;
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 0.25rem;
-    white-space: pre-wrap;
-    font-size: 0.95rem;
-    color: #1e293b;
-}
-
-/* Meta-Metric Tags (ATCF/PRF) */
-.metric-tag {
-    display: inline-block;
-    padding: 0.125rem 0.625rem;
-    border-radius: 9999px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.025em;
-    margin-right: 0.5rem;
-    background-color: #e0e7ff;
-    color: #4338ca;
-    border: 1px solid #c7d2fe;
-}
-
-/* --- Animations & Loaders --- */
-.animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .5; }
-}
-
-.loader {
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid #4f46e5;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    animation: spin 1s linear infinite;
-    margin: 1.5rem auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Tooltip/Disclaimer styling */
-#disclaimer-text {
-    font-style: italic;
-    line-height: 1.6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
