@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         // --- ROBUST AI API LOGIC ---
+        async // --- ROBUST AI API LOGIC ---
         async callGeminiAPI(prompt, outputElement) {
             if (!this.apiKey) {
                 outputElement.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-xl text-xs font-bold uppercase tracking-widest">⚠️ Missing API Key. Go to Settings.</div>`;
@@ -82,15 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
 
             try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.apiKey}`, {
+                // CORRECTED ENDPOINT: Using the stable v1 endpoint with the specific model format
+                const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${this.apiKey}`;
+                
+                const response = await fetch(url, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: prompt }] }] })
+                    body: JSON.stringify({ 
+                        contents: [{ 
+                            parts: [{ text: prompt }] 
+                        }] 
+                    })
                 });
 
                 if (!response.ok) {
                     const errorJson = await response.json();
-                    throw new Error(errorJson.error?.message || "Connection Error");
+                    // If the error persists, it will output the specific Google error message here
+                    throw new Error(errorJson.error?.message || `HTTP ${response.status}`);
                 }
 
                 const result = await response.json();
@@ -105,14 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div id="${id}" class="text-slate-700 text-sm leading-loose">${formatted}</div>
                         </div>`;
                 } else {
-                    outputElement.innerHTML = `<div class="p-6 bg-amber-50 text-amber-700 rounded-2xl text-xs font-bold italic">Identity Shielding: The AI was unable to generate a response. This may be due to safety filters or a complex PRF request.</div>`;
+                    outputElement.innerHTML = `<div class="p-6 bg-amber-50 text-amber-700 rounded-2xl text-xs font-bold italic">Identity Shielding: No response generated. Check your Phenomenal Reference Frame (PRF) constraints.</div>`;
                 }
             } catch (e) {
-                console.error("API Error:", e);
-                outputElement.innerHTML = `<div class="p-6 bg-red-50 text-red-600 rounded-2xl text-xs font-bold italic">Thermodynamic Failure: ${e.message}. Please check your API key and connection.</div>`;
+                console.error("API Error Details:", e);
+                outputElement.innerHTML = `<div class="p-6 bg-red-50 text-red-600 rounded-2xl text-xs font-bold italic">Thermodynamic Failure: ${e.message}. Please check your API key permissions in Google AI Studio.</div>`;
             }
         },
-
         setupEventListeners() {
             const startBtn = document.getElementById('start-btn');
             if (startBtn) {
