@@ -4,26 +4,29 @@ document.addEventListener('DOMContentLoaded', () => {
         apiKey: localStorage.getItem('ethical_cartography_key') || "",
         currentModalFigure: null,
 
-        // KNOWLEDGE BASE: Integrated with 'Ethics in an Entropic World'
+        // KNOWLEDGE BASE: Integrated with 'Ethics in an Entropic World' (2026)
         frameworkContext: `
-            You are the 'Ethical Cartography' AI Tutor, an expert in Constructor Ethics and multi-scale coherence. 
+            You are the 'Ethical Cartography' AI Tutor, an expert in Constructor Ethics and multi-scale coherence. [cite: 10, 87]
             
             CORE ONTOLOGY:
-            - PRF stands for **Phenomenal Reference Frame**. It is the agent's lived horizon of meaning. Maintain Ontological Pluralism: the formal architecture is universal, but its lived interpretation is plural. [cite: 95, 1159, 1176]
-            - Multi-Scale Coherence (BROA+): Agency is a thermodynamic achievement requiring Biological (BRC), Identity (KIC), Cognitive (CIC), Institutional (ISC), and Temporal (TNC) alignment. [cite: 46, 1047, 1329]
-            - ATCF: The Adaptive Temporal Coherence Function measures Autobiographical (At), Present-Time (Tt), Prospective (Ct), and Meta-Constructive (Ft) coherence. [cite: 754, 763, 764]
-            - Thermodynamic Constraints: Ethical action carries metabolic and informational cost. [cite: 82, 1337] 
-            - Sapolsky Function: Chronic stress degrades the prefrontal cortex, causing 'temporal collapse' where the future shrinks into the present. [cite: 1059, 1061, 1083]
-            - Identity Kernel: Composed of Coherent Information Bits (CIBs). Moral Injury occurs when incompatible CIBs create 'Moral Debt'. [cite: 79, 716, 1244]
+            - PRF stands for **Phenomenal Reference Frame**. It is the agent's lived horizon of meaning. Maintain Ontological Pluralism: the formal architecture is universal, but its lived interpretation is plural[cite: 93, 105, 1176].
+            - Multi-Scale Coherence (BROA+): Agency is a thermodynamic achievement requiring Biological (BRC), Identity (KIC), Cognitive (CIC), Institutional (ISC), and Temporal (TNC) alignment[cite: 46, 1047, 1329].
+            - ATCF: The Adaptive Temporal Coherence Function measures Autobiographical (At), Present-Time (Tt), Prospective (Ct), and Meta-Constructive (Ft) coherence[cite: 754, 763, 764].
+            - Thermodynamic Constraints: Ethical action carries metabolic and informational cost (Landauer's Principle)[cite: 82, 1337, 1351]. 
+            - Sapolsky Function: Chronic stress degrades the prefrontal cortex, causing 'temporal collapse' where the future shrinks into the present[cite: 1059, 1061, 1083].
+            - Identity Kernel: Composed of Coherent Information Bits (CIBs). Moral Injury occurs when incompatible CIBs create 'Moral Debt'[cite: 79, 716, 1244].
             
-            INSTRUCTIONS: Diagnose the student's struggle across these scales. Use historical role models to suggest functional equivalents for their goals. [cite: 213, 217]
+            INSTRUCTIONS: Diagnose the student's struggle across these scales[cite: 213]. Evaluate if the environment is making ethical behavior possible[cite: 217]. Use historical role models to suggest functional equivalents for their goals.
         `,
 
         init() {
-            this.renderAllContent();
+            // Setup listeners FIRST so the Start button is reactive even if data rendering has a delay
             this.setupEventListeners();
+            this.renderAllContent();
+            
             if (this.apiKey) {
-                document.getElementById('api-key-input-settings').value = this.apiKey;
+                const keyInput = document.getElementById('api-key-input-settings');
+                if (keyInput) keyInput.value = this.apiKey;
             }
         },
 
@@ -50,26 +53,28 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         createCardHtml(item, type, index) {
-            const accent = type === 'navigator' ? 'indigo' : 'teal';
+            // Fixed color strings to ensure Tailwind detects them
+            const accentColor = type === 'navigator' ? 'indigo' : 'teal';
+            const accentClass = type === 'navigator' ? 'text-indigo-700' : 'text-teal-700';
+            const borderClass = type === 'navigator' ? 'hover:border-indigo-400' : 'hover:border-teal-400';
+            
             return `
-                <article role="button" tabindex="0" class="profile-card group bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:border-${accent}-400 hover:shadow-xl transition-all cursor-pointer flex flex-col" data-type="${type}" data-index="${index}">
-                    <h3 class="text-2xl font-black text-slate-900 group-hover:text-${accent}-600 transition-colors">${item.name}</h3>
+                <article role="button" tabindex="0" class="profile-card group bg-white p-8 rounded-3xl shadow-sm border border-slate-200 ${borderClass} hover:shadow-xl transition-all cursor-pointer flex flex-col" data-type="${type}" data-index="${index}">
+                    <h3 class="text-2xl font-black text-slate-900 group-hover:${accentClass} transition-colors">${item.name}</h3>
                     <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">${item.lifespan}</p>
                     <p class="text-slate-600 text-sm leading-relaxed line-clamp-4 flex-grow">${item.summary}</p>
-                    <div class="mt-6 pt-6 border-t border-slate-50 text-${accent}-600 font-black text-xs uppercase tracking-widest">Analyze PRF →</div>
+                    <div class="mt-6 pt-6 border-t border-slate-50 ${accentClass} font-black text-xs uppercase tracking-widest">Analyze PRF →</div>
                 </article>`;
         },
 
         createSimpleCardHtml(item, type, index) {
             return `
-                <article role="button" tabindex="0" class="simple-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl transition-all cursor-pointer" data-type="${type}" data-index="${index}">
+                <article role="button" tabindex="0" class="simple-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:border-indigo-400 hover:shadow-xl transition-all cursor-pointer" data-type="${type}" data-index="${index}">
                       <h3 class="text-xl font-black text-slate-900 mb-2">${item.title}</h3>
                       <p class="text-slate-500 text-sm leading-relaxed">${item.summary}</p>
                 </article>`;
         },
 
-        // --- ROBUST AI API LOGIC ---
-        async // --- ROBUST AI API LOGIC ---
         async callGeminiAPI(prompt, outputElement) {
             if (!this.apiKey) {
                 outputElement.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-xl text-xs font-bold uppercase tracking-widest">⚠️ Missing API Key. Go to Settings.</div>`;
@@ -83,23 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
 
             try {
-                // CORRECTED ENDPOINT: Using the stable v1 endpoint with the specific model format
                 const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${this.apiKey}`;
                 
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
-                        contents: [{ 
-                            parts: [{ text: prompt }] 
-                        }] 
+                        contents: [{ parts: [{ text: prompt }] }] 
                     })
                 });
 
                 if (!response.ok) {
                     const errorJson = await response.json();
-                    // If the error persists, it will output the specific Google error message here
-                    throw new Error(errorJson.error?.message || `HTTP ${response.status}`);
+                    throw new Error(errorJson.error?.message || "Connection Error");
                 }
 
                 const result = await response.json();
@@ -114,13 +115,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div id="${id}" class="text-slate-700 text-sm leading-loose">${formatted}</div>
                         </div>`;
                 } else {
-                    outputElement.innerHTML = `<div class="p-6 bg-amber-50 text-amber-700 rounded-2xl text-xs font-bold italic">Identity Shielding: No response generated. Check your Phenomenal Reference Frame (PRF) constraints.</div>`;
+                    outputElement.innerHTML = `<div class="p-6 bg-amber-50 text-amber-700 rounded-2xl text-xs font-bold italic">Identity Shielding: No response generated. Check your PRF constraints.</div>`;
                 }
             } catch (e) {
-                console.error("API Error Details:", e);
-                outputElement.innerHTML = `<div class="p-6 bg-red-50 text-red-600 rounded-2xl text-xs font-bold italic">Thermodynamic Failure: ${e.message}. Please check your API key permissions in Google AI Studio.</div>`;
+                outputElement.innerHTML = `<div class="p-6 bg-red-50 text-red-600 rounded-2xl text-xs font-bold italic">Thermodynamic Failure: ${e.message}</div>`;
             }
         },
+
         setupEventListeners() {
             const startBtn = document.getElementById('start-btn');
             if (startBtn) {
@@ -135,7 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.addEventListener('click', () => {
                     const targetId = btn.id.replace('-tab', '-section');
                     document.querySelectorAll('[role="tabpanel"]').forEach(p => p.classList.add('hidden'));
-                    document.getElementById(targetId).classList.remove('hidden');
+                    const section = document.getElementById(targetId);
+                    if (section) section.classList.remove('hidden');
+                    
                     document.querySelectorAll('.tab-btn').forEach(b => {
                         b.setAttribute('aria-selected', 'false');
                         b.className = "tab-btn flex-1 min-w-[150px] px-4 py-3 font-bold text-sm rounded-xl transition-all text-slate-500 hover:bg-slate-50";
@@ -181,11 +184,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         getPersonHtml(data) {
             return `
-                <div class="mb-10 text-center"><h2 class="text-4xl font-black mb-2">${data.name}</h2><p class="text-indigo-600 font-bold uppercase tracking-widest text-xs">${data.title}</p></div>
+                <div class="mb-10 text-center"><h2 id="modal-title" class="text-4xl font-black mb-2">${data.name}</h2><p class="text-indigo-600 font-bold uppercase tracking-widest text-xs">${data.title}</p></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="space-y-6">
-                        <section><h4 class="text-[10px] font-black uppercase text-slate-400 mb-2">Phenomenal Reference Frame (PRF)</h4><div class="text-slate-700 text-sm leading-relaxed">${data.broa}</div></section>
-                        <section><h4 class="text-[10px] font-black uppercase text-slate-400 mb-2">Temporal Coherence (ATCF)</h4><p class="text-slate-700 text-sm italic">${data.atcf}</p></section>
+                        <section><h4 class="text-[10px] font-black uppercase text-slate-400 mb-2">Phenomenal Reference Frame (PRF) [cite: 1159]</h4><div class="text-slate-700 text-sm leading-relaxed">${data.broa}</div></section>
+                        <section><h4 class="text-[10px] font-black uppercase text-slate-400 mb-2">Temporal Coherence (ATCF) [cite: 764]</h4><p class="text-slate-700 text-sm italic">${data.atcf}</p></section>
                     </div>
                     <div class="bg-indigo-50 p-8 rounded-3xl">
                         <h4 class="text-[10px] font-black uppercase text-indigo-400 mb-4 tracking-widest">Lab Simulation: Speak with Navigator</h4>
@@ -199,19 +202,20 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         getSimpleHtml(data) {
-            return `<h2 class="text-3xl font-black mb-4">${data.title}</h2><div class="prose text-slate-600 text-sm">${data.content || data.analysis || data.summary}</div>`;
+            return `<h2 id="modal-title" class="text-3xl font-black mb-4">${data.title}</h2><div class="prose text-slate-600 text-sm max-w-none">${data.content || data.analysis || data.summary}</div>`;
         },
 
         async handleResonanceLab() {
             const input = document.getElementById('resonance-input').value;
             if (!input) return;
-            const prompt = `${this.frameworkContext}\nStudent PRF Reflection: "${input}"\nIdentify role models and explain functional equivalence through BROA+ and ATCF metrics. [cite: 88, 222]`;
+            const prompt = `${this.frameworkContext}\nStudent PRF Reflection: "${input}"\nIdentify role models and explain functional equivalence through BROA+ and ATCF metrics. [cite: 88, 222, 2505]`;
             await this.callGeminiAPI(prompt, document.getElementById('counterparts-output'));
             document.getElementById('resonance-chat-container').classList.remove('hidden');
         },
 
         handleModalChat() {
             const inputEl = document.getElementById('modal-chat-input');
+            const out = document.getElementById('modal-chat-output');
             const question = inputEl.value;
             if (!question) return;
 
@@ -219,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const turn = document.createElement('div');
             turn.innerHTML = `<div class="p-3 bg-indigo-100 rounded-xl mb-2 font-bold">${question}</div><div class="ai-box"></div>`;
-            document.getElementById('modal-chat-output').appendChild(turn);
+            out.appendChild(turn);
             this.callGeminiAPI(prompt, turn.querySelector('.ai-box'));
             inputEl.value = "";
         },
