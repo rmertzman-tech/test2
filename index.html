@@ -1,109 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethical Cartography Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-100 text-slate-900 font-['Inter']">
     <a href="#main-content-area" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-indigo-600 text-white p-2 rounded">Skip to content</a>
 
-    <div id="app" class="container mx-auto p-4 md:p-8">
+    <div id="app" class="min-h-screen">
         
-        <div id="welcome-screen" class="text-center py-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Welcome to the Ethical Cartography Lab</h1>
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Explore ethics as a practice of multi-scale coherence across biological, cognitive, and institutional layers.</p>
-            <button id="start-btn" class="mt-8 bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors text-lg" aria-label="Enter the lab">
-                Start Here
-            </button>
-        </div>
-
-        <div id="app-container" class="hidden">
-            <header class="text-center mb-10 relative">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Ethical Cartography Lab</h1>
-                <p class="mt-2 text-lg text-gray-600">Ethics as the Achievement of Multi-Scale Coherence</p>
-                <button id="settings-btn" aria-label="Open API Key Settings" class="absolute top-0 right-0 text-gray-500 hover:text-gray-800 p-2 focus:ring-2 focus:ring-indigo-500">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                </button>
-            </header>
-
-            <nav class="mb-8 border-b border-gray-200" aria-label="Lab navigation tabs">
-                <div class="flex flex-wrap -mb-px" role="tablist">
-                    <button id="navigators-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="true">Ethical Navigators</button>
-                    <button id="thinkers-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Philosophers</button>
-                    <button id="foundations-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Theoretical Foundations</button>
-                    <button id="casestudies-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Case Studies</button>
-                    <button id="resonance-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Personal Resonance Lab</button>
-                </div>
-            </nav>
-
-            <main id="main-content-area">
-                <div id="navigators-section" role="tabpanel">
-                    <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Ethical Navigators in Action</h2>
-                    <div id="profile-grid" class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <div id="welcome-screen" class="max-w-4xl mx-auto py-16 px-6">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+                <div class="bg-indigo-600 p-10 text-center text-white">
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Ethical Cartography Lab</h1>
+                    <p class="text-indigo-100 text-lg max-w-2xl mx-auto leading-relaxed">
+                        A space to explore ethics as a practice of multi-scale coherence across biological, cognitive, and institutional layers.
+                    </p>
                 </div>
 
-                <div id="thinkers-section" class="hidden" role="tabpanel">
-                    <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Foundational Philosophers</h2>
-                    <div id="thinker-grid" class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-                </div>
-
-                <div id="foundations-section" class="hidden" role="tabpanel">
-                    <h2 class="text-2xl font-bold mb-4 text-gray-900">Theoretical Foundations</h2>
-                    <p id="disclaimer-text" class="text-sm text-gray-600 mb-6 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded"></p>
-                    <div id="foundation-grid" class="card-container grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-                </div>
-
-                <div id="casestudies-section" class="hidden" role="tabpanel">
-                    <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Case Studies in Multi-Scale Coherence</h2>
-                    <div id="casestudy-grid" class="card-container grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-                </div>
-
-                <div id="resonance-section" class="hidden" role="tabpanel">
-                    <h2 class="text-2xl font-bold mb-4 text-gray-900">Personal Resonance Lab</h2>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <label for="resonance-input" class="block text-sm font-medium text-gray-700 mb-2">Describe your current goals or challenges through your Phenomenal Reference Frame (PRF):</label>
-                        <textarea id="resonance-input" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="e.g., I want to build better collaborative capabilities in my community..."></textarea>
-                        <button id="find-counterparts-btn" class="mt-4 w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700">✨ Find Functional Equivalents</button>
-                        
-                        <div id="counterparts-output" aria-live="polite" class="mt-6"></div>
-
-                        <div id="resonance-chat-container" class="hidden mt-6 border-t pt-4">
-                            <div class="flex gap-2">
-                                <input type="text" id="resonance-chat-input" class="flex-1 border rounded p-2" placeholder="Ask a follow-up question...">
-                                <button id="resonance-send-btn" class="bg-indigo-600 text-white px-4 py-2 rounded font-bold">Send</button>
-                            </div>
-                        </div>
+                <div class="p-10 space-y-8">
+                    <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-6">
+                        <h2 class="text-amber-800 font-bold flex items-center gap-2 mb-3">
+                            🔑 Setup: Required for AI Interaction
+                        </h2>
+                        <p class="text-amber-900 text-sm mb-4 leading-relaxed">
+                            To use the AI Tutor, you need a Google Gemini API Key. This is free and acts as your individual "Computational Resource" within the lab.
+                        </p>
+                        <ol class="text-sm text-amber-900 space-y-3 list-decimal list-inside mb-6">
+                            <li>Go to <a href="https://aistudio.google.com/app/apikey" target="_blank" class="underline font-bold hover:text-amber-700">Google AI Studio (Click here)</a>.</li>
+                            <li>Sign in with any Google account.</li>
+                            <li>Click <strong class="bg-amber-200 px-1 rounded">"Get API key"</strong> then <strong class="bg-amber-200 px-1 rounded">"Create API key"</strong>.</li>
+                            <li>Copy the long string of letters and numbers.</li>
+                        </ol>
+                        <p class="text-xs text-amber-700 italic border-t border-amber-200 pt-3">
+                            Note: Once you click "Start," use the gear icon ⚙️ in the top right to paste your key.
+                        </p>
                     </div>
-                </div>
-            </main>
-        </div>
 
-        <div id="settings-api-key-modal" class="hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
-                <h2 class="text-xl font-bold mb-4">Gemini API Settings</h2>
-                <input type="password" id="api-key-input-settings" class="w-full border rounded p-2 mb-4" placeholder="Enter your API key">
-                <div class="flex justify-end gap-2">
-                    <button id="cancel-api-key-btn" class="px-4 py-2 text-gray-600">Cancel</button>
-                    <button id="save-api-key-btn" class="px-4 py-2 bg-indigo-600 text-white rounded font-bold">Save Key</button>
+                    <div class="text-center">
+                        <button id="start-btn" class="bg-indigo-600 text-white font-black py-4 px-10 rounded-2xl hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg text-xl tracking-wide uppercase">
+                            Enter the Lab
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="detail-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 h-full w-full z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <div class="relative w-full max-w-4xl shadow-2xl rounded-xl bg-white overflow-hidden">
-                <div class="modal-content p-8">
-                    <div class="flex justify-between items-start mb-4">
-                        <div id="modal-content-details" class="w-full"></div>
-                        <button id="close-modal" aria-label="Close details" class="text-gray-400 hover:text-gray-900 p-2 ml-auto sticky top-0 bg-white rounded-full">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </button>
+        <div id="app-container" class="hidden">
+            <header class="bg-indigo-900 text-white shadow-lg py-12 mb-10">
+                <div class="container mx-auto px-6 relative text-center">
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight">Ethical Cartography Lab</h1>
+                    <p class="mt-2 text-indigo-300 font-medium tracking-wide">Constructor Ethics & Coherence Mapping</p>
+                    <button id="settings-btn" aria-label="Open API Key Settings" class="absolute top-0 right-6 text-indigo-200 hover:text-white p-2 transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </button>
+                </div>
+            </header>
+
+            <div class="container mx-auto px-4 pb-20">
+                <nav class="mb-12 bg-white rounded-2xl shadow-sm p-2 flex flex-wrap gap-2 border border-slate-200" aria-label="Lab navigation">
+                    <button id="navigators-tab" role="tab" class="tab-btn flex-1 min-w-[150px] px-4 py-3 font-bold text-sm rounded-xl transition-all" aria-selected="true">Navigators</button>
+                    <button id="thinkers-tab" role="tab" class="tab-btn flex-1 min-w-[150px] px-4 py-3 font-bold text-sm rounded-xl transition-all" aria-selected="false">Philosophers</button>
+                    <button id="foundations-tab" role="tab" class="tab-btn flex-1 min-w-[150px] px-4 py-3 font-bold text-sm rounded-xl transition-all" aria-selected="false">Foundations</button>
+                    <button id="casestudies-tab" role="tab" class="tab-btn flex-1 min-w-[150px] px-4 py-3 font-bold text-sm rounded-xl transition-all" aria-selected="false">Case Studies</button>
+                    <button id="resonance-tab" role="tab" class="tab-btn flex-1 min-w-[150px] px-4 py-3 font-bold text-sm rounded-xl transition-all bg-indigo-600 text-white" aria-selected="false">Resonance Lab</button>
+                </nav>
+
+                <main id="main-content-area">
+                    <div id="navigators-section" role="tabpanel" class="space-y-6">
+                        <div id="profile-grid" class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
                     </div>
+
+                    <div id="thinkers-section" class="hidden" role="tabpanel">
+                        <div id="thinker-grid" class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                    </div>
+
+                    <div id="foundations-section" class="hidden" role="tabpanel">
+                        <p id="disclaimer-text" class="mb-8 p-6 bg-amber-50 border-l-4 border-amber-400 text-amber-900 rounded-r-xl italic"></p>
+                        <div id="foundation-grid" class="card-container grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+                    </div>
+
+                    <div id="casestudies-section" class="hidden" role="tabpanel">
+                        <div id="casestudy-grid" class="card-container grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+                    </div>
+
+                    <div id="resonance-section" class="hidden" role="tabpanel">
+                        <div class="bg-white p-10 rounded-3xl shadow-xl border border-slate-200">
+                            <h2 class="text-3xl font-black text-slate-900 mb-4">Personal Resonance Lab</h2>
+                            <label for="resonance-input" class="block text-slate-600 font-medium mb-4 leading-relaxed">
+                                Enter a value you hold, a capability you wish to cultivate, or an ethical challenge you face. The AI will map this into your Phenomenal Reference Frame (PRF).
+                            </label>
+                            <textarea id="resonance-input" rows="4" class="w-full rounded-2xl border-slate-200 bg-slate-50 focus:ring-4 focus:ring-indigo-100 p-6 text-lg transition-all" placeholder="e.g., I want to be more courageous in speaking up at work..."></textarea>
+                            <button id="find-counterparts-btn" class="mt-6 w-full bg-indigo-600 text-white font-black py-4 px-6 rounded-2xl hover:bg-indigo-700 shadow-lg uppercase tracking-widest transition-all">
+                                ✨ Map Functional Equivalents
+                            </button>
+                            <div id="counterparts-output" aria-live="polite" class="mt-10 space-y-6"></div>
+                            <div id="resonance-chat-container" class="hidden mt-10 pt-10 border-t border-slate-100">
+                                <div class="flex gap-2 p-2 bg-slate-50 rounded-2xl border border-slate-200">
+                                    <input type="text" id="resonance-chat-input" class="flex-1 bg-transparent border-none focus:ring-0 p-4" placeholder="Ask a follow-up question...">
+                                    <button id="resonance-send-btn" class="bg-indigo-600 text-white px-8 py-4 rounded-xl font-black">SEND</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <div id="settings-api-key-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-md z-[100] flex items-center justify-center p-4">
+            <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200">
+                <div class="bg-indigo-600 p-6 text-white font-bold text-center">API Settings</div>
+                <div class="p-8 space-y-6">
+                    <input type="password" id="api-key-input-settings" class="w-full border-slate-200 rounded-xl p-4 bg-slate-50 focus:ring-indigo-500" placeholder="Paste your key here...">
+                    <div class="flex gap-3">
+                        <button id="cancel-api-key-btn" class="flex-1 py-3 text-slate-500 font-bold hover:bg-slate-50 rounded-xl">Cancel</button>
+                        <button id="save-api-key-btn" class="flex-1 py-3 bg-indigo-600 text-white rounded-xl font-bold shadow-lg">Save Key</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="detail-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="relative w-full max-w-4xl shadow-2xl rounded-3xl bg-white overflow-hidden border border-slate-200">
+                <div class="modal-content p-10">
+                    <div id="modal-content-details" class="w-full"></div>
+                    <button id="close-modal" aria-label="Close" class="absolute top-6 right-6 p-2 text-slate-400 hover:text-slate-900 bg-slate-100 rounded-full transition-all">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </button>
                 </div>
             </div>
         </div>
