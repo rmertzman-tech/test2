@@ -4,14 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
         apiKey: localStorage.getItem('ethical_cartography_key') || "",
         currentModalFigure: null,
 
-        // Framework updated with 'Ethics in an Entropic World'
+        // KNOWLEDGE BASE: Integrated with 'Ethics in an Entropic World'
         frameworkContext: `
-            You are the 'Ethical Cartography' AI Tutor. 
-            PRF = Phenomenal Reference Frame.
-            ATCF = Adaptive Temporal Coherence Function.
-            Sapolsky Function = Chronic stress causing temporal collapse.
-            Landauer Principle = Energetic cost of ethical overwriting.
-            Help students map their needs to role models using functional equivalence.
+            You are the 'Ethical Cartography' AI Tutor, an expert in Constructor Ethics and multi-scale coherence. 
+            
+            CORE ONTOLOGY:
+            - PRF stands for **Phenomenal Reference Frame**. It is the agent's lived horizon of meaning. Maintain Ontological Pluralism: the formal architecture is universal, but its lived interpretation is plural. [cite: 95, 1159, 1176]
+            - Multi-Scale Coherence (BROA+): Agency is a thermodynamic achievement requiring Biological (BRC), Identity (KIC), Cognitive (CIC), Institutional (ISC), and Temporal (TNC) alignment. [cite: 46, 1047, 1329]
+            - ATCF: The Adaptive Temporal Coherence Function measures Autobiographical (At), Present-Time (Tt), Prospective (Ct), and Meta-Constructive (Ft) coherence. [cite: 754, 763, 764]
+            - Thermodynamic Constraints: Ethical action carries metabolic and informational cost. [cite: 82, 1337] 
+            - Sapolsky Function: Chronic stress degrades the prefrontal cortex, causing 'temporal collapse' where the future shrinks into the present. [cite: 1059, 1061, 1083]
+            - Identity Kernel: Composed of Coherent Information Bits (CIBs). Moral Injury occurs when incompatible CIBs create 'Moral Debt'. [cite: 79, 716, 1244]
+            
+            INSTRUCTIONS: Diagnose the student's struggle across these scales. Use historical role models to suggest functional equivalents for their goals. [cite: 213, 217]
         `,
 
         init() {
@@ -63,15 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 </article>`;
         },
 
+        // --- ROBUST AI API LOGIC ---
         async callGeminiAPI(prompt, outputElement) {
             if (!this.apiKey) {
-                outputElement.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-xl text-xs font-bold uppercase tracking-widest">⚠️ Missing API Key</div>`;
+                outputElement.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-xl text-xs font-bold uppercase tracking-widest">⚠️ Missing API Key. Go to Settings.</div>`;
                 return;
             }
 
-            outputElement.innerHTML = `<div class="flex items-center gap-3 p-6 bg-indigo-50 rounded-2xl animate-pulse">
-                <div class="loader m-0"></div><span class="text-indigo-700 font-bold text-sm tracking-tight">Resolving Coherence Architecture...</span>
-            </div>`;
+            outputElement.innerHTML = `
+                <div class="flex items-center gap-3 p-6 bg-indigo-50 rounded-2xl animate-pulse">
+                    <div class="loader m-0"></div>
+                    <span class="text-indigo-700 font-bold text-sm tracking-tight">Resolving Coherence Architecture...</span>
+                </div>`;
 
             try {
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.apiKey}`, {
@@ -79,6 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: prompt }] }] })
                 });
+
+                if (!response.ok) {
+                    const errorJson = await response.json();
+                    throw new Error(errorJson.error?.message || "Connection Error");
+                }
 
                 const result = await response.json();
                 const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -91,9 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             <button onclick="app.speakText(document.getElementById('${id}').innerText)" class="mb-4 text-[10px] font-black uppercase text-indigo-500 hover:text-indigo-800 tracking-tighter">🔊 Listen to AI Tutor</button>
                             <div id="${id}" class="text-slate-700 text-sm leading-loose">${formatted}</div>
                         </div>`;
+                } else {
+                    outputElement.innerHTML = `<div class="p-6 bg-amber-50 text-amber-700 rounded-2xl text-xs font-bold italic">Identity Shielding: The AI was unable to generate a response. This may be due to safety filters or a complex PRF request.</div>`;
                 }
             } catch (e) {
-                outputElement.innerHTML = `<div class="p-6 bg-red-50 text-red-600 rounded-2xl text-xs font-bold italic">Thermodynamic Error: Connection failed. Check API key.</div>`;
+                console.error("API Error:", e);
+                outputElement.innerHTML = `<div class="p-6 bg-red-50 text-red-600 rounded-2xl text-xs font-bold italic">Thermodynamic Failure: ${e.message}. Please check your API key and connection.</div>`;
             }
         },
 
@@ -127,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.apiKey = document.getElementById('api-key-input-settings').value.trim();
                 localStorage.setItem('ethical_cartography_key', this.apiKey);
                 document.getElementById('settings-api-key-modal').classList.add('hidden');
+                location.reload(); 
             };
 
             document.querySelectorAll('.card-container').forEach(c => c.onclick = e => this.handleCardClick(e));
@@ -159,14 +176,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="mb-10 text-center"><h2 class="text-4xl font-black mb-2">${data.name}</h2><p class="text-indigo-600 font-bold uppercase tracking-widest text-xs">${data.title}</p></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="space-y-6">
-                        <section><h4 class="text-[10px] font-black uppercase text-slate-400 mb-2">Phenomenal Frame (BROA+)</h4><div class="text-slate-700 text-sm leading-relaxed">${data.broa}</div></section>
+                        <section><h4 class="text-[10px] font-black uppercase text-slate-400 mb-2">Phenomenal Reference Frame (PRF)</h4><div class="text-slate-700 text-sm leading-relaxed">${data.broa}</div></section>
                         <section><h4 class="text-[10px] font-black uppercase text-slate-400 mb-2">Temporal Coherence (ATCF)</h4><p class="text-slate-700 text-sm italic">${data.atcf}</p></section>
                     </div>
                     <div class="bg-indigo-50 p-8 rounded-3xl">
                         <h4 class="text-[10px] font-black uppercase text-indigo-400 mb-4 tracking-widest">Lab Simulation: Speak with Navigator</h4>
                         <div id="modal-chat-output" class="text-xs mb-6 space-y-4 max-h-60 overflow-y-auto"></div>
                         <div class="flex gap-2 p-2 bg-white rounded-2xl shadow-inner">
-                            <input type="text" id="modal-chat-input" class="flex-1 bg-transparent border-none focus:ring-0 p-2 text-sm" placeholder="Ask a question...">
+                            <input type="text" id="modal-chat-input" class="flex-1 bg-transparent border-none focus:ring-0 p-2 text-sm" placeholder="Ask about their PRF or choices...">
                             <button id="modal-chat-send" class="bg-indigo-600 text-white px-4 py-2 rounded-xl font-bold">SEND</button>
                         </div>
                     </div>
@@ -180,19 +197,23 @@ document.addEventListener('DOMContentLoaded', () => {
         async handleResonanceLab() {
             const input = document.getElementById('resonance-input').value;
             if (!input) return;
-            const prompt = `${this.frameworkContext}\nStudent PRF: "${input}"\nIdentify role models and explain functional equivalence.`;
+            const prompt = `${this.frameworkContext}\nStudent PRF Reflection: "${input}"\nIdentify role models and explain functional equivalence through BROA+ and ATCF metrics. [cite: 88, 222]`;
             await this.callGeminiAPI(prompt, document.getElementById('counterparts-output'));
             document.getElementById('resonance-chat-container').classList.remove('hidden');
         },
 
         handleModalChat() {
-            const input = document.getElementById('modal-chat-input');
-            const prompt = `SIMULATION: Respond AS ${this.currentModalFigure.name}. Question: ${input.value}`;
+            const inputEl = document.getElementById('modal-chat-input');
+            const question = inputEl.value;
+            if (!question) return;
+
+            const prompt = `SIMULATION: You are ${this.currentModalFigure.name}. Answer this student through your Phenomenal Reference Frame (PRF) and historical context: "${question}". Address their multi-scale coherence (BROA+). [cite: 181, 1181]`;
+            
             const turn = document.createElement('div');
-            turn.innerHTML = `<div class="p-3 bg-indigo-100 rounded-xl mb-2 font-bold">${input.value}</div><div class="ai-box"></div>`;
+            turn.innerHTML = `<div class="p-3 bg-indigo-100 rounded-xl mb-2 font-bold">${question}</div><div class="ai-box"></div>`;
             document.getElementById('modal-chat-output').appendChild(turn);
             this.callGeminiAPI(prompt, turn.querySelector('.ai-box'));
-            input.value = "";
+            inputEl.value = "";
         },
 
         handleResonanceChat() {
