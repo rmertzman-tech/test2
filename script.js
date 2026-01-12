@@ -31,15 +31,23 @@ document.addEventListener('DOMContentLoaded', () => {
             TASK: Help students map functional equivalents and resolve Moral Debt within their chosen PRF.
         `,
 
-        init() {
-            this.renderAllContent();
-            this.setupEventListeners();
-            
-            if (this.apiKey) {
-                const keyInput = document.getElementById('api-key-input-settings');
-                if (keyInput) keyInput.value = this.apiKey;
-            }
-        },
+       init() {
+    // 1. Setup Event Listeners FIRST so the Start button always works
+    this.setupEventListeners();
+    
+    // 2. Load the key
+    if (this.apiKey) {
+        const keyInput = document.getElementById('api-key-input-settings');
+        if (keyInput) keyInput.value = this.apiKey;
+    }
+
+    // 3. Attempt to render content (wrapped in a try/catch to prevent total crash)
+    try {
+        this.renderAllContent();
+    } catch (e) {
+        console.error("Coherence Error: Content rendering failed, check data.js.", e);
+    }
+},
 
         // --- ACCESSIBILITY: TEXT-TO-SPEECH (TTS) ---
         speakText(text) {
@@ -61,18 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- CONTENT RENDERING ---
         renderAllContent() {
-            document.getElementById('profile-grid').innerHTML = this.navigators.map((item, index) => this.createCardHtml(item, 'navigator', index)).join('');
-            document.getElementById('thinker-grid').innerHTML = this.thinkers.map((item, index) => this.createCardHtml(item, 'thinker', index)).join('');
-            document.getElementById('concept-grid').innerHTML = this.concepts.map((item, index) => this.createConceptCardHtml(item, index)).join('');
-            document.getElementById('foundation-grid').innerHTML = this.foundations.map((item, index) => this.createSimpleCardHtml(item, 'foundation', index)).join('');
-            document.getElementById('casestudy-grid').innerHTML = this.caseStudies.map((item, index) => this.createSimpleCardHtml(item, 'casestudy', index)).join('');
-            document.getElementById('essay-grid').innerHTML = this.essays.map((item, index) => this.createSimpleCardHtml(item, 'essay', index)).join('');
-            
-            const disclaimerEl = document.getElementById('disclaimer-text');
-            if(disclaimerEl && appData.disclaimerText) disclaimerEl.textContent = appData.disclaimerText;
+    // Helper to safely render to a grid if it exists
+    const safeRender = (id, data, htmlFunc) => {
+        const el = document.getElementById(id);
+        if (el && data) el.innerHTML = data.map((item, index) => htmlFunc.call(this, item, index)).join('');
+    };
 
-            this.renderComparisonLab();
-        },
+    safeRender('profile-grid', this.navigators, (item, i) => this.createCardHtml(item, 'navigator', i));
+    safeRender('thinker-grid', this.thinkers, (item, i) => this.createCardHtml(item, 'thinker', i));
+    safeRender('concept-grid', this.concepts, (item, i) => this.createConceptCardHtml(item, i));
+    safeRender('foundation-grid', this.foundations, (item, i) => this.createSimpleCardHtml(item, 'foundation', i));
+    safeRender('casestudy-grid', this.caseStudies, (item, i) => this.createSimpleCardHtml(item, 'casestudy', i));
+    safeRender('essay-grid', this.essays, (item, i) => this.createSimpleCardHtml(item, 'essay', i));
+    
+    const disclaimerEl = document.getElementById('disclaimer-text');
+    if(disclaimerEl && appData.disclaimerText) disclaimerEl.textContent = appData.disclaimerText;
+
+    this.renderComparisonLab();
+},
         
         createCardHtml(item, type, index) {
             const colors = { navigator: 'text-indigo-700', thinker: 'text-teal-700' };
@@ -213,32 +227,42 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         // --- UI LOGIC & EVENT LISTENERS ---
-        setupEventListeners() {
-            // Screen Transitions
-            const startBtn = document.getElementById('start-btn');
-            if (startBtn) {
-                startBtn.addEventListener('click', () => {
-                    document.getElementById('welcome-screen').classList.add('hidden');
-                    document.getElementById('app-container').classList.remove('hidden');
-                });
-            }
+    setupEventListeners() {
+    // Immediate wire-up of the Start Button
+    const startBtn = document.getElementById('start-btn');
+    if (startBtn) {
+        startBtn.addEventListener('click', () => {
+            document.getElementById('welcome-screen').classList.add('hidden');
+            document.getElementById('app-container').classList.remove('hidden');
+            // Move focus to the header for accessibility
+            document.querySelector('header h1').setAttribute('tabindex', '-1');
+            document.querySelector('header h1').focus();
+        });
+    }
 
-            // Tabs
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            tabButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const targetId = btn.id.replace('-tab', '-section');
-                    document.querySelectorAll('[role="tabpanel"]').forEach(p => p.classList.add('hidden'));
-                    document.getElementById(targetId).classList.remove('hidden');
-                    
-                    tabButtons.forEach(b => {
-                        b.setAttribute('aria-selected', 'false');
-                        b.classList.remove('bg-indigo-100', 'border-indigo-600');
-                    });
-                    btn.setAttribute('aria-selected', 'true');
-                    btn.classList.add('bg-indigo-100', 'border-indigo-600');
+    // Tab Navigation Logic with ID Syncing
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // FIX: Map plural tab IDs to singular section IDs used in your HTML
+            let targetId = btn.id.replace('-tab', '-section');
+            if (targetId === 'casestudies-section') targetId = 'casestudy-section';
+            if (targetId === 'essays-section') targetId = 'essay-section';
+
+            const section = document.getElementById(targetId);
+            if (section) {
+                document.querySelectorAll('[role="tabpanel"]').forEach(p => p.classList.add('hidden'));
+                section.classList.remove('hidden');
+                
+                tabButtons.forEach(b => {
+                    b.setAttribute('aria-selected', 'false');
+                    b.classList.remove('bg-indigo-100', 'border-indigo-600');
                 });
-            });
+                btn.setAttribute('aria-selected', 'true');
+                btn.classList.add('bg-indigo-100', 'border-indigo-600');
+            }
+        });
+    });
 
             // Settings
             document.getElementById('settings-btn').addEventListener('click', () => document.getElementById('settings-api-key-modal').classList.remove('hidden'));
