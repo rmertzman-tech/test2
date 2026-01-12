@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = {
         // --- YOUR API KEY GOES HERE ---
         // Replace "YOUR_GEMINI_API_KEY_HERE" with your actual key.
-        apiKey: 'AIzaSyCDi9d-lTladymJwcrQ7HhKQgRh34FmgrE.', 
+        apiKey:
         // -----------------------------
 
         currentComparison: null,
