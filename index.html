@@ -32,43 +32,73 @@
 
             <nav class="mb-8 border-b border-gray-200" aria-label="Lab navigation tabs">
                 <div class="flex flex-wrap -mb-px" role="tablist">
-                    <button id="navigators-tab" role="tab" aria-controls="navigators-section" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="true">Ethical Navigators</button>
-                    <button id="thinkers-tab" role="tab" aria-controls="thinkers-section" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Philosophers</button>
-                    <button id="resonance-tab" role="tab" aria-controls="resonance-section" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Personal Resonance Lab</button>
+                    <button id="navigators-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="true">Ethical Navigators</button>
+                    <button id="thinkers-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Philosophers</button>
+                    <button id="foundations-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Theoretical Foundations</button>
+                    <button id="casestudies-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Case Studies</button>
+                    <button id="resonance-tab" role="tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md focus:outline-none" aria-selected="false">Personal Resonance Lab</button>
                 </div>
             </nav>
 
             <main id="main-content-area">
-                <div id="navigators-section" role="tabpanel" aria-labelledby="navigators-tab">
-                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Ethical Navigators</h2>
+                <div id="navigators-section" role="tabpanel">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Ethical Navigators in Action</h2>
                     <div id="profile-grid" class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
                 </div>
 
-                <div id="comparison-section" class="hidden" role="tabpanel">
-                    <h2 class="text-2xl font-bold mb-4 text-gray-900">Capability & Comparison Lab</h2>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div id="comparison-output" aria-live="polite" class="mt-4 min-h-[50px]"></div>
-                        </div>
+                <div id="thinkers-section" class="hidden" role="tabpanel">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Foundational Philosophers</h2>
+                    <div id="thinker-grid" class="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                </div>
+
+                <div id="foundations-section" class="hidden" role="tabpanel">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-900">Theoretical Foundations</h2>
+                    <p id="disclaimer-text" class="text-sm text-gray-600 mb-6 bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded"></p>
+                    <div id="foundation-grid" class="card-container grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+                </div>
+
+                <div id="casestudies-section" class="hidden" role="tabpanel">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900 border-b pb-2">Case Studies in Multi-Scale Coherence</h2>
+                    <div id="casestudy-grid" class="card-container grid grid-cols-1 md:grid-cols-2 gap-6"></div>
                 </div>
 
                 <div id="resonance-section" class="hidden" role="tabpanel">
                     <h2 class="text-2xl font-bold mb-4 text-gray-900">Personal Resonance Lab</h2>
                     <div class="bg-white p-6 rounded-lg shadow-md">
-                        <label for="resonance-input" class="block text-sm font-medium text-gray-700">Enter your Phenomenal Reference Frame (PRF) reflection:</label>
-                        <textarea id="resonance-input" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500"></textarea>
-                        <div id="counterparts-output" aria-live="polite" class="mt-4 min-h-[50px]"></div>
+                        <label for="resonance-input" class="block text-sm font-medium text-gray-700 mb-2">Describe your current goals or challenges through your Phenomenal Reference Frame (PRF):</label>
+                        <textarea id="resonance-input" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="e.g., I want to build better collaborative capabilities in my community..."></textarea>
+                        <button id="find-counterparts-btn" class="mt-4 w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700">✨ Find Functional Equivalents</button>
+                        
+                        <div id="counterparts-output" aria-live="polite" class="mt-6"></div>
+
+                        <div id="resonance-chat-container" class="hidden mt-6 border-t pt-4">
+                            <div class="flex gap-2">
+                                <input type="text" id="resonance-chat-input" class="flex-1 border rounded p-2" placeholder="Ask a follow-up question...">
+                                <button id="resonance-send-btn" class="bg-indigo-600 text-white px-4 py-2 rounded font-bold">Send</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
         </div>
 
+        <div id="settings-api-key-modal" class="hidden fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+                <h2 class="text-xl font-bold mb-4">Gemini API Settings</h2>
+                <input type="password" id="api-key-input-settings" class="w-full border rounded p-2 mb-4" placeholder="Enter your API key">
+                <div class="flex justify-end gap-2">
+                    <button id="cancel-api-key-btn" class="px-4 py-2 text-gray-600">Cancel</button>
+                    <button id="save-api-key-btn" class="px-4 py-2 bg-indigo-600 text-white rounded font-bold">Save Key</button>
+                </div>
+            </div>
+        </div>
+
         <div id="detail-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 h-full w-full z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <div class="relative w-full max-w-3xl shadow-lg rounded-lg bg-white overflow-hidden">
-                <div class="p-6">
-                    <div class="flex justify-between items-start">
-                        <div id="modal-content-details" class="w-full">
-                            </div>
-                        <button id="close-modal" aria-label="Close details" class="text-gray-400 hover:text-gray-900 p-1.5 ml-auto">
+            <div class="relative w-full max-w-4xl shadow-2xl rounded-xl bg-white overflow-hidden">
+                <div class="modal-content p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div id="modal-content-details" class="w-full"></div>
+                        <button id="close-modal" aria-label="Close details" class="text-gray-400 hover:text-gray-900 p-2 ml-auto sticky top-0 bg-white rounded-full">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </button>
                     </div>
