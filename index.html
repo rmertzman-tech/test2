@@ -62,23 +62,34 @@
                     <button id="resonance-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl bg-amber-500 text-white shadow-lg" aria-selected="false">Resonance Lab</button>
                 </nav>
 
-                <main id="main-content-area" class="max-w-7xl mx-auto">
-                    <div id="navigators-section" role="tabpanel" class="card-grid"></div>
-                    <div id="thinkers-section" class="hidden card-grid" role="tabpanel"></div>
-                    <div id="foundations-section" class="hidden card-grid" role="tabpanel"></div>
-                    <div id="casestudies-section" class="hidden card-grid" role="tabpanel"></div>
-                    
-                    <div id="resonance-section" class="hidden" role="tabpanel">
-                        <div class="bg-white p-12 rounded-[3rem] shadow-2xl border border-slate-200 max-w-4xl mx-auto">
-                            <h2 class="text-3xl font-black text-slate-900 mb-6">Personal Resonance Lab</h2>
-                            <textarea id="resonance-input" rows="4" class="w-full rounded-2xl border-slate-200 bg-slate-50 p-6 text-lg focus:ring-4 focus:ring-indigo-100 transition-all mb-4" placeholder="Enter your PRF reflection..."></textarea>
-                            <button id="find-counterparts-btn" class="w-full bg-indigo-600 text-white font-black py-5 rounded-2xl hover:bg-indigo-700 shadow-lg uppercase tracking-widest">
-                                ✨ Map Functional Equivalents
-                            </button>
-                            <div id="counterparts-output" aria-live="polite" class="mt-10"></div>
-                        </div>
-                    </div>
-                </main>
+               <main id="main-content-area" class="max-w-7xl mx-auto">
+    <div id="navigators-section" role="tabpanel" class="card-grid">
+        <div id="profile-grid" class="card-grid"></div>
+    </div>
+    
+    <div id="thinkers-section" class="hidden" role="tabpanel">
+        <div id="thinker-grid" class="card-grid"></div>
+    </div>
+    
+    <div id="foundations-section" class="hidden" role="tabpanel">
+        <div id="foundation-grid" class="card-grid"></div>
+    </div>
+    
+    <div id="casestudies-section" class="hidden" role="tabpanel">
+        <div id="casestudy-grid" class="card-grid"></div>
+    </div>
+    
+    <div id="resonance-section" class="hidden" role="tabpanel">
+        <div class="bg-white p-12 rounded-[3rem] shadow-2xl border border-slate-200 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-black text-slate-900 mb-6">Personal Resonance Lab</h2>
+            <textarea id="resonance-input" rows="4" class="w-full rounded-2xl border-slate-200 bg-slate-50 p-6 text-lg focus:ring-4 focus:ring-indigo-100 transition-all mb-4" placeholder="Enter your PRF reflection..."></textarea>
+            <button id="find-counterparts-btn" class="w-full bg-indigo-600 text-white font-black py-5 rounded-2xl hover:bg-indigo-700 shadow-lg uppercase tracking-widest">
+                ✨ Map Functional Equivalents
+            </button>
+            <div id="counterparts-output" aria-live="polite" class="mt-10"></div>
+        </div>
+    </div>
+</main>
             </div>
         </div>
 
