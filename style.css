@@ -5,26 +5,18 @@ body { font-family: 'Inter', sans-serif; }
     border-bottom: 8px solid #6366f1;
 }
 
-.card-container {
+/* FIX: Ensure grid layout is always 3 columns on large screens */
+.card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
+    width: 100%;
 }
 
 .modal-content::-webkit-scrollbar { width: 6px; }
-.modal-content::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+.modal-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
 
-.loader-vivid {
-    border: 3px solid rgba(255,255,255,0.1);
-    border-top: 3px solid #6366f1;
-    border-radius: 50%;
-    width: 24px; height: 24px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-/* Fix line clamping for summaries */
+/* Custom clamp to keep cards neat */
 .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -32,7 +24,5 @@ body { font-family: 'Inter', sans-serif; }
     overflow: hidden;
 }
 
-.tab-btn[aria-selected="false"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
