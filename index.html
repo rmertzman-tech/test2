@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-50 text-slate-900">
-
     <div id="app" class="min-h-screen">
         <div id="welcome-screen" class="max-w-4xl mx-auto py-12 px-4">
             <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-200">
@@ -17,33 +16,18 @@
                     <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Ethical Cartography Lab</h1>
                     <p class="text-indigo-100 text-xl font-medium uppercase tracking-widest text-xs italic">Phenomenal Reference Frame (PRF) Mapping</p>
                 </div>
-                
                 <div class="p-8 md:p-12 space-y-8">
                     <div class="bg-blue-50 border-2 border-blue-100 p-8 rounded-3xl">
-                        <h2 class="text-blue-900 font-black text-lg mb-4 uppercase flex items-center gap-2">
-                            🚀 1. Activate Your AI Research Key
-                        </h2>
-                        <p class="text-blue-800 text-sm mb-6 leading-relaxed">
-                            The AI Tutor operates on the <strong>Gemini 1.5 Flash</strong> substrate. You must generate your own unique API key to initialize the lab's computational resources.
-                        </p>
-                        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-4 px-8 rounded-2xl hover:bg-blue-700 transition-all shadow-lg mb-4">
-                            Get Your Free Gemini API Key Here ↗
-                        </a>
-                        <div class="mt-4 p-4 bg-white/50 rounded-xl text-xs text-blue-700 leading-relaxed border border-blue-100">
-                            <strong>Instructions:</strong> Sign in with a Google account → Click "Get API Key" → Click "Create API Key in new project" → Copy the code.
-                        </div>
+                        <h2 class="text-blue-900 font-black text-lg mb-4 uppercase flex items-center gap-2">🚀 1. Activate Your AI Research Key</h2>
+                        <p class="text-blue-800 text-sm mb-6 leading-relaxed">The AI Tutor operates on the <strong>Gemini 3 Flash</strong> substrate. You must generate your own unique API key to initialize the lab's computational resources.</p>
+                        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-4 px-8 rounded-2xl hover:bg-blue-700 transition-all shadow-lg mb-4">Get Your Free Gemini API Key Here ↗</a>
+                        <div class="mt-4 p-4 bg-white/50 rounded-xl text-xs text-blue-700 leading-relaxed border border-blue-100 italic">Note: As of January 2026, ensure you create your key in a new project to support the Gemini 3 architecture.</div>
                     </div>
-
                     <div class="bg-slate-50 border-2 border-slate-200 p-8 rounded-3xl">
                         <h2 class="text-slate-900 font-black text-lg mb-4 uppercase">2. Initialize Lab Interface</h2>
-                        <input type="password" id="api-key-input-welcome" class="w-full border-slate-300 rounded-xl p-4 bg-white focus:ring-4 focus:ring-indigo-100 mb-2" placeholder="Paste your API Key here...">
+                        <input type="password" id="api-key-input-welcome" class="w-full border-slate-300 rounded-xl p-4 bg-white focus:ring-4 focus:ring-indigo-100" placeholder="Paste your API Key here...">
                     </div>
-
-                    <div class="text-center">
-                        <button id="start-btn" class="bg-indigo-600 text-white font-black py-5 px-12 rounded-2xl hover:bg-indigo-700 shadow-xl text-2xl uppercase tracking-widest transition-transform hover:scale-105">
-                            Enter the Lab
-                        </button>
-                    </div>
+                    <div class="text-center"><button id="start-btn" class="bg-indigo-600 text-white font-black py-5 px-12 rounded-2xl hover:bg-indigo-700 shadow-xl text-2xl uppercase tracking-widest transition-all hover:scale-105">Enter the Lab</button></div>
                 </div>
             </div>
         </div>
@@ -59,7 +43,7 @@
 
             <div class="container mx-auto px-4 pb-24">
                 <nav class="mb-12 flex flex-wrap justify-center gap-3" role="tablist">
-                    <button id="navigators-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl bg-indigo-700 text-white shadow-xl" aria-selected="true">Ethical Navigators</button>
+                    <button id="navigators-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl bg-indigo-700 text-white shadow-xl" aria-selected="true">Navigators</button>
                     <button id="thinkers-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl text-slate-400 hover:bg-white" aria-selected="false">Philosophers</button>
                     <button id="foundations-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl text-slate-400 hover:bg-white" aria-selected="false">Foundations</button>
                     <button id="casestudies-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl text-slate-400 hover:bg-white" aria-selected="false">Case Studies</button>
@@ -68,7 +52,6 @@
 
                 <main id="main-content-area" class="max-w-7xl mx-auto">
                     <div id="navigators-section" role="tabpanel" class="card-grid"></div>
-                    
                     <div id="thinkers-section" class="hidden card-grid" role="tabpanel"></div>
                     <div id="foundations-section" class="hidden card-grid" role="tabpanel"></div>
                     <div id="casestudies-section" class="hidden card-grid" role="tabpanel"></div>
@@ -76,10 +59,8 @@
                     <div id="resonance-section" class="hidden" role="tabpanel">
                         <div class="bg-white p-12 rounded-[3rem] shadow-2xl border border-slate-200 max-w-4xl mx-auto">
                             <h2 class="text-3xl font-black text-slate-900 mb-6">Personal Resonance Lab</h2>
-                            <textarea id="resonance-input" rows="4" class="w-full rounded-2xl border-slate-200 bg-slate-50 p-6 text-lg focus:ring-4 focus:ring-indigo-100 transition-all mb-4" placeholder="Describe your current ethical challenge or goal through your Phenomenal Reference Frame..."></textarea>
-                            <button id="find-counterparts-btn" class="w-full bg-indigo-600 text-white font-black py-5 rounded-2xl hover:bg-indigo-700 shadow-lg uppercase tracking-widest">
-                                ✨ Map Functional Equivalents
-                            </button>
+                            <textarea id="resonance-input" rows="4" class="w-full rounded-2xl border-slate-200 bg-slate-50 p-6 text-lg focus:ring-4 focus:ring-indigo-100" placeholder="Describe your challenge through your PRF..."></textarea>
+                            <button id="find-counterparts-btn" class="mt-6 w-full bg-indigo-600 text-white font-black py-5 rounded-2xl hover:bg-indigo-700 shadow-lg uppercase tracking-widest">✨ Map Functional Equivalents</button>
                             <div id="counterparts-output" aria-live="polite" class="mt-10"></div>
                         </div>
                     </div>
@@ -91,14 +72,13 @@
             <div class="relative w-full max-w-5xl shadow-2xl rounded-[3rem] bg-white overflow-hidden border border-slate-300">
                 <div id="modal-scroll" class="p-10 md:p-16 overflow-y-auto max-h-[90vh]">
                     <div id="modal-content-details" class="w-full"></div>
-                    <button id="close-modal" aria-label="Close" class="absolute top-8 right-8 p-3 text-slate-400 hover:text-indigo-600 bg-slate-100 rounded-full transition-all">
-                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <button id="close-modal" class="absolute top-8 right-8 p-3 text-slate-400 hover:text-indigo-600 bg-slate-100 rounded-full transition-all">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20"><path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"/></svg>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
