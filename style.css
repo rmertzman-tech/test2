@@ -1,11 +1,21 @@
-body { font-family: 'Inter', sans-serif; }
+/* --- Base Layer: Biological Regulatory Constraints (BRC) --- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* slate-50 */
+    color: #0f172a; /* slate-900 */
+    margin: 0;
+    line-height: 1.6;
+}
 
+/* --- Header & Banners: Vivid Indigo Gradient --- */
 .header-banner {
     background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
     border-bottom: 8px solid #6366f1;
+    color: white;
 }
 
-/* FIX: Ensure grid layout is always 3 columns on large screens */
+/* --- Structural Stability: The Multi-Column Grid --- */
+/* This ensures Navigators and Philosophers appear in 3 columns */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -13,10 +23,51 @@ body { font-family: 'Inter', sans-serif; }
     width: 100%;
 }
 
-.modal-content::-webkit-scrollbar { width: 6px; }
-.modal-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+/* --- Interactive Elements: Identity Kernels --- */
+.profile-card, .simple-card {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+    border: 1px solid #f1f5f9;
+}
 
-/* Custom clamp to keep cards neat */
+.profile-card:hover, .simple-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* --- Modal Architecture: Glassmorphism --- */
+#detail-modal {
+    backdrop-filter: blur(8px);
+    background-color: rgba(15, 23, 42, 0.6);
+}
+
+#modal-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #ffffff;
+}
+
+/* Custom Scrollbar for Webkit Browsers */
+#modal-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+#modal-scroll::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+#modal-scroll::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* --- AI Output: Coherence Indicators --- */
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+}
+
+/* Utility for text clamping (Cognitive Clarity) */
 .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -24,5 +75,7 @@ body { font-family: 'Inter', sans-serif; }
     overflow: hidden;
 }
 
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
-.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+/* Tab Active States */
+.tab-btn {
+    transition: all 0.3s ease;
+}
