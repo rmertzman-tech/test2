@@ -61,46 +61,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 </article>`;
         },
 
-        async callGeminiAPI(prompt, outputElement) {
-            if (!this.apiKey) {
-                outputElement.innerHTML = `<div class="p-6 bg-red-50 text-red-700 rounded-2xl font-black text-xs">⚠️ Setup Required: Add API Key</div>`;
-                return;
-            }
+       async callGeminiAPI(prompt, outputElement) {
+    if (!this.apiKey) {
+        outputElement.innerHTML = `<div class="p-6 bg-red-50 text-red-700 rounded-2xl font-black uppercase text-xs">⚠️ Missing API Key.</div>`;
+        return;
+    }
 
-            outputElement.innerHTML = `<div class="p-8 bg-indigo-50 rounded-3xl animate-pulse text-center">
-                <span class="text-indigo-800 font-black text-sm uppercase tracking-widest">Resolving Coherence Architecture...</span>
-            </div>`;
+    outputElement.innerHTML = `<div class="flex items-center gap-4 p-8 bg-indigo-50 rounded-3xl animate-pulse text-center">
+        <span class="text-indigo-800 font-black text-sm uppercase tracking-widest italic">Resolving Coherence Architecture...</span>
+    </div>`;
 
-            try {
-                // FIXED ENDPOINT FOR 2026 HANDSHAKE
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.apiKey}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                });
+    try {
+        // ULTIMATE ENDPOINT FIX: Using the v1 stable endpoint which is now standard for 1.5-Flash
+        // If v1 fails, change "v1" below to "v1beta" manually
+        const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${this.apiKey}`;
+        
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                contents: [{ 
+                    parts: [{ text: prompt }] 
+                }] 
+            })
+        });
 
-                const result = await response.json();
-                if (!response.ok) throw new Error(result.error?.message || "Connection Decoherence");
+        const result = await response.json();
 
-                const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
-                if (text) {
-                    const formatted = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                    const turnId = "speech-" + Math.random().toString(36).substr(2, 9);
-                    outputElement.innerHTML = `
-                        <div class="bg-white border-2 border-indigo-100 p-8 rounded-[2rem] shadow-sm">
-                            <button onclick="app.speakText(document.getElementById('${turnId}').innerText)" class="mb-4 text-[10px] font-black text-indigo-500 uppercase flex items-center gap-2 hover:text-indigo-800">
-                                🔊 Hear AI Synthesis
-                            </button>
-                            <div id="${turnId}" class="text-slate-700 text-sm leading-loose">${formatted}</div>
-                        </div>`;
-                    outputElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
-            } catch (e) {
-                outputElement.innerHTML = `<div class="p-8 bg-red-50 text-red-600 rounded-3xl text-xs font-bold uppercase border-2 border-red-100">
-                    Thermodynamic Failure: ${e.message}
-                </div>`;
-            }
-        },
+        // Check for specific Google-side decoherence
+        if (!response.ok) {
+            console.error("Full Google Error:", result);
+            throw new Error(result.error?.message || `Status ${response.status}`);
+        }
+
+        const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (text) {
+            const formatted = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            outputElement.innerHTML = `<div class="bg-white border-2 border-indigo-100 p-8 rounded-[2rem] text-slate-700 text-sm leading-relaxed shadow-sm">${formatted}</div>`;
+        } else {
+            outputElement.innerHTML = `<div class="p-6 bg-amber-50 text-amber-700 rounded-2xl text-xs font-bold italic">Identity Shielding: No content generated.</div>`;
+        }
+    } catch (e) {
+        console.error("Detailed API Failure:", e);
+        // This output now provides the specific error for debugging
+        outputElement.innerHTML = `<div class="p-8 bg-red-50 text-red-600 rounded-3xl text-sm font-bold border-2 border-red-100">
+            <strong>Thermodynamic Failure:</strong><br>
+            <code class="block mt-2 p-2 bg-white/50 rounded text-xs font-mono">${e.message}</code>
+            <p class="mt-4 text-[10px] uppercase opacity-75 font-normal">Suggestion: If the error says 'Model Not Found', try changing the URL in script.js from /v1/ to /v1beta/.</p>
+        </div>`;
+    }
+}
 
         setupEventListeners() {
             document.getElementById('start-btn').onclick = () => {
