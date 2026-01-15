@@ -6,31 +6,39 @@
     <title>Ethical Cartography Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .header-banner { background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%); border-bottom: 8px solid #6366f1; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+        .profile-card:hover { transform: translateY(-5px); transition: all 0.2s ease; }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
-    <a href="#main-content-area" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-indigo-600 text-white p-2 rounded">Skip to content</a>
+<body class="bg-slate-100 text-slate-900">
 
     <div id="app" class="min-h-screen">
         <div id="welcome-screen" class="max-w-4xl mx-auto py-12 px-4">
-            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+            <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-200">
                 <div class="bg-indigo-700 p-12 text-center text-white">
-                    <h1 class="text-4xl md:text-6xl font-black mb-4">Ethical Cartography Lab</h1>
-                    <p class="text-indigo-100 text-xl font-medium">Phenomenal Reference Frame (PRF) Mapping</p>
+                    <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Ethical Cartography Lab</h1>
+                    <p class="text-indigo-100 text-xl font-medium uppercase tracking-widest text-xs">Phenomenal Reference Frame (PRF) Mapping</p>
                 </div>
                 
                 <div class="p-8 md:p-12 space-y-8">
-                    <div class="bg-blue-50 border-l-8 border-blue-500 p-6 rounded-xl">
-                        <h2 class="text-blue-900 font-black text-lg mb-2 uppercase tracking-tighter">🚀 Student Setup Guide</h2>
-                        <p class="text-blue-800 text-sm mb-4">To activate the AI Tutor, you must generate a unique API key. This connects your local lab instance to the Gemini intelligence layer.</p>
-                        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-all shadow-md">
-                            Get Your Free Gemini API Key Here ↗
+                    <div class="bg-blue-50 border-2 border-blue-200 p-6 rounded-2xl">
+                        <h2 class="text-blue-900 font-black text-lg mb-4 uppercase">1. Get Your AI Research Key</h2>
+                        <p class="text-blue-800 text-sm mb-4 leading-relaxed">The AI Tutor requires a Gemini API Key to function. This is your link to the computational substrate of the lab.</p>
+                        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-blue-700 transition-all shadow-lg mb-4">
+                            Get Free Key at Google AI Studio ↗
                         </a>
-                        <p class="text-xs text-blue-600 mt-4 italic">Sign in with any Google account, click "Get API Key", then "Create API Key".</p>
+                    </div>
+
+                    <div class="bg-slate-50 border-2 border-slate-200 p-6 rounded-2xl">
+                        <h2 class="text-slate-900 font-black text-lg mb-4 uppercase">2. Initialize Lab Key</h2>
+                        <input type="password" id="api-key-input-welcome" class="w-full border-slate-300 rounded-xl p-4 bg-white focus:ring-4 focus:ring-indigo-100 mb-2" placeholder="Paste your API Key here...">
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">The key is stored locally in your browser cache.</p>
                     </div>
 
                     <div class="text-center">
-                        <button id="start-btn" class="bg-indigo-600 text-white font-black py-5 px-12 rounded-2xl hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-xl text-2xl uppercase tracking-widest">
+                        <button id="start-btn" class="bg-indigo-600 text-white font-black py-5 px-12 rounded-2xl hover:bg-indigo-700 shadow-xl text-2xl uppercase tracking-widest transition-transform hover:scale-105">
                             Enter the Lab
                         </button>
                     </div>
@@ -39,43 +47,32 @@
         </div>
 
         <div id="app-container" class="hidden">
-            <header class="header-banner text-white shadow-xl py-16 mb-10">
-                <div class="container mx-auto px-6 relative text-center">
-                    <h1 class="text-5xl font-black tracking-tighter mb-2">Ethical Cartography Lab</h1>
-                    <p class="text-indigo-200 font-bold uppercase tracking-widest text-sm">Constructor Ethics & Multi-Scale Coherence</p>
-                    <button id="settings-btn" aria-label="Open API Key Settings" class="absolute top-0 right-6 text-white/50 hover:text-white p-2">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </button>
-                </div>
+            <header class="header-banner text-white py-16 mb-10 text-center relative">
+                <h1 class="text-5xl font-black tracking-tighter mb-2">Ethical Cartography Lab</h1>
+                <p class="text-indigo-200 font-bold uppercase tracking-widest text-xs">Constructor Ethics & Multi-Scale Coherence</p>
+                <button id="reset-key-btn" class="absolute top-4 right-4 text-xs font-bold text-indigo-200 hover:text-white underline">Change API Key</button>
             </header>
 
             <div class="container mx-auto px-4 pb-24">
-                <nav class="mb-12 flex flex-wrap justify-center gap-3" aria-label="Navigation">
-                    <button id="navigators-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl transition-all" aria-selected="true">Navigators</button>
-                    <button id="thinkers-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl transition-all" aria-selected="false">Philosophers</button>
-                    <button id="foundations-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl transition-all" aria-selected="false">Theoretical Foundations</button>
-                    <button id="casestudies-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl transition-all" aria-selected="false">Case Studies</button>
-                    <button id="resonance-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl transition-all bg-indigo-600 text-white" aria-selected="false">Resonance Lab</button>
+                <nav class="mb-12 flex flex-wrap justify-center gap-2" role="tablist">
+                    <button id="navigators-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl bg-indigo-700 text-white shadow-xl" aria-selected="true">Navigators</button>
+                    <button id="thinkers-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl text-slate-400 hover:bg-white" aria-selected="false">Philosophers</button>
+                    <button id="foundations-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl text-slate-400 hover:bg-white" aria-selected="false">Foundations</button>
+                    <button id="casestudies-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl text-slate-400 hover:bg-white" aria-selected="false">Case Studies</button>
+                    <button id="resonance-tab" role="tab" class="tab-btn px-6 py-3 font-black text-xs uppercase tracking-widest rounded-xl bg-amber-500 text-white shadow-lg" aria-selected="false">Resonance Lab</button>
                 </nav>
 
                 <main id="main-content-area" class="max-w-7xl mx-auto">
-                    <div id="navigators-section" role="tabpanel">
-                        <div id="profile-grid" class="card-container"></div>
-                    </div>
-                    <div id="thinkers-section" class="hidden" role="tabpanel">
-                        <div id="thinker-grid" class="card-container"></div>
-                    </div>
-                    <div id="foundations-section" class="hidden" role="tabpanel">
-                        <div id="foundation-grid" class="card-container"></div>
-                    </div>
-                    <div id="casestudies-section" class="hidden" role="tabpanel">
-                        <div id="casestudy-grid" class="card-container"></div>
-                    </div>
+                    <div id="navigators-section" role="tabpanel" class="card-grid"></div>
+                    <div id="thinkers-section" class="hidden card-grid" role="tabpanel"></div>
+                    <div id="foundations-section" class="hidden card-grid" role="tabpanel"></div>
+                    <div id="casestudies-section" class="hidden card-grid" role="tabpanel"></div>
+                    
                     <div id="resonance-section" class="hidden" role="tabpanel">
-                        <div class="bg-white p-12 rounded-3xl shadow-xl border border-slate-200 max-w-4xl mx-auto">
+                        <div class="bg-white p-12 rounded-[3rem] shadow-2xl border border-slate-200 max-w-4xl mx-auto">
                             <h2 class="text-3xl font-black text-slate-900 mb-6">Personal Resonance Lab</h2>
-                            <textarea id="resonance-input" rows="4" class="w-full rounded-2xl border-slate-200 bg-slate-50 p-6 text-lg focus:ring-4 focus:ring-indigo-100 transition-all" placeholder="Enter your PRF reflection..."></textarea>
-                            <button id="find-counterparts-btn" class="mt-6 w-full bg-indigo-600 text-white font-black py-4 px-8 rounded-2xl hover:bg-indigo-700 shadow-lg uppercase tracking-widest">
+                            <textarea id="resonance-input" rows="4" class="w-full rounded-2xl border-slate-200 bg-slate-50 p-6 text-lg focus:ring-4 focus:ring-indigo-100 transition-all mb-4" placeholder="Enter your PRF reflection..."></textarea>
+                            <button id="find-counterparts-btn" class="w-full bg-indigo-600 text-white font-black py-5 rounded-2xl hover:bg-indigo-700 shadow-lg uppercase tracking-widest">
                                 ✨ Map Functional Equivalents
                             </button>
                             <div id="counterparts-output" aria-live="polite" class="mt-10"></div>
@@ -85,26 +82,12 @@
             </div>
         </div>
 
-        <div id="settings-api-key-modal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-md z-[100] flex items-center justify-center p-4">
-            <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200">
-                <div class="bg-indigo-600 p-6 text-white font-black text-center uppercase tracking-widest">API Configuration</div>
-                <div class="p-8 space-y-6">
-                    <p class="text-xs text-slate-500 font-bold uppercase">Enter Gemini API Key</p>
-                    <input type="password" id="api-key-input-settings" class="w-full border-slate-200 rounded-xl p-4 bg-slate-50 focus:ring-indigo-500" placeholder="Paste key here...">
-                    <div class="flex gap-3">
-                        <button id="cancel-api-key-btn" class="flex-1 py-4 text-slate-400 font-black hover:bg-slate-50 rounded-xl">CANCEL</button>
-                        <button id="save-api-key-btn" class="flex-1 py-4 bg-indigo-600 text-white rounded-xl font-black shadow-lg">ACTIVATE</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="detail-modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
-            <div class="relative w-full max-w-5xl shadow-2xl rounded-3xl bg-white overflow-hidden border border-slate-200">
-                <div class="modal-content p-8 md:p-12 overflow-y-auto max-h-[90vh]">
+        <div id="detail-modal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+            <div class="relative w-full max-w-5xl shadow-2xl rounded-[3rem] bg-white overflow-hidden border border-slate-300">
+                <div id="modal-scroll" class="p-10 md:p-16 overflow-y-auto max-h-[90vh]">
                     <div id="modal-content-details" class="w-full"></div>
-                    <button id="close-modal" class="absolute top-6 right-6 p-2 text-slate-400 hover:text-indigo-600 bg-slate-100 rounded-full transition-all">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <button id="close-modal" class="absolute top-8 right-8 p-3 text-slate-400 hover:text-indigo-600 bg-slate-100 rounded-full transition-all">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
                 </div>
             </div>
