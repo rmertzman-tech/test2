@@ -8,36 +8,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 text-slate-900 font-['Inter']">
+
     <div id="app" class="min-h-screen">
         <div id="welcome-screen" class="max-w-4xl mx-auto py-12 px-4">
             <div class="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-200">
-                <div class="bg-indigo-700 p-12 text-center text-white">
+                <div class="bg-indigo-700 p-12 text-center text-white shadow-inner">
                     <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Ethical Cartography Lab</h1>
                     <p class="text-indigo-100 text-xl font-medium uppercase tracking-widest text-xs italic">Phenomenal Reference Frame (PRF) Mapping</p>
                 </div>
+                
                 <div class="p-8 md:p-12 space-y-8">
-                    <div class="bg-blue-50 border-2 border-blue-100 p-8 rounded-3xl">
-                        <h2 class="text-blue-900 font-black text-lg mb-4 uppercase flex items-center gap-2">🚀 1. Activate Your AI Research Key</h2>
-                        <p class="text-blue-800 text-sm mb-6 leading-relaxed">The AI Tutor operates on the <strong>Gemini 3 Flash</strong> substrate. You must generate your own unique API key to initialize the lab's computational resources.</p>
-                        <a href="https://aistudio.google.com/app/apikey" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-4 px-8 rounded-2xl hover:bg-blue-700 transition-all shadow-lg mb-4">Get Your Free Gemini API Key Here ↗</a>
-                        <div class="mt-4 p-4 bg-white/50 rounded-xl text-xs text-blue-700 leading-relaxed border border-blue-100 italic">Note: As of January 2026, ensure you create your key in a new project to support the Gemini 3 architecture.</div>
+                    <div class="bg-blue-50 border-2 border-blue-200 p-8 rounded-3xl text-center">
+                        <h2 class="text-blue-900 font-black text-lg mb-4 uppercase">🚀 1. Initialize Gemini 2.5 Substrate</h2>
+                        <p class="text-blue-800 text-sm mb-6 leading-relaxed">The AI Tutor requires a valid API key to process multi-scale coherence diagnostics. Please provide your research key below.</p>
+                        <input type="password" id="api-key-input-welcome" class="w-full max-w-md border-slate-300 rounded-xl p-4 bg-white shadow-inner focus:ring-4 focus:ring-indigo-100 mb-4" placeholder="Paste your 2026 API Key here...">
+                        <div class="text-[10px] text-blue-600 uppercase font-bold tracking-widest">
+                            <a href="https://aistudio.google.com/app/apikey" target="_blank" class="underline">Google AI Studio (v2.5 Key Access) ↗</a>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 border-2 border-slate-200 p-8 rounded-3xl">
-                        <h2 class="text-slate-900 font-black text-lg mb-4 uppercase">2. Initialize Lab Interface</h2>
-                        <input type="password" id="api-key-input-welcome" class="w-full border-slate-300 rounded-xl p-4 bg-white focus:ring-4 focus:ring-indigo-100" placeholder="Paste your API Key here...">
+
+                    <div class="text-center">
+                        <button id="start-btn" class="bg-indigo-600 text-white font-black py-5 px-12 rounded-2xl hover:bg-indigo-700 shadow-xl text-2xl uppercase tracking-widest transition-all hover:scale-105">
+                            Enter the Lab
+                        </button>
                     </div>
-                    <div class="text-center"><button id="start-btn" class="bg-indigo-600 text-white font-black py-5 px-12 rounded-2xl hover:bg-indigo-700 shadow-xl text-2xl uppercase tracking-widest transition-all hover:scale-105">Enter the Lab</button></div>
                 </div>
             </div>
         </div>
 
         <div id="app-container" class="hidden">
-            <header class="header-banner text-white py-16 mb-10 text-center relative shadow-2xl">
+            <header class="header-banner text-white py-16 mb-10 text-center relative shadow-2xl border-b-4 border-indigo-400">
                 <div class="container mx-auto px-6">
                     <h1 class="text-5xl font-black tracking-tighter mb-2">Ethical Cartography Lab</h1>
-                    <p class="text-indigo-200 font-bold uppercase tracking-widest text-sm">Constructor Ethics & Multi-Scale Coherence</p>
-                    <button id="reset-key-btn" class="absolute top-4 right-6 text-xs font-bold text-indigo-200 hover:text-white underline">⚙️ Reset API Key</button>
+                    <p class="text-indigo-200 font-bold uppercase tracking-widest text-xs">Constructor Ethics & Multi-Scale Coherence</p>
+                    <button id="reset-key-btn" class="absolute top-4 right-6 text-xs font-bold text-indigo-200 hover:text-white underline">⚙️ Reset Lab Key</button>
                 </div>
             </header>
 
@@ -58,9 +63,9 @@
                     
                     <div id="resonance-section" class="hidden" role="tabpanel">
                         <div class="bg-white p-12 rounded-[3rem] shadow-2xl border border-slate-200 max-w-4xl mx-auto">
-                            <h2 class="text-3xl font-black text-slate-900 mb-6">Personal Resonance Lab</h2>
-                            <textarea id="resonance-input" rows="4" class="w-full rounded-2xl border-slate-200 bg-slate-50 p-6 text-lg focus:ring-4 focus:ring-indigo-100" placeholder="Describe your challenge through your PRF..."></textarea>
-                            <button id="find-counterparts-btn" class="mt-6 w-full bg-indigo-600 text-white font-black py-5 rounded-2xl hover:bg-indigo-700 shadow-lg uppercase tracking-widest">✨ Map Functional Equivalents</button>
+                            <h2 class="text-3xl font-black text-slate-900 mb-6 uppercase text-center">Personal Resonance Lab</h2>
+                            <textarea id="resonance-input" rows="4" class="w-full rounded-2xl border-slate-200 bg-slate-50 p-6 text-lg focus:ring-4 focus:ring-indigo-100 mb-4" placeholder="Describe your ethical challenge through your Phenomenal Reference Frame (PRF)..."></textarea>
+                            <button id="find-counterparts-btn" class="w-full bg-indigo-600 text-white font-black py-5 rounded-2xl hover:bg-indigo-700 shadow-lg uppercase tracking-widest">✨ Map Functional Equivalents</button>
                             <div id="counterparts-output" aria-live="polite" class="mt-10"></div>
                         </div>
                     </div>
